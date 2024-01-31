@@ -4,7 +4,6 @@ public enum MessageType
 {
     instant,
     delayed,
-    random,
     afterMessageCount
 }
 
@@ -17,6 +16,10 @@ public class MessageItem : ScriptableObject
     [SerializeField] public string message;
 
     [SerializeField] public MessageType messageType;
+    [SerializeField] public Flags[] flagsRequired;
+    [SerializeField] public bool repeat;
+    [SerializeField] public bool inSequence;
+    [SerializeField] public MessageItem followingMessage;
     [SerializeField] public int messageWaitCount;
     [SerializeField] public float delayBeforeSending;
 }

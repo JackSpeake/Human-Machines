@@ -1586,7 +1586,7 @@ MonoBehaviour:
   minWaitTime: 2
   maxWaitTime: 6
   messagePrefab: {fileID: 1262349676427394085, guid: 6453564d62ad75f4f8b042e468f2c2a2, type: 3}
-  availableMessageItems:
+  availableRandomMessageItems:
   - {fileID: 11400000, guid: 72b3bebca372bca40892be8cc5cb975d, type: 2}
   - {fileID: 11400000, guid: e0851345a7d197740ac1d69f9dfca6fe, type: 2}
   - {fileID: 11400000, guid: 9758ac92566fa9a4cbc06ef413cf2bbe, type: 2}

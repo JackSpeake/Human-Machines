@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This is literally just a script to make the underline in the console beep
+// It does not currently continue to beep after typing has started.
 public class ConsoleVisualBeep : MonoBehaviour
 {
     private TMPro.TMP_Text placeholder;

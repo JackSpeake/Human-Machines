@@ -16,7 +16,7 @@ public class MessageObject : MonoBehaviour
         //declineButton.enabled = false;
     }
 
-
+    // Used to set the message item of the object when the object is created
     public MessageObject(MessageItem m)
     {
         SetMessageItem(m);
@@ -37,7 +37,7 @@ public class MessageObject : MonoBehaviour
     }
 
     // theyre the same for now lmao
-
+    // This should be where the reaction to accepting / denying should happen
     public void Accept()
     {
         Destroy(this.gameObject);
