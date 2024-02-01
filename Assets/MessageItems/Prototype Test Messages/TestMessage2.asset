@@ -16,6 +16,7 @@ MonoBehaviour:
   message: 'Request Recieved: www.123movies.com'
   messageType: 0
   flagsRequired: 
+  repeat: 1
   inSequence: 0
   followingMessage: {fileID: 0}
   messageWaitCount: 0

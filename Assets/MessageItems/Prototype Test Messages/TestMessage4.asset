@@ -15,5 +15,9 @@ MonoBehaviour:
   MESSAGE_ID: 4
   message: 'Request Recieved: www.:3.com'
   messageType: 0
+  flagsRequired: 
+  repeat: 1
+  inSequence: 0
+  followingMessage: {fileID: 0}
   messageWaitCount: 0
   delayBeforeSending: 0
