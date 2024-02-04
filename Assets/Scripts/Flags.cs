@@ -4,7 +4,12 @@ using UnityEngine;
 
 public enum Flags
 {
-    GameStarted
+    GameStarted,
+    dead,
+    alive,
+    killedaman,
+    cool,
+    lame
 }
 
 public static class SetFlags

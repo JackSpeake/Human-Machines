@@ -14,6 +14,8 @@ public class MessageItem : ScriptableObject
     // TODO: Determine organization scheme, ex 001122 00 = which module, 11 = which message line, 22 = which message in line 
     [SerializeField] public int MESSAGE_ID;
     [SerializeField] public string message;
+    [Tooltip("CHECK IF GREEN IS CORRECT")]
+    [SerializeField] public bool correct;
 
     [SerializeField] public MessageType messageType;
     [SerializeField] public Flags[] flagsRequired;
@@ -22,4 +24,5 @@ public class MessageItem : ScriptableObject
     [SerializeField] public MessageItem followingMessage;
     [SerializeField] public int messageWaitCount;
     [SerializeField] public float delayBeforeSending;
+
 }

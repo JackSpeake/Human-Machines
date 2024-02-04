@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 1
   message: 'Request Recieved: www.thisisaprototype.com'
   messageType: 0
-  flagsRequired: 
+  flagsRequired: 00000000
   repeat: 1
   inSequence: 0
   followingMessage: {fileID: 0}

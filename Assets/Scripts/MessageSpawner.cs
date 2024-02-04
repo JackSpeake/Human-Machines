@@ -22,7 +22,6 @@ public class MessageSpawner : MonoBehaviour
     private List<(MessageItem, int)> messageCountSendQueue;
 
     private float currWaitTime;
-    
 
     private void Start()
     {
@@ -35,7 +34,6 @@ public class MessageSpawner : MonoBehaviour
     {
         SpawnRandom();
         SpawnFlagMessage();
-
     }
 
     // Just spawns the message attached

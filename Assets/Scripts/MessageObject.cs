@@ -40,11 +40,21 @@ public class MessageObject : MonoBehaviour
     // This should be where the reaction to accepting / denying should happen
     public void Accept()
     {
+        if (this.messageItem.correct)
+        {
+            // SEND UPDATE TO GAME MANAGER OF CORRECTNESS
+        }
+
         Destroy(this.gameObject);
     }
 
     public void Decline()
     {
+        if (this.messageItem.correct)
+        {
+            // SEND UPDATE TO GAME MANAGER OF INCORRECTNESS
+        }
+
         Destroy(this.gameObject);
     }
 }
