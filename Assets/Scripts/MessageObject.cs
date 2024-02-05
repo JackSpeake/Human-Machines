@@ -40,9 +40,23 @@ public class MessageObject : MonoBehaviour
     // This should be where the reaction to accepting / denying should happen
     public void Accept()
     {
-        if (this.messageItem.correct)
+        if (!this.messageItem.correct)
         {
-            // SEND UPDATE TO GAME MANAGER OF CORRECTNESS
+            GameManager.Instance.takeDamage(messageItem.failPoints);
+        }
+
+        if (this.messageItem.completeRaiseFlag)
+        {
+            SetFlags.addFlag(this.messageItem.acceptRaiseFlag);
+        }
+
+        if (this.messageItem.following)
+        {
+            if (this.messageItem.acceptFollowingMessage)
+            {
+                GameObject.FindGameObjectWithTag("Spawner").GetComponent<MessageSpawner>()
+                    .spawnOnFlagMessages.Add(this.messageItem.acceptFollowingMessage);
+            }
         }
 
         Destroy(this.gameObject);
@@ -52,7 +66,19 @@ public class MessageObject : MonoBehaviour
     {
         if (this.messageItem.correct)
         {
-            // SEND UPDATE TO GAME MANAGER OF INCORRECTNESS
+            GameManager.Instance.takeDamage(messageItem.failPoints);
+        }
+        if (this.messageItem.completeRaiseFlag)
+        {
+            SetFlags.addFlag(this.messageItem.declineRaiseFlag);
+        }
+        if (this.messageItem.following)
+        {
+            if (this.messageItem.declineFollowingMessage)
+            {
+                GameObject.FindGameObjectWithTag("Spawner").GetComponent<MessageSpawner>()
+                    .spawnOnFlagMessages.Add(this.messageItem.declineFollowingMessage);
+            }
         }
 
         Destroy(this.gameObject);
