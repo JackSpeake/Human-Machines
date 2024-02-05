@@ -40,20 +40,22 @@ public class MessageObject : MonoBehaviour
     // This should be where the reaction to accepting / denying should happen
     public void Accept()
     {
-        if (this.messageItem.correct)
+        if (!this.messageItem.correct)
         {
-            if (this.messageItem.completeRaiseFlag)
-            {
-                SetFlags.addFlag(this.messageItem.acceptRaiseFlag);
-            }
+            GameManager.Instance.takeDamage(messageItem.failPoints);
+        }
 
-            if (this.messageItem.following)
+        if (this.messageItem.completeRaiseFlag)
+        {
+            SetFlags.addFlag(this.messageItem.acceptRaiseFlag);
+        }
+
+        if (this.messageItem.following)
+        {
+            if (this.messageItem.acceptFollowingMessage)
             {
-                if (this.messageItem.acceptFollowingMessage)
-                {
-                    GameObject.FindGameObjectWithTag("Spawner").GetComponent<MessageSpawner>()
-                        .spawnOnFlagMessages.Add(this.messageItem.acceptFollowingMessage);
-                }
+                GameObject.FindGameObjectWithTag("Spawner").GetComponent<MessageSpawner>()
+                    .spawnOnFlagMessages.Add(this.messageItem.acceptFollowingMessage);
             }
         }
 
@@ -64,18 +66,18 @@ public class MessageObject : MonoBehaviour
     {
         if (this.messageItem.correct)
         {
-            if (this.messageItem.completeRaiseFlag)
+            GameManager.Instance.takeDamage(messageItem.failPoints);
+        }
+        if (this.messageItem.completeRaiseFlag)
+        {
+            SetFlags.addFlag(this.messageItem.declineRaiseFlag);
+        }
+        if (this.messageItem.following)
+        {
+            if (this.messageItem.declineFollowingMessage)
             {
-                SetFlags.addFlag(this.messageItem.declineRaiseFlag);
-            }
-
-            if (this.messageItem.following)
-            {
-                if (this.messageItem.declineFollowingMessage)
-                {
-                    GameObject.FindGameObjectWithTag("Spawner").GetComponent<MessageSpawner>()
-                        .spawnOnFlagMessages.Add(this.messageItem.declineFollowingMessage);
-                }
+                GameObject.FindGameObjectWithTag("Spawner").GetComponent<MessageSpawner>()
+                    .spawnOnFlagMessages.Add(this.messageItem.declineFollowingMessage);
             }
         }
 
