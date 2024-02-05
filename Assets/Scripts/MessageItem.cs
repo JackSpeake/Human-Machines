@@ -16,13 +16,23 @@ public class MessageItem : ScriptableObject
     [SerializeField] public string message;
     [Tooltip("CHECK IF GREEN IS CORRECT")]
     [SerializeField] public bool correct;
+    [SerializeField] public bool noFail;
+    [SerializeField] public int failPoints;
+    [SerializeField] public float timeToFail;
 
     [SerializeField] public MessageType messageType;
     [SerializeField] public Flags[] flagsRequired;
     [SerializeField] public bool repeat;
-    [SerializeField] public bool inSequence;
-    [SerializeField] public MessageItem followingMessage;
     [SerializeField] public int messageWaitCount;
     [SerializeField] public float delayBeforeSending;
+
+    [SerializeField] public bool completeRaiseFlag;
+    [SerializeField] public Flags acceptRaiseFlag, declineRaiseFlag;
+
+    [SerializeField] public bool following;
+    [SerializeField] public MessageItem acceptFollowingMessage, declineFollowingMessage;
+
+
+
 
 }

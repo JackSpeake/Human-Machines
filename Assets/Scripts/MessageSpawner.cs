@@ -15,9 +15,9 @@ public class MessageSpawner : MonoBehaviour
     private float timeSinceSpawnedMessage = 0.0f;
 
     [Tooltip("A list of the messages that can be randomly sent at any time.")]
-    [SerializeField] private List<MessageItem> availableRandomMessageItems;
+    [SerializeField] public List<MessageItem> availableRandomMessageItems;
     [Tooltip("A list of messages that are reliant on flags to be sent.")]
-    [SerializeField] private List<MessageItem> spawnOnFlagMessages;
+    [SerializeField] public List<MessageItem> spawnOnFlagMessages;
 
     private List<(MessageItem, int)> messageCountSendQueue;
 
@@ -94,14 +94,7 @@ public class MessageSpawner : MonoBehaviour
             {
                 SpawnMessage(m);
 
-                // ISSUE!!!!!! IF MESSAGE IS DELAYED, WILL ADD FOLLOWING MESSAGE BEFORE DELAYED MESSAGE IS SENT
-                if (m.inSequence)
-                {
-                    spawnOnFlagMessages.Add(m.followingMessage);
-                    spawnOnFlagMessages.Remove(m);
-                }
-
-                if (m.repeat == false)
+                if (m.repeat == false || m.following)
                 {
                     spawnOnFlagMessages.Remove(m);
                 }
@@ -122,13 +115,7 @@ public class MessageSpawner : MonoBehaviour
             MessageItem m = availableRandomMessageItems[Random.Range(0, availableRandomMessageItems.Count)];
             SpawnMessage(m);
 
-            if (m.inSequence)
-            {
-                availableRandomMessageItems.Add(m.followingMessage);
-                availableRandomMessageItems.Remove(m);
-            }
-
-            if (m.repeat == false)
+            if (m.repeat == false || m.following)
             {
                 availableRandomMessageItems.Remove(m);
             }
