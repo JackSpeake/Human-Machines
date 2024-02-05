@@ -8,7 +8,9 @@ public class MessageObject : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text messageText;
     [SerializeField] private Button acceptButton, declineButton;
     [SerializeField] private MessageItem messageItem;
+    [SerializeField] private float jitSpeedInc, jitAngleInc, jitCurveMult;
 
+    private TMPro.Examples.VertexJitter jitterComp;
     private bool completed = false;
 
     private void Start()
@@ -34,7 +36,7 @@ public class MessageObject : MonoBehaviour
     {
         messageText.text = messageItem.message;
         StartCoroutine(timeToKill());
-
+        jitterComp = messageText.GetComponent<TMPro.Examples.VertexJitter>();
     }
 
     /* I am unsure if running out of time on a message should
@@ -47,13 +49,46 @@ public class MessageObject : MonoBehaviour
 
     private IEnumerator timeToKill()
     {
-        yield return new WaitForSeconds(messageItem.timeToFail);
+
+        yield return new WaitForSeconds(messageItem.timeToFail * (3f / 5f));
+
+        //StartCoroutine(LerpColor(messageText.color, Color.clear, messageItem.timeToFail * (2f / 5f)));
+        StartCoroutine(JitterRamp());
+        
+
+        yield return new WaitForSeconds(messageItem.timeToFail * (2f / 5f));
 
         if (!completed)
         {
             GameManager.Instance.takeDamage(messageItem.failPoints);
             Destroy(this.gameObject);
         }
+    }
+
+    // DOES NOT WORK
+    private IEnumerator LerpColor(Color startColor, Color endColor, float lerpTime)
+    {
+        float t = 0;
+
+        while (t < lerpTime)
+        {
+            jitterComp.textColor = Color.Lerp(startColor, endColor, t / lerpTime);
+            t += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+
+    private IEnumerator JitterRamp()
+    {
+        while (!completed)
+        {
+            jitterComp.AngleMultiplier += jitAngleInc;
+            jitterComp.CurveScale += jitCurveMult;
+            jitterComp.SpeedMultiplier += jitSpeedInc;
+            yield return new WaitForSeconds(.1f);
+        }
+        
     }
 
     // theyre the same for now lmao
