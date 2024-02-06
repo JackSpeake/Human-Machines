@@ -21,6 +21,8 @@ public class MessageSpawner : MonoBehaviour
 
     private List<(MessageItem, int)> messageCountSendQueue;
 
+    public bool spawning = true;
+
     private float currWaitTime;
 
     private void Start()
@@ -32,8 +34,11 @@ public class MessageSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnRandom();
-        SpawnFlagMessage();
+        if (spawning)
+        {
+            SpawnRandom();
+            SpawnFlagMessage();
+        }
     }
 
     // Just spawns the message attached

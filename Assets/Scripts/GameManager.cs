@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class GameManager : MonoBehaviour
     public int stage = 1;
     [SerializeField] private int daysInStage;
 
+    [SerializeField] private float loseDestroyBaseTime;
+    [SerializeField] private float loseDestroySpeedupRate;
+
     // In seconds
     public float time = 0;
     // In seconds
@@ -16,6 +21,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int maxHP = 100;
     [SerializeField] private int hp;
+
+    [SerializeField] private TMPro.TMP_Text firedText;
+    [SerializeField] private GameObject restartPanel;
+
+    private bool lost = false;
 
     private static GameManager _instance;
 
@@ -42,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp < 0)
+        if (hp <= 0)
         {
             Lose();
         }
@@ -60,7 +70,57 @@ public class GameManager : MonoBehaviour
 
     void Lose()
     {
-        // rip
+        if (!lost)
+        {
+            lost = true;
+
+            StartCoroutine(loseCutscene());
+        }
+    }
+
+    private IEnumerator loseCutscene()
+    {
+        GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
+        GameObject[] panels = GameObject.FindGameObjectsWithTag("Module");
+        GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
+
+        // stop spawning
+        spawner.GetComponent<MessageSpawner>().spawning = false;
+
+        float newTime = loseDestroyBaseTime;
+
+        yield return new WaitForSeconds(loseDestroyBaseTime);
+
+        foreach (GameObject g in messages)
+        {
+            Destroy(g);
+            yield return new WaitForSeconds(newTime);
+            newTime *= loseDestroySpeedupRate;
+        }
+
+        newTime = loseDestroyBaseTime;
+        yield return new WaitForSeconds(newTime);
+
+        foreach (GameObject g in panels)
+        {
+            Destroy(g);
+            yield return new WaitForSeconds(newTime);
+            newTime *= loseDestroySpeedupRate;
+        }
+
+        yield return new WaitForSeconds(loseDestroyBaseTime);
+
+        firedText.enabled = true;
+
+        yield return new WaitForSeconds(loseDestroyBaseTime * 4);
+
+        firedText.enabled = false;
+
+        yield return new WaitForSeconds(loseDestroyBaseTime * 3);
+
+        restartPanel.SetActive(true);
+
+        //Destroy(spawner);
     }
 
     void NextDay()
@@ -76,6 +136,16 @@ public class GameManager : MonoBehaviour
     public void takeDamage(int dmg)
     {
         hp -= dmg;
+    }
+
+    public void DontRetry()
+    {
+        Application.Quit();
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
