@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public float time = 0;
     // In seconds
     [SerializeField] public float lengthOfDay = 64800;
+    [SerializeField] public float daySpeedRatio = 20;
 
     [SerializeField] private int maxHP = 100;
     [SerializeField] private int hp;
@@ -52,6 +53,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime * daySpeedRatio;
+
         if (hp <= 0)
         {
             Lose();
@@ -126,11 +129,13 @@ public class GameManager : MonoBehaviour
     void NextDay()
     {
         time = 0;
+        day++;
     }
 
     void NextStage()
     {
         day = 1;
+        stage++;
     }
 
     public void takeDamage(int dmg)
