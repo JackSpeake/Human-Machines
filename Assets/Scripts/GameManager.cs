@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text firedText;
     [SerializeField] private GameObject restartPanel;
 
+    [SerializeField] private NotificationArea notifications;
+
     private bool lost = false;
 
     private static GameManager _instance;
@@ -151,6 +153,11 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void SendNotification(string m)
+    {
+        notifications.showMessage(m);
     }
 
 }

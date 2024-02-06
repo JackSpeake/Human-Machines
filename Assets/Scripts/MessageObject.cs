@@ -60,6 +60,8 @@ public class MessageObject : MonoBehaviour
     // This should be where the reaction to accepting / denying should happen
     public void Accept()
     {
+        GameManager.Instance.SendNotification("YOU JUST ACCEPTED A MESSAGE. WOW. GOOD JOB.");
+
         if (!this.messageItem.correct)
         {
             GameManager.Instance.takeDamage(messageItem.failPoints);
