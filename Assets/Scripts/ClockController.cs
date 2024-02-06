@@ -17,6 +17,8 @@ public class ClockController : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Converts the seconds float to a date time format
+    // also just updates the days and stages text
     void Update()
     {
         TimeSpan t = TimeSpan.FromSeconds(gm.lengthOfDay - gm.time);

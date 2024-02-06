@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return _instance; } }
 
+    // FOR SINGLETON. DO NOT DELETE.
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Checks hp and time to check if we need to progress game.
     void Update()
     {
         time += Time.deltaTime * daySpeedRatio;
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Runs if hp hits 0. If it runs, begin lose coroutine
     void Lose()
     {
         if (!lost)
@@ -83,6 +86,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Deletes each part of the screen one piece at a time
+    // Then lets the user restart the game.
     private IEnumerator loseCutscene()
     {
         GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
@@ -128,33 +133,40 @@ public class GameManager : MonoBehaviour
         //Destroy(spawner);
     }
 
+    // Iterates to next day. Basically no functionality
     void NextDay()
     {
         time = 0;
         day++;
     }
 
+    // Iterates to next stage. Basically no functionality
     void NextStage()
     {
         day = 1;
         stage++;
     }
 
+    // Lets other scripts do damage to the player
     public void takeDamage(int dmg)
     {
         hp -= dmg;
     }
 
+    // Exits the game
     public void DontRetry()
     {
         Application.Quit();
     }
 
+    // Reloads the scene, aka START OVER
     public void Retry()
     {
         SceneManager.LoadScene(0);
     }
 
+    // This doesn't technically need to be here, but it will make it easier to send notifications to the notification zone
+    // because the gamemanager is a singleton so anyone can access this method from anywhere.
     public void SendNotification(string m)
     {
         notifications.showMessage(m);

@@ -17,12 +17,12 @@ public class NotificationArea : MonoBehaviour
     private Queue<string> stringQueue;
 
 
-
     private void Start()
     {
         stringQueue = new Queue<string>();
     }
 
+    // Checks if we are displaying, if we arent, display next from the queue
     private void Update()
     {
         if (!displaying && stringQueue.Count != 0)
@@ -31,6 +31,7 @@ public class NotificationArea : MonoBehaviour
         }
     }
 
+    // Begins the message animation if not animating, if animating, puts the message into the queue
     public void showMessage(string message)
     {
         if (displaying)
@@ -48,6 +49,7 @@ public class NotificationArea : MonoBehaviour
         }
     }
 
+    // Coroutine that displays the message one character at a time
     private IEnumerator displayMessageOverTime(string message)
     {
         messageText.text = "";
@@ -62,6 +64,7 @@ public class NotificationArea : MonoBehaviour
         displaying = false;
     }
 
+    // Animates the face by swapping between the two strings
     private IEnumerator animateFace()
     {
         animating = true;
