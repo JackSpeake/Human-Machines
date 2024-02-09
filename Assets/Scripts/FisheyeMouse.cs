@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-private Transform t;
-
 public class FisheyeMouse : MonoBehaviour
 {
+
+    private Transform t;
+
     // Start is called before the first frame update
     void Start()
     {
-        T = GetComponent<Transform>();
+        t = GetComponent<Transform>();
     }
 
     // Update is called once per frame

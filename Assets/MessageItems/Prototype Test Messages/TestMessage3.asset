@@ -14,10 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MESSAGE_ID: 3
   message: 'Request Recieved: w3.coolmathgames.com'
+  correct: 0
+  noFail: 0
+  failPoints: 10
+  timeToFail: 15
   messageType: 0
   flagsRequired: 
   repeat: 1
-  inSequence: 0
-  followingMessage: {fileID: 0}
   messageWaitCount: 0
   delayBeforeSending: 0
+  completeRaiseFlag: 0
+  acceptRaiseFlag: 0
+  declineRaiseFlag: 0
+  following: 0
+  acceptFollowingMessage: {fileID: 0}
+  declineFollowingMessage: {fileID: 0}

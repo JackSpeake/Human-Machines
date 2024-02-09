@@ -9,6 +9,8 @@ public class MessageObject : MonoBehaviour
     [SerializeField] private Button acceptButton, declineButton;
     [SerializeField] private MessageItem messageItem;
 
+    private bool completed = false;
+
     private void Start()
     {
         //messageText.enabled = false;
@@ -31,15 +33,35 @@ public class MessageObject : MonoBehaviour
     private void Startup()
     {
         messageText.text = messageItem.message;
-        //messageText.enabled = true;
-        //acceptButton.enabled = true;
-        //declineButton.enabled = true;
+        StartCoroutine(timeToKill());
+
+    }
+
+    /* I am unsure if running out of time on a message should
+     *  a. Kill the message
+     *  b. Just alert the user that its slow, but still have them respond to it
+     *  c. Just let it through by default
+     *  d. other?
+     */
+
+
+    private IEnumerator timeToKill()
+    {
+        yield return new WaitForSeconds(messageItem.timeToFail);
+
+        if (!completed)
+        {
+            GameManager.Instance.takeDamage(messageItem.failPoints);
+            Destroy(this.gameObject);
+        }
     }
 
     // theyre the same for now lmao
     // This should be where the reaction to accepting / denying should happen
     public void Accept()
     {
+        GameManager.Instance.SendNotification("YOU JUST ACCEPTED A MESSAGE. WOW. GOOD JOB.");
+
         if (!this.messageItem.correct)
         {
             GameManager.Instance.takeDamage(messageItem.failPoints);

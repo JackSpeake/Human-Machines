@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawner
+  - Message
+  - Module
   layers:
   - Default
   - TransparentFX
