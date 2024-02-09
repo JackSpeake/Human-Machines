@@ -11,11 +11,13 @@ public class FisheyeMouse : MonoBehaviour
     void Start()
     {
         t = GetComponent<Transform>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosition = Input.mousePosition;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        t.position = new Vector3 (mousePosition.x, mousePosition.y, 1.0f);
     }
 }

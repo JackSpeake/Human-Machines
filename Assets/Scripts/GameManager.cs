@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public int day = 1;
     public int stage = 1;
+    public int money = 100;
     [SerializeField] private int daysInStage;
 
     [SerializeField] private float loseDestroyBaseTime;
