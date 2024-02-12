@@ -7,7 +7,7 @@ public class ShopItem : MonoBehaviour
 {
 
     [SerializeField] private GameManager gm;
-    [SerializeField] private string name;
+    [SerializeField] private string itemName;
     [SerializeField] private int price;
     [SerializeField] private TMP_Text text;
     [SerializeField] private GameObject moduleButton;
@@ -17,7 +17,7 @@ public class ShopItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = name + "\n$" + price;
+        text.text = itemName + "\n$" + price;
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class ShopItem : MonoBehaviour
         if (!purchased && gm.money >= price) {
             purchased = true;
             gm.money -= price;
-            text.text = name + "\n---";
+            text.text = itemName + "\n---";
             moduleButton.SetActive(true);
         }
     }
