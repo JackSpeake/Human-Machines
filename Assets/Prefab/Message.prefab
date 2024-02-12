@@ -187,6 +187,9 @@ MonoBehaviour:
   acceptButton: {fileID: 1262349677168116280}
   declineButton: {fileID: 1262349676377846777}
   messageItem: {fileID: 0}
+  jitSpeedInc: 0.1
+  jitAngleInc: 0.1
+  jitCurveMult: 0.1
 --- !u!1 &1262349676742727135
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +201,7 @@ GameObject:
   - component: {fileID: 1262349676742727132}
   - component: {fileID: 1262349676742727122}
   - component: {fileID: 1262349676742727133}
+  - component: {fileID: 4593974285933627996}
   m_Layer: 5
   m_Name: Message Text
   m_TagString: Untagged
@@ -248,7 +252,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -321,6 +325,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4593974285933627996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262349676742727135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed57967c52645d390a89dcf8f61ba73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AngleMultiplier: 0
+  SpeedMultiplier: 0
+  CurveScale: 0
+  textColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1262349677168116282
 GameObject:
   m_ObjectHideFlags: 0

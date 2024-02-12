@@ -52,12 +52,24 @@ public class NotificationArea : MonoBehaviour
     // Coroutine that displays the message one character at a time
     private IEnumerator displayMessageOverTime(string message)
     {
+        messageText.text = message;
+        messageText.maxVisibleCharacters = 0;
+
+        while (messageText.maxVisibleCharacters < message.Length)
+        {
+            messageText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(displayRate);
+        }
+
+        /*
+         * OLD IMPLEMENTATION
         messageText.text = "";
         foreach (char c in message)
         {
             messageText.text += c;
             yield return new WaitForSeconds(displayRate);
         }
+        */
 
         yield return new WaitForSeconds(stayTimeBeforeNextMessage);
         messageText.text = "";
