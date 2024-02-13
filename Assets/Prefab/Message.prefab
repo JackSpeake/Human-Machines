@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 552, y: 2.0115}
-  m_SizeDelta: {x: 83.5218, y: 69.276}
+  m_AnchoredPosition: {x: 558, y: -0.00000047683}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1262349676377846783
 CanvasRenderer:
@@ -97,9 +97,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.7843138, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.24905658, b: 0.24905658, a: 1}
+    m_PressedColor: {r: 0.7843138, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 88.74603, y: 0}
-  m_SizeDelta: {x: 1272.3126, y: 104.4804}
+  m_AnchoredPosition: {x: 88.74603, y: -10.7275}
+  m_SizeDelta: {x: 1272.3126, y: 83.0253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262349676427394267
 MonoBehaviour:
@@ -225,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -124.201584, y: -4.5359}
+  m_AnchoredPosition: {x: -124.201584, y: 0}
   m_SizeDelta: {x: 971.7068, y: 82.371}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1262349676742727122
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -376,8 +376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 449.45, y: 1.8834}
-  m_SizeDelta: {x: 83.2138, y: 69.0198}
+  m_AnchoredPosition: {x: 478.11902, y: -0.00000032783}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1262349677168116286
 CanvasRenderer:
@@ -438,9 +438,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.010840114, g: 0.8207547, b: 0.13394709, a: 1}
+    m_HighlightedColor: {r: 0.21658951, g: 0.9811321, b: 0.33279994, a: 1}
+    m_PressedColor: {r: 0, g: 0.9803922, b: 0.14901961, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
