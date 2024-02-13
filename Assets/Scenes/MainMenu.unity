@@ -1259,8 +1259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quitButton: {fileID: 1866188642}
-  deleteTime: 1
-  waitTime: 2
+  deleteTime: 0.5
+  waitTime: 1
   hiredText: {fileID: 1500061448}
   tutorialMessage: {fileID: 8200272392202485717}
 --- !u!1 &1500061448
