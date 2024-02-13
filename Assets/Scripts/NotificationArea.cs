@@ -22,6 +22,11 @@ public class NotificationArea : MonoBehaviour
         stringQueue = new Queue<string>();
     }
 
+    public bool isDone()
+    {
+        return !(displaying || animating);
+    }
+
     // Checks if we are displaying, if we arent, display next from the queue
     private void Update()
     {

@@ -53,11 +53,13 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartWithTutorial()
     {
+        PlayerPrefs.SetInt("Tutorial", 1);
         LoadGameScene();
     }
 
     public void StartWithoutTutorial()
     {
+        PlayerPrefs.SetInt("Tutorial", 0);
         LoadGameScene();
     }
 

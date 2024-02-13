@@ -34,7 +34,7 @@ public class MessageSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawning)
+        if (spawning && GameManager.Instance.started)
         {
             SpawnRandom();
             SpawnFlagMessage();
@@ -42,7 +42,7 @@ public class MessageSpawner : MonoBehaviour
     }
 
     // Just spawns the message attached
-    void SpawnMessage(MessageItem message)
+    public void SpawnMessage(MessageItem message)
     {
         // If instant, send message
         if (message.messageType == MessageType.instant)

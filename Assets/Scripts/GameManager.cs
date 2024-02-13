@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int daysInStage;
 
     [SerializeField] private float loseDestroyBaseTime;
+    [SerializeField] private float startUpBaseTime;
     [SerializeField] private float loseDestroySpeedupRate;
 
     // In seconds
@@ -30,6 +31,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private NotificationArea notifications;
 
     private bool lost = false;
+
+    public bool started = false;
+    public bool tutorial = false;
+
+    // This is lowkey bad design but it will make this shit SOOOOOO much easier
+    [SerializeField] private GameObject messagePanel, consoleCommandsPanel, clockPanel, controlButtonsPanel, moduleControlPanel, notificationPanel, screenHeaders;
+    [SerializeField] private MessageItem tutorialMessageItem;
 
     private static GameManager _instance;
 
@@ -52,28 +60,199 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         hp = maxHP;
+
+        if (PlayerPrefs.GetInt("Tutorial", 0) == 1)
+        {
+            tutorial = true;
+        }
+
+        StartUp();
     }
 
     // Update is called once per frame
     // Checks hp and time to check if we need to progress game.
     void Update()
     {
-        time += Time.deltaTime * daySpeedRatio;
-
-        if (hp <= 0)
+        if (started)
         {
-            Lose();
+            time += Time.deltaTime * daySpeedRatio;
+
+            if (hp <= 0)
+            {
+                Lose();
+            }
+
+            if (time > lengthOfDay)
+            {
+                NextDay();
+            }
+
+            if (day > daysInStage)
+            {
+                NextStage();
+            }
+        }
+        
+    }
+
+    void StartUp()
+    {
+        GameObject[] panels = GameObject.FindGameObjectsWithTag("Module");
+
+        foreach (GameObject g in panels)
+        {
+            g.SetActive(false);
         }
 
-        if (time > lengthOfDay)
+        StartCoroutine(startupCoroutine());
+    }
+
+    IEnumerator startupCoroutine()
+    {
+        yield return new WaitForSeconds(startUpBaseTime);
+
+        screenHeaders.SetActive(true);
+
+        yield return new WaitForSeconds(startUpBaseTime);
+
+        notificationPanel.SetActive(true);
+
+        // do thing
+        if (tutorial)
         {
-            NextDay();
+            SendNotification("Welcome to Human Machines... This is your notification panel, where you will recieve correspondance from your superiors.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            yield return new WaitForSeconds(startUpBaseTime);
         }
 
-        if (day > daysInStage)
+       
+
+        messagePanel.SetActive(true);
+
+        // do thing
+        if (tutorial)
         {
-            NextStage();
+            SendNotification("This is the message panel, it is where you will recieve dns requests from users. You will need to accept or decline these requests in order to protect our users from harm.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+
+
+            SendNotification("Here is an example message, go ahead and accept it. Be warned, normal messages will fail after some time of indecision.");
+            
+            MessageSpawner m = messagePanel.GetComponentInChildren<MessageSpawner>();
+            m.SpawnMessage(tutorialMessageItem);
+
+            while(!SetFlags.activeFlags.Contains(Flags.tutorialAccepted))
+            {       
+                if (SetFlags.activeFlags.Contains(Flags.tutorialDeclined))
+                {
+                    SendNotification("I said to accept the message. If you can't follow instructions, you are not going to last long here. Try again.");
+
+                    while (!notifications.isDone())
+                        yield return new WaitForEndOfFrame();
+
+                    SetFlags.removeFlag(Flags.tutorialDeclined);
+
+                    m.SpawnMessage(tutorialMessageItem);
+                }
+                else
+                {
+                    yield return new WaitForEndOfFrame();
+                }
+            }
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
         }
+        else
+        {
+            yield return new WaitForSeconds(startUpBaseTime);
+        }
+
+        consoleCommandsPanel.SetActive(true);
+
+        // do thing
+        if (tutorial)
+        {
+            SendNotification("This is the console, you may access various commands from here.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            yield return new WaitForSeconds(startUpBaseTime);
+        }
+
+        clockPanel.SetActive(true);
+
+        // do thing
+        if (tutorial)
+        {
+            SendNotification("This is your shift clock, please ensure you complete your entire shift.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            yield return new WaitForSeconds(startUpBaseTime);
+        }
+
+        moduleControlPanel.SetActive(true);
+
+        // do thing
+        if (tutorial)
+        {
+            SendNotification("These are your modules, you don't have any yet.");
+            SendNotification("Modules can be purchased in the shop, they will be vital in your success here.");
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            yield return new WaitForSeconds(startUpBaseTime);
+        }
+
+        controlButtonsPanel.SetActive(true);
+
+        // do thing
+        if (tutorial)
+        {
+            SendNotification("The shop, exit and credits can be accessed from these buttons.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            yield return new WaitForSeconds(startUpBaseTime);
+        }
+
+        // do thing
+        if (tutorial)
+        {
+            SendNotification("This concludes the tutorial, we are excited to see all of the great things you are going to accomplish! Good Luck.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            SendNotification("Welcome back to Human Machines. Your shift starts now, USER NUMBER " + Random.Range(10000, 99999).ToString() + ".");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+        }
+
+
+        started = true;
     }
 
     // Runs if hp hits 0. If it runs, begin lose coroutine

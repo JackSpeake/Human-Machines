@@ -5,11 +5,8 @@ using UnityEngine;
 public enum Flags
 {
     GameStarted,
-    dead,
-    alive,
-    killedaman,
-    cool,
-    lame
+    tutorialAccepted,
+    tutorialDeclined
 }
 
 public static class SetFlags
@@ -19,6 +16,11 @@ public static class SetFlags
     public static void addFlag(Flags f)
     {
         activeFlags.Add(f);
+    }
+
+    public static void removeFlag(Flags f)
+    {
+        activeFlags.Remove(f);
     }
 
     public static bool containsAllFlags(Flags[] f)
