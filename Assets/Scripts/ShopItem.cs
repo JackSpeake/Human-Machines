@@ -11,6 +11,8 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private int price;
     [SerializeField] private TMP_Text text;
     [SerializeField] private GameObject moduleButton;
+    [SerializeField] private YapperState purchaseYapper;
+
     private bool purchased;
     
 
@@ -37,6 +39,7 @@ public class ShopItem : MonoBehaviour
             gm.money -= price;
             text.text = itemName + "\n---";
             moduleButton.SetActive(true);
+            GameManager.Instance.SendCustomYap(purchaseYapper, 1);
         }
     }
 }

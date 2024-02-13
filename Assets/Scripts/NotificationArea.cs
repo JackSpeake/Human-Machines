@@ -19,6 +19,7 @@ public class NotificationArea : MonoBehaviour
     private bool displaying = false;
     private bool animating = false;
     private Queue<string> stringQueue;
+    private bool customYap = false;
 
     float t = 0;
     float randTime = 0;
@@ -36,6 +37,19 @@ public class NotificationArea : MonoBehaviour
         return !(displaying || animating);
     }
 
+    public void setCustomYapper(YapperState yap, float time)
+    {
+        customYap = true;
+        animationText.text = yap.yapImg;
+
+        Invoke("endCustomYap", time);
+    }
+
+    private void endCustomYap()
+    {
+        customYap = false;
+    }
+
     // Checks if we are displaying, if we arent, display next from the queue
     private void Update()
     {
@@ -46,7 +60,7 @@ public class NotificationArea : MonoBehaviour
             showMessage(stringQueue.Dequeue());
         }
 
-        if (!animating)
+        if (!animating && !customYap)
         {
             // MAKE THIS RANDOM YAP
             if (randTime == 0 && !inRandYap)

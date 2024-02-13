@@ -353,4 +353,9 @@ public class GameManager : MonoBehaviour
         notifications.showMessage(m);
     }
 
+    public void SendCustomYap(YapperState yap, float time)
+    {
+        notifications.setCustomYapper(yap, time);
+    }
+
 }

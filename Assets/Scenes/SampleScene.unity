@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00198
+      value: 147.00204
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1492,6 +1492,7 @@ MonoBehaviour:
   price: 100
   text: {fileID: 267970978}
   moduleButton: {fileID: 1782199431}
+  purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
 --- !u!1 &517116905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,6 +2700,7 @@ MonoBehaviour:
   price: 80
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
+  purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
 --- !u!1001 &819823020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4202,6 +4204,7 @@ MonoBehaviour:
   price: 20
   text: {fileID: 1265449328}
   moduleButton: {fileID: 885936490}
+  purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
 --- !u!1 &1265449326
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,6 +4904,7 @@ MonoBehaviour:
   price: 50
   text: {fileID: 1911331404}
   moduleButton: {fileID: 717998038}
+  purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
 --- !u!1 &1530903319
 GameObject:
   m_ObjectHideFlags: 0
@@ -5316,7 +5320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.00198
+      value: 167.00204
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
