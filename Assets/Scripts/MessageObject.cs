@@ -35,8 +35,32 @@ public class MessageObject : MonoBehaviour
     private void Startup()
     {
         messageText.text = messageItem.message;
+        messageText.maxVisibleCharacters = 0;
+        acceptButton.gameObject.SetActive(false);
+        declineButton.gameObject.SetActive(false);
         StartCoroutine(timeToKill());
+        StartCoroutine(SpawnAnimation());
         jitterComp = messageText.GetComponent<TMPro.Examples.VertexJitter>();
+    }
+
+    private IEnumerator SpawnAnimation()
+    {
+        float letterTime = .01f;
+
+        while (messageText.maxVisibleCharacters < messageText.text.Length)
+        {
+            messageText.maxVisibleCharacters++;
+
+            yield return new WaitForSeconds(letterTime);
+        }
+
+        yield return new WaitForSeconds(letterTime * 4);
+
+        acceptButton.gameObject.SetActive(true);
+        
+        yield return new WaitForSeconds(letterTime * 4);
+
+        declineButton.gameObject.SetActive(true);
     }
 
     /* I am unsure if running out of time on a message should
