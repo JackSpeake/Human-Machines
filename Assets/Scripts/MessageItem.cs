@@ -7,7 +7,7 @@ public enum MessageType
     afterMessageCount
 }
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/MessageItem", order = 1)]
+[CreateAssetMenu(fileName = "Data", menuName = "MessageItem", order = 1)]
 public class MessageItem : ScriptableObject
 {
     // Internal ID for message, 6 digits

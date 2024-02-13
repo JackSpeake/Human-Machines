@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class NotificationArea : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text messageText, animationText;
     [SerializeField] private float displayRate;
     [SerializeField] private float stayTimeBeforeNextMessage;
-    [TextArea]
-    [SerializeField] private string openMouth, closeMouth;
 
+    [SerializeField] private YapperState[] otherYappers;
+    [SerializeField] private YapperState defaultYapper, openMouthYapper;
 
     private bool displaying = false;
     private bool animating = false;
@@ -20,6 +21,7 @@ public class NotificationArea : MonoBehaviour
     private void Start()
     {
         stringQueue = new Queue<string>();
+
     }
 
     public bool isDone()
@@ -33,6 +35,12 @@ public class NotificationArea : MonoBehaviour
         if (!displaying && stringQueue.Count != 0)
         {
             showMessage(stringQueue.Dequeue());
+        }
+
+        if (!animating)
+        {
+            // MAKE THIS RANDOM YAP
+            animationText.text = defaultYapper.yapImg;
         }
     }
 
@@ -59,22 +67,24 @@ public class NotificationArea : MonoBehaviour
     {
         messageText.text = message;
         messageText.maxVisibleCharacters = 0;
+        messageText.linkedTextComponent.maxVisibleCharacters = 0;
 
-        while (messageText.maxVisibleCharacters < message.Length)
+
+        while (messageText.maxVisibleCharacters < messageText.text.Length)
         {
             messageText.maxVisibleCharacters++;
-            yield return new WaitForSeconds(displayRate);
+           
+            if (!messageText.isTextOverflowing || !(messageText.maxVisibleCharacters > 50 && messageText.maxVisibleCharacters >= messageText.firstOverflowCharacterIndex - 1))
+                yield return new WaitForSeconds(displayRate);
         }
 
-        /*
-         * OLD IMPLEMENTATION
-        messageText.text = "";
-        foreach (char c in message)
+        messageText.linkedTextComponent.maxVisibleCharacters = messageText.firstOverflowCharacterIndex;
+
+        while (messageText.linkedTextComponent.maxVisibleCharacters < messageText.linkedTextComponent.text.Length)
         {
-            messageText.text += c;
+            messageText.linkedTextComponent.maxVisibleCharacters++;
             yield return new WaitForSeconds(displayRate);
         }
-        */
 
         yield return new WaitForSeconds(stayTimeBeforeNextMessage);
         messageText.text = "";
@@ -89,18 +99,18 @@ public class NotificationArea : MonoBehaviour
 
         while (displaying)
         {
-            if (animationText.text != openMouth)
+            if (animationText.text != openMouthYapper.yapImg)
             {
-                animationText.text = openMouth;
+                animationText.text = openMouthYapper.yapImg;
             }
             else
             {
-                animationText.text = closeMouth;
+                animationText.text = defaultYapper.yapImg;
             }
             yield return new WaitForSeconds(displayRate * 3);
         }
 
-        animationText.text = "";
+        animationText.text = defaultYapper.yapImg;
         animating = false;
     }
 

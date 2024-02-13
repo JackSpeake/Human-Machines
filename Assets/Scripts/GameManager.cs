@@ -137,7 +137,8 @@ public class GameManager : MonoBehaviour
         // do thing
         if (tutorial)
         {
-            SendNotification("This is the message panel, it is where you will recieve dns requests from users. You will need to accept or decline these requests in order to protect our users from harm.");
+            SendNotification("This is the message panel, it is where you will recieve dns requests from users.");
+            SendNotification("You will need to accept or decline these requests in order to protect our users from harm.");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
