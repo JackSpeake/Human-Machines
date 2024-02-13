@@ -8,6 +8,9 @@ public class NotificationArea : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text messageText, animationText;
     [SerializeField] private float displayRate;
+    [SerializeField] private float displayRateYapperAnim;
+    [SerializeField] private float randomYapperChangeTime;
+    [SerializeField] private float timeBetweenRandomYappersLow, timeBetweenRandomYappersHigh;
     [SerializeField] private float stayTimeBeforeNextMessage;
 
     [SerializeField] private YapperState[] otherYappers;
@@ -16,6 +19,10 @@ public class NotificationArea : MonoBehaviour
     private bool displaying = false;
     private bool animating = false;
     private Queue<string> stringQueue;
+
+    float t = 0;
+    float randTime = 0;
+    bool inRandYap = false;
 
 
     private void Start()
@@ -32,6 +39,8 @@ public class NotificationArea : MonoBehaviour
     // Checks if we are displaying, if we arent, display next from the queue
     private void Update()
     {
+        t += Time.deltaTime;
+
         if (!displaying && stringQueue.Count != 0)
         {
             showMessage(stringQueue.Dequeue());
@@ -40,7 +49,30 @@ public class NotificationArea : MonoBehaviour
         if (!animating)
         {
             // MAKE THIS RANDOM YAP
-            animationText.text = defaultYapper.yapImg;
+            if (randTime == 0 && !inRandYap)
+            {
+                randTime = Random.Range(timeBetweenRandomYappersLow, timeBetweenRandomYappersHigh);
+            }
+            else if (t > randTime && !inRandYap)
+            {
+                t = 0;
+                randTime = 0;
+                inRandYap = true;
+                animationText.text = otherYappers[Random.Range(0, otherYappers.Length - 1)].yapImg;
+            }
+            else if (inRandYap)
+            {
+                if (t > randomYapperChangeTime)
+                {
+                    animationText.text = defaultYapper.yapImg;
+                    t = 0;
+                    inRandYap = false;
+                }
+            }
+            else
+            {
+                animationText.text = defaultYapper.yapImg;
+            }  
         }
     }
 

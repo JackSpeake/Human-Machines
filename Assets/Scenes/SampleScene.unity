@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00195
+      value: 147.00198
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5316,7 +5316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.00195
+      value: 167.00198
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5468,8 +5468,29 @@ MonoBehaviour:
   messageText: {fileID: 1461790953}
   animationText: {fileID: 212855702}
   displayRate: 0.03
+  displayRateYapperAnim: 0.09
+  randomYapperChangeTime: 3
+  timeBetweenRandomYappersLow: 5
+  timeBetweenRandomYappersHigh: 25
   stayTimeBeforeNextMessage: 2
-  otherYappers: []
+  otherYappers:
+  - {fileID: 11400000, guid: 195930864f0cfd947b4b656717939514, type: 2}
+  - {fileID: 11400000, guid: 20cbaaa6fd771354f878103219028143, type: 2}
+  - {fileID: 11400000, guid: ed99be03f1428ac48ac70b30facdd08b, type: 2}
+  - {fileID: 11400000, guid: 276b40b2724c9e0469040011303ac89d, type: 2}
+  - {fileID: 11400000, guid: b6d40d8b6635b7c418ee6b9f7cea125d, type: 2}
+  - {fileID: 11400000, guid: a4ee883afc1367e42bc8ebbd2a85c1f3, type: 2}
+  - {fileID: 11400000, guid: 932a443e018aadb4dbc50f79ed8062bb, type: 2}
+  - {fileID: 11400000, guid: 8a0d2fd89e8ca4b4aaa15d9cf8f142ef, type: 2}
+  - {fileID: 11400000, guid: 1c6ff3bc5b8c01c4eb4a3dbc3e030ed5, type: 2}
+  - {fileID: 11400000, guid: d85d670018ad7304a9e77834c9f8f65b, type: 2}
+  - {fileID: 11400000, guid: a601284948153a645bdb6948c23095ea, type: 2}
+  - {fileID: 11400000, guid: e40cdc3ee63ee3948a1309e29147d678, type: 2}
+  - {fileID: 11400000, guid: efd5be06126dc5245b49b7192e380b3e, type: 2}
+  - {fileID: 11400000, guid: ecd47e1902bfe9b4db9a3a1c55054981, type: 2}
+  - {fileID: 11400000, guid: 855cccd9cf9fb6f46b9e96ed37fdd410, type: 2}
+  - {fileID: 11400000, guid: 8e30e7ac1dc7b2743957e1a218812d1b, type: 2}
+  - {fileID: 11400000, guid: d322e723d66589f499f73ea0eaeda2c0, type: 2}
   defaultYapper: {fileID: 11400000, guid: 7a60650d5d9c1444593ddbb8cb7e8164, type: 2}
   openMouthYapper: {fileID: 11400000, guid: 2d9fc5e6c51554344a58053262522a65, type: 2}
 --- !u!1 &1687871480
