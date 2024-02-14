@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject restartPanel;
 
     [SerializeField] private NotificationArea notifications;
-
     [SerializeField] private GameObject clockOut, clockIn, dayBreakdown;
+    [SerializeField] private int[] WeeklyRates;
 
     private bool lost = false;
 
@@ -411,6 +411,13 @@ public class GameManager : MonoBehaviour
         List<TMPro.TMP_Text> texts = new List<TMPro.TMP_Text>(headerText.gameObject.GetComponentsInChildren<TMPro.TMP_Text>());
         texts.Remove(headerText);
         lowerText = texts[0];
+
+        int profit = (int)((float)WeeklyRates[stage - 1] * (DayBreakdownClass.GetPercent() / 100f));
+        money += profit;
+        DayBreakdownClass.moneyEarned = profit;
+
+        headerText.text = DayBreakdownClass.GetHeaderString();
+        lowerText.text = DayBreakdownClass.GetBreakdownString();
 
         headerText.maxVisibleCharacters = 0;
         lowerText.maxVisibleCharacters = 0;

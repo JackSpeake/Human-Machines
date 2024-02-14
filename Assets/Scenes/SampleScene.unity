@@ -569,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00241
+      value: 147.00253
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1001,8 +1001,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 114.4, y: -164.78}
-  m_SizeDelta: {x: 136.82, y: 136.01}
+  m_AnchoredPosition: {x: 100.85, y: -164.78}
+  m_SizeDelta: {x: 163.91, y: 136.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212855702
 MonoBehaviour:
@@ -2456,9 +2456,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.08368469, g: 0.8207547, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.24090253, g: 1, b: 0.15471691, a: 1}
+    m_PressedColor: {r: 0.075989544, g: 0.745283, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -5408,6 +5408,7 @@ MonoBehaviour:
   clockOut: {fileID: 751309214}
   clockIn: {fileID: 401298546}
   dayBreakdown: {fileID: 77721851}
+  WeeklyRates: 640000002c010000f4010000e8030000b80b0000
   started: 0
   tutorial: 0
   currMessages: 0
@@ -5766,24 +5767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '49 REQUESTS ANSWERED CORRECTLY
-
-
-    19 REQUESTS ANSWERED INCORRECTLY
-
-
-    8
-    REQUESTS NOT ANSWERED
-
-
-    FINAL WORK REPORT...
-
-
-    RANK A
-
-
-    $250 DOLLARS
-    EARNED'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5aaf7bc319b0e84591f88a848c335a5, type: 2}
   m_sharedMaterial: {fileID: 8987501532469481116, guid: b5aaf7bc319b0e84591f88a848c335a5, type: 2}
@@ -6055,9 +6039,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.8301887, g: 0.074879766, b: 0, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.26529038, b: 0.19245279, a: 1}
+    m_PressedColor: {r: 0.6792453, g: 0.07525725, b: 0.015379119, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -6408,7 +6392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.00241
+      value: 167.00253
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7613,7 +7597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DAY ONE COMPLETED
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b431a17185adb74e8a193d45f3a7fcb, type: 2}
   m_sharedMaterial: {fileID: -4999495909679927178, guid: 6b431a17185adb74e8a193d45f3a7fcb, type: 2}

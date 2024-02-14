@@ -98,6 +98,7 @@ public class MessageObject : MonoBehaviour
         if (!completed)
         {
             GameManager gm = GameManager.Instance;
+            DayBreakdownClass.messagesMissed++;
             gm.SendNotification(gm.chooseRandomString(failedToAnswerMessages));
             gm.takeDamage(messageItem.failPoints);
             Destroy(this.gameObject);
@@ -140,9 +141,14 @@ public class MessageObject : MonoBehaviour
             firstAccept = true;
         }
 
-        if (!this.messageItem.correct)
+        if (!this.messageItem.correct && !this.messageItem.noFail)
         {
             GameManager.Instance.takeDamage(messageItem.failPoints);
+            DayBreakdownClass.messagesIncorrect++;
+        }
+        else
+        {
+            DayBreakdownClass.messagesCorrect++;
         }
 
         if (this.messageItem.completeRaiseFlag)
@@ -164,10 +170,16 @@ public class MessageObject : MonoBehaviour
 
     public void Decline()
     {
-        if (this.messageItem.correct)
+        if (this.messageItem.correct && !this.messageItem.noFail)
         {
             GameManager.Instance.takeDamage(messageItem.failPoints);
+            DayBreakdownClass.messagesIncorrect++;
         }
+        else
+        {
+            DayBreakdownClass.messagesCorrect++;
+        }
+
         if (this.messageItem.completeRaiseFlag)
         {
             SetFlags.addFlag(this.messageItem.declineRaiseFlag);
