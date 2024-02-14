@@ -456,7 +456,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1954886534}
-  - {fileID: 1500859362}
   m_Father: {fileID: 708551952}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -570,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00226
+      value: 147.00241
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2479,7 +2478,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 590699731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1485674203}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ClockOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &590699731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5386,7 +5397,7 @@ MonoBehaviour:
   loseDestroyBaseTime: 1
   startUpBaseTime: 0.6
   loseDestroySpeedupRate: 0.7
-  time: 62800
+  time: 0
   lengthOfDay: 64800
   daySpeedRatio: 150
   maxHP: 100
@@ -5408,6 +5419,19 @@ MonoBehaviour:
   notificationPanel: {fileID: 1645756534}
   screenHeaders: {fileID: 2038908747875064781}
   tutorialMessageItem: {fileID: 11400000, guid: f174f9417d1f8614daaf51e4c4299511, type: 2}
+  halfwayDoneMessages:
+  - You're halfway through the day! Keep up the good work
+  - You're halfway there, keep working.
+  almostDoneMessages:
+  - You're almost through the day, keep going strong!
+  finishUpMessages:
+  - Make sure you finish up any tasks before you clock out.
+  goodbyeMessages:
+  - Thanks for the good work, your payment will be sent shortly. See you in 6:00:00
+  - Thanks for the adequate work, payment imminent. Be here in 6:00:00
+  welcomeBackMessages:
+  - Welcome back...
+  - You're here forever :)
 --- !u!4 &1485674204
 Transform:
   m_ObjectHideFlags: 0
@@ -5712,15 +5736,15 @@ RectTransform:
   m_GameObject: {fileID: 1500859361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0002826, y: 1.0002826, z: 1.0002826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 77721852}
-  m_RootOrder: 1
+  m_Father: {fileID: 1954886534}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.668, y: -97.377}
-  m_SizeDelta: {x: 1616.1, y: 648.87}
+  m_AnchoredPosition: {x: -1.905, y: -422.53}
+  m_SizeDelta: {x: 1640.88, y: 648.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500859363
 MonoBehaviour:
@@ -6007,7 +6031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32, y: -302}
+  m_AnchoredPosition: {x: -40, y: -302}
   m_SizeDelta: {x: 690.63, y: 179.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546184290
@@ -6053,7 +6077,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1546184291}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1485674203}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ClockIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1546184291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6372,7 +6408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.00226
+      value: 167.00241
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7547,14 +7583,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0002826, y: 1.0002826, z: 1.0002826}
-  m_Children: []
+  m_Children:
+  - {fileID: 1500859362}
   m_Father: {fileID: 77721852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.668, y: 325.27}
-  m_SizeDelta: {x: 1616.1, y: 196.24}
+  m_AnchoredPosition: {x: -23, y: 367}
+  m_SizeDelta: {x: 1637.07, y: 196.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1954886535
 MonoBehaviour:

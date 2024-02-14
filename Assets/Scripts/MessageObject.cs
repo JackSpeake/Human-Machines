@@ -16,6 +16,9 @@ public class MessageObject : MonoBehaviour
     private static bool firstAccept = false;
     private static bool firstBeginTimeout = false;
 
+    [TextArea]
+    [SerializeField] private string[] failedToAnswerMessages;
+
     private void Start()
     {
         GameManager.Instance.currMessages++;
@@ -94,8 +97,9 @@ public class MessageObject : MonoBehaviour
 
         if (!completed)
         {
-            GameManager.Instance.SendNotification("You failed to answer the request in time. Your client is not going to be happy.");
-            GameManager.Instance.takeDamage(messageItem.failPoints);
+            GameManager gm = GameManager.Instance;
+            gm.SendNotification(gm.chooseRandomString(failedToAnswerMessages));
+            gm.takeDamage(messageItem.failPoints);
             Destroy(this.gameObject);
         }
     }

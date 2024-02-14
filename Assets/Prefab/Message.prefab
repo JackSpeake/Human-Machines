@@ -190,6 +190,11 @@ MonoBehaviour:
   jitSpeedInc: 0.1
   jitAngleInc: 0.1
   jitCurveMult: 0.1
+  failedToAnswerMessages:
+  - You failed to answer the request in time. Your client is not going to be happy.
+  - Don't let that happen again.
+  - FASTER FASTER FASTER FASTER FASTER.
+  - Pathetic.
 --- !u!1 &1262349676742727135
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject messagePanel, consoleCommandsPanel, clockPanel, controlButtonsPanel, moduleControlPanel, notificationPanel, screenHeaders;
     [SerializeField] private MessageItem tutorialMessageItem;
 
+    [TextArea]
+    [SerializeField] private string[] halfwayDoneMessages, almostDoneMessages, finishUpMessages, goodbyeMessages, welcomeBackMessages;
+
     private static GameManager _instance;
 
     public static GameManager Instance { get { return _instance; } }
@@ -92,13 +95,13 @@ public class GameManager : MonoBehaviour
 
             if (time > lengthOfDay / 2 && !halfDay)
             {
-                SendNotification("You're halfway through the day! Keep up the good work");
+                SendNotification(chooseRandomString(halfwayDoneMessages));
                 halfDay = true;
             }
 
             if (time > lengthOfDay - (lengthOfDay / 8) && !dayAlmostOver)
             {
-                SendNotification("You're almost through the day, keep going strong!");
+                SendNotification(chooseRandomString(almostDoneMessages));
                 dayAlmostOver = true;
             }
 
@@ -337,7 +340,7 @@ public class GameManager : MonoBehaviour
     // Iterates to next day. Basically no functionality
     void NextDay()
     {
-        SendNotification("Make sure you finish up any tasks before you clock out.");
+        SendNotification(chooseRandomString(finishUpMessages));
         messagePanel.GetComponentInChildren<MessageSpawner>().spawning = false;
         
         started = false;
@@ -356,7 +359,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        SendNotification("Thanks for the good work, your payment will be sent shortly. See you in 6:00:00");
+        SendNotification(chooseRandomString(goodbyeMessages));
 
         while (!notifications.isDone())
         {
@@ -472,7 +475,7 @@ public class GameManager : MonoBehaviour
 
         dayAlmostOver = false;
         halfDay = false;
-        SendNotification("Welcome Back...");
+        SendNotification(chooseRandomString(welcomeBackMessages));
 
         while (!notifications.isDone())
         {
