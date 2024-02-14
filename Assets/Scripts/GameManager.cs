@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private NotificationArea notifications;
 
+    [SerializeField] private GameObject clockOut, clockIn, dayBreakdown;
+
     private bool lost = false;
 
     public bool started = false;
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
     bool halfDay = false;
     bool dayAlmostOver = false;
     bool dayOver = false;
+
+    public int currMessages = 0;
 
     // This is lowkey bad design but it will make this shit SOOOOOO much easier
     [SerializeField] private GameObject messagePanel, consoleCommandsPanel, clockPanel, controlButtonsPanel, moduleControlPanel, notificationPanel, screenHeaders;
@@ -337,11 +341,146 @@ public class GameManager : MonoBehaviour
         messagePanel.GetComponentInChildren<MessageSpawner>().spawning = false;
         
         started = false;
+        StartCoroutine(waitForEndOfDay());
         //day++;
 
         // dayAlmostOver = false;
         // halfDay = false;
         // time = 0;
+    }
+
+    IEnumerator waitForEndOfDay()
+    {
+        while (currMessages > 0)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        SendNotification("Thanks for the good work, your payment will be sent shortly. See you in 6:00:00");
+
+        while (!notifications.isDone())
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        GameObject[] panels = GameObject.FindGameObjectsWithTag("Module");
+
+        float newTime = loseDestroyBaseTime;
+
+        foreach (GameObject g in panels)
+        {
+            g.SetActive(false);
+            yield return new WaitForSeconds(newTime);
+            newTime *= loseDestroySpeedupRate;
+        }
+
+        yield return new WaitForSeconds(.5f);
+
+        clockOut.SetActive(true);
+    }
+
+    public void ClockOut()
+    {
+        StartCoroutine(DayBreakdown());
+    }
+
+    public void ClockIn()
+    {
+        StartCoroutine(StartNewNotFirstDay());
+    }
+
+    // this is bad code, dont look
+    // ALSO IMPORTANT THERE ARE A LOT OF RANDOM FLOATS IN HERE THAT NEED TO BE MADE INTO VARIABLES FOR LATER TWEAKING!!!!
+    IEnumerator DayBreakdown()
+    {
+        clockOut.SetActive(false);
+
+        yield return new WaitForSeconds(.5f);
+
+        dayBreakdown.SetActive(true);
+
+
+        // Everything from here down is REALLY bad code
+        // I am sorry ;;
+        TMPro.TMP_Text headerText, lowerText;
+
+        headerText = dayBreakdown.GetComponentInChildren<TMPro.TMP_Text>();
+        List<TMPro.TMP_Text> texts = new List<TMPro.TMP_Text>(headerText.gameObject.GetComponentsInChildren<TMPro.TMP_Text>());
+        texts.Remove(headerText);
+        lowerText = texts[0];
+
+        headerText.maxVisibleCharacters = 0;
+        lowerText.maxVisibleCharacters = 0;
+
+        while (headerText.maxVisibleCharacters < headerText.text.Length)
+        {
+            headerText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(.1f);
+        }
+
+        yield return new WaitForSeconds(.5f);
+
+        while (lowerText.maxVisibleCharacters < lowerText.text.Length)
+        {
+            lowerText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(.03f);
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        while (lowerText.maxVisibleCharacters > 0)
+        {
+            lowerText.maxVisibleCharacters--;
+            yield return new WaitForSeconds(.008f);
+        }
+
+        while (headerText.maxVisibleCharacters > 0)
+        {
+            headerText.maxVisibleCharacters--;
+            yield return new WaitForSeconds(.008f);
+        }
+
+        yield return new WaitForSeconds(.5f);
+
+        dayBreakdown.SetActive(false);
+
+        yield return new WaitForSeconds(.5f);
+
+        clockIn.SetActive(true);
+    }
+
+    // also not amazing code but hopefully it works
+    IEnumerator StartNewNotFirstDay()
+    {
+        clockIn.SetActive(false);
+
+        day++;
+        time = 0;
+
+        yield return new WaitForSeconds(.5f);
+
+        GameObject[] panels = { screenHeaders, messagePanel, consoleCommandsPanel, clockPanel, controlButtonsPanel, moduleControlPanel, notificationPanel };
+
+        float newTime = loseDestroyBaseTime;
+
+        foreach (GameObject g in panels)
+        {
+            g.SetActive(true);
+            yield return new WaitForSeconds(newTime);
+            newTime *= loseDestroySpeedupRate;
+        }
+
+        dayAlmostOver = false;
+        halfDay = false;
+        SendNotification("Welcome Back...");
+
+        while (!notifications.isDone())
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        started = true;
+        messagePanel.GetComponentInChildren<MessageSpawner>().spawning = true;
     }
 
     // Iterates to next stage. Basically no functionality
@@ -379,6 +518,11 @@ public class GameManager : MonoBehaviour
     public void SendCustomYap(YapperState yap, float time)
     {
         notifications.setCustomYapper(yap, time);
+    }
+
+    public string chooseRandomString(string[] strs)
+    {
+        return strs[Random.Range(0, strs.Length)];
     }
 
 }

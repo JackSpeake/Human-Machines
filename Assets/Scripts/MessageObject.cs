@@ -18,6 +18,7 @@ public class MessageObject : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.currMessages++;
         //messageText.enabled = false;
         //acceptButton.enabled = false;
         //declineButton.enabled = false;
@@ -177,6 +178,11 @@ public class MessageObject : MonoBehaviour
         }
 
         Destroy(this.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.currMessages--;
     }
 }
 

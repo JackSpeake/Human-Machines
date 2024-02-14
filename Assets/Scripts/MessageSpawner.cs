@@ -48,6 +48,7 @@ public class MessageSpawner : MonoBehaviour
         if (message.messageType == MessageType.instant)
         {
             Instantiate(messagePrefab, this.transform).GetComponent<MessageObject>().SetMessageItem(message);
+
             updateMessageCountMessages();
         }
         // If delayed by time, start coroutine

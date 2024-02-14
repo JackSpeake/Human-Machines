@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ClockController : MonoBehaviour
 {
-    [SerializeField] private TMPro.TMP_Text time, day, stage;
+    [SerializeField] private TMPro.TMP_Text time, day, stage, OVERTIME;
     GameManager gm;
 
 
@@ -26,5 +26,16 @@ public class ClockController : MonoBehaviour
 
         day.text = gm.day.ToString();
         stage.text = gm.stage.ToString();
+
+        if (gm.time >= gm.lengthOfDay)
+        {
+            time.text = "OVERTIME";
+            time.color = Color.red;
+        }
+        else
+        {
+            if (time.color != Color.white)
+                time.color = Color.white;
+        }
     }
 }
