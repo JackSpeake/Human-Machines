@@ -13,6 +13,9 @@ public class MessageObject : MonoBehaviour
     private TMPro.Examples.VertexJitter jitterComp;
     private bool completed = false;
 
+    private static bool firstAccept = false;
+    private static bool firstBeginTimeout = false;
+
     private void Start()
     {
         //messageText.enabled = false;
@@ -76,6 +79,12 @@ public class MessageObject : MonoBehaviour
 
         yield return new WaitForSeconds(messageItem.timeToFail * (3f / 5f));
 
+        if (!firstBeginTimeout)
+        {
+            GameManager.Instance.SendNotification("It's shaking! Answer before the request times out!");
+            firstBeginTimeout = true;
+        }
+        
         //StartCoroutine(LerpColor(messageText.color, Color.clear, messageItem.timeToFail * (2f / 5f)));
         StartCoroutine(JitterRamp());
         
@@ -84,6 +93,7 @@ public class MessageObject : MonoBehaviour
 
         if (!completed)
         {
+            GameManager.Instance.SendNotification("You failed to answer the request in time. Your client is not going to be happy.");
             GameManager.Instance.takeDamage(messageItem.failPoints);
             Destroy(this.gameObject);
         }
@@ -119,7 +129,11 @@ public class MessageObject : MonoBehaviour
     // This should be where the reaction to accepting / denying should happen
     public void Accept()
     {
-        GameManager.Instance.SendNotification("YOU JUST ACCEPTED A MESSAGE. WOW. GOOD JOB.");
+        if (!firstAccept)
+        {
+            GameManager.Instance.SendNotification("YOU JUST ACCEPTED A MESSAGE. WOW. GOOD JOB.");
+            firstAccept = true;
+        }
 
         if (!this.messageItem.correct)
         {

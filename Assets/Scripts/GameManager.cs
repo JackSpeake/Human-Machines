@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
     public bool started = false;
     public bool tutorial = false;
 
+    bool halfDay = false;
+    bool dayAlmostOver = false;
+    bool dayOver = false;
+
     // This is lowkey bad design but it will make this shit SOOOOOO much easier
     [SerializeField] private GameObject messagePanel, consoleCommandsPanel, clockPanel, controlButtonsPanel, moduleControlPanel, notificationPanel, screenHeaders;
     [SerializeField] private MessageItem tutorialMessageItem;
@@ -80,6 +84,18 @@ public class GameManager : MonoBehaviour
             if (hp <= 0)
             {
                 Lose();
+            }
+
+            if (time > lengthOfDay / 2 && !halfDay)
+            {
+                SendNotification("You're halfway through the day! Keep up the good work");
+                halfDay = true;
+            }
+
+            if (time > lengthOfDay - (lengthOfDay / 8) && !dayAlmostOver)
+            {
+                SendNotification("You're almost through the day, keep going strong!");
+                dayAlmostOver = true;
             }
 
             if (time > lengthOfDay)
@@ -252,7 +268,7 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForEndOfFrame();
         }
 
-
+        PlayerPrefs.SetInt("Tutorial", 0);
         started = true;
     }
 
@@ -317,8 +333,15 @@ public class GameManager : MonoBehaviour
     // Iterates to next day. Basically no functionality
     void NextDay()
     {
-        time = 0;
-        day++;
+        SendNotification("Make sure you finish up any tasks before you clock out.");
+        messagePanel.GetComponentInChildren<MessageSpawner>().spawning = false;
+        
+        started = false;
+        //day++;
+
+        // dayAlmostOver = false;
+        // halfDay = false;
+        // time = 0;
     }
 
     // Iterates to next stage. Basically no functionality
