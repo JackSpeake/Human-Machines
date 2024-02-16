@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3530ef13a09c1a46abf7ed2ccb571bd, type: 3}
   m_Name: OpenMouth
   m_EditorClassIdentifier: 
-  yapImg: "(\\__/)\r\n(\u2022 o \u2022 ) \r\n/> < \\\r\n"
+  yapImg: "(\\_/)\r\n(\u2022o \u2022) \r\n/>< \\ \r\n"

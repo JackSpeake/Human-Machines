@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3530ef13a09c1a46abf7ed2ccb571bd, type: 3}
-  m_Name: Distressed
+  m_Name: Singing
   m_EditorClassIdentifier: 
-  yapImg: "(\\_/)\r\n(>-<) \r\n/>< \\ \r"
+  yapImg: "  (\\_/)\r\n~ (^o^) \r\n  />< \\ \r"

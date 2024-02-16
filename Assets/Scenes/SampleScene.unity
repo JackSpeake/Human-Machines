@@ -569,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00253
+      value: 147.00272
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1001,8 +1001,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.85, y: -164.78}
-  m_SizeDelta: {x: 163.91, y: 136.01}
+  m_AnchoredPosition: {x: 82.402, y: -150}
+  m_SizeDelta: {x: 164.8, y: 136.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212855702
 MonoBehaviour:
@@ -1024,7 +1024,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5aaf7bc319b0e84591f88a848c335a5, type: 2}
   m_sharedMaterial: {fileID: 8987501532469481116, guid: b5aaf7bc319b0e84591f88a848c335a5, type: 2}
@@ -6392,7 +6394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.00253
+      value: 167.00272
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6548,7 +6550,7 @@ MonoBehaviour:
   randomYapperChangeTime: 3
   timeBetweenRandomYappersLow: 5
   timeBetweenRandomYappersHigh: 25
-  stayTimeBeforeNextMessage: 2
+  stayTimeBeforeNextMessage: 3
   otherYappers:
   - {fileID: 11400000, guid: 195930864f0cfd947b4b656717939514, type: 2}
   - {fileID: 11400000, guid: 20cbaaa6fd771354f878103219028143, type: 2}
