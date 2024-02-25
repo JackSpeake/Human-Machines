@@ -32,6 +32,8 @@ public class MessageItem : ScriptableObject
     [SerializeField] public bool following;
     [SerializeField] public MessageItem acceptFollowingMessage, declineFollowingMessage;
 
+    [SerializeField] public bool reblocked = false;
+
 
 
 

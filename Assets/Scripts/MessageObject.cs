@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class MessageObject : MonoBehaviour
 {
+    public enum MessageState {
+        Normal,
+        Reblocked,
+        Infected
+    }
+
     [SerializeField] private TMPro.TMP_Text messageText;
     [SerializeField] private Button acceptButton, declineButton;
     [SerializeField] private MessageItem messageItem;
+    private string text;
     [SerializeField] private float jitSpeedInc, jitAngleInc, jitCurveMult;
 
     private TMPro.Examples.VertexJitter jitterComp;
@@ -16,12 +23,18 @@ public class MessageObject : MonoBehaviour
     private static bool firstAccept = false;
     private static bool firstBeginTimeout = false;
 
+    public Reblocker reblocker;
+
     [TextArea]
     [SerializeField] private string[] failedToAnswerMessages;
+
+    public MessageState state;
 
     private void Start()
     {
         GameManager.Instance.currMessages++;
+        state = MessageState.Normal;
+        //reblocker = GameObject.Find("Reblocker Module").GetComponent<Reblocker>();
         //messageText.enabled = false;
         //acceptButton.enabled = false;
         //declineButton.enabled = false;
@@ -41,7 +54,8 @@ public class MessageObject : MonoBehaviour
 
     private void Startup()
     {
-        messageText.text = messageItem.message;
+        text = messageItem.message;
+        messageText.text = text;
         messageText.maxVisibleCharacters = 0;
         acceptButton.gameObject.SetActive(false);
         declineButton.gameObject.SetActive(false);
@@ -200,5 +214,28 @@ public class MessageObject : MonoBehaviour
     {
         GameManager.Instance.currMessages--;
     }
+
+    public string GetMessageText() {
+        return messageItem.message;
+    }
+
+    public MessageItem GetMessageItem() {
+        return messageItem;
+    }
+
+    public void SetMessageText(string newText) {
+        text = newText;
+        messageText.text = text;
+    }
+
+    public void ChangeMessageColor(Color c) {
+        this.messageText.color = c;
+    }
+
+    public void Reblock() {
+        this.messageItem.reblocked = true;
+    }
 }
+
+
 

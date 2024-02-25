@@ -29,3 +29,4 @@ MonoBehaviour:
   following: 0
   acceptFollowingMessage: {fileID: 0}
   declineFollowingMessage: {fileID: 0}
+  reblocked: 0

@@ -66,14 +66,14 @@ public class Module : MonoBehaviour
         }
         else {
             float step = openSpeed;
-            while (step > 0)
+            while (step >= 0)
             {
                 rt.anchoredPosition = Vector2.Lerp(destination, origin, step * (1.0f / openSpeed));
                 rt.localScale = new Vector3(step * (1.0f / openSpeed), step * (1.0f / openSpeed), 1.0f);
                 step -= Time.deltaTime;
                 yield return new WaitForEndOfFrame();
             }
-            gameObject.SetActive(false);
+            rt.localScale = new Vector3(0.0f, 0.0f, 0.0f);
         }
 
 		

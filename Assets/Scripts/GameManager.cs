@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private NotificationArea notifications;
     [SerializeField] private GameObject clockOut, clockIn, dayBreakdown;
     [SerializeField] private int[] WeeklyRates;
+    [SerializeField] private MessageItemManager miManager;
 
     private bool lost = false;
 
@@ -120,6 +121,7 @@ public class GameManager : MonoBehaviour
 
     void StartUp()
     {
+        miManager.Reset();
         GameObject[] panels = GameObject.FindGameObjectsWithTag("Module");
 
         foreach (GameObject g in panels)
@@ -282,6 +284,8 @@ public class GameManager : MonoBehaviour
     // Runs if hp hits 0. If it runs, begin lose coroutine
     void Lose()
     {
+        miManager.Reset();
+
         if (!lost)
         {
             lost = true;
