@@ -6,7 +6,8 @@ public enum Flags
 {
     GameStarted,
     tutorialAccepted,
-    tutorialDeclined
+    tutorialDeclined,
+    phase2Started
 }
 
 public static class SetFlags
