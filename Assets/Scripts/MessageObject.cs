@@ -82,6 +82,8 @@ public class MessageObject : MonoBehaviour
         yield return new WaitForSeconds(letterTime * 4);
 
         declineButton.gameObject.SetActive(true);
+
+        messageText.maxVisibleCharacters = 10000000;
     }
 
     /* I am unsure if running out of time on a message should

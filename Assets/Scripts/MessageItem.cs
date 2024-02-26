@@ -13,6 +13,7 @@ public class MessageItem : ScriptableObject
     // Internal ID for message, 6 digits
     // TODO: Determine organization scheme, ex 001122 00 = which module, 11 = which message line, 22 = which message in line 
     [SerializeField] public int MESSAGE_ID;
+    [TextArea]
     [SerializeField] public string message;
     [Tooltip("CHECK IF GREEN IS CORRECT")]
     [SerializeField] public bool correct;
