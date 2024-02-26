@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int[] WeeklyRates;
     [SerializeField] private string[] promotionNames;
     [SerializeField] private MessageItemManager miManager;
+    [SerializeField] private TimeoutModule tmModule;
 
     [SerializeField] private GameObject confetti, congrats, newAssignment, newAssignmentAfterColorChange;
 
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
     // Checks hp and time to check if we need to progress game.
     void Update()
     {
-        if (started)
+        if (started && !tmModule.paused)
         {
             time += Time.deltaTime * daySpeedRatio;
 
@@ -602,12 +603,18 @@ public class GameManager : MonoBehaviour
     // because the gamemanager is a singleton so anyone can access this method from anywhere.
     public void SendNotification(string m)
     {
-        notifications.showMessage(m);
+        if (!tmModule.paused) {
+            notifications.showMessage(m);
+        }
+        
     }
 
     public void SendCustomYap(YapperState yap, float time)
     {
-        notifications.setCustomYapper(yap, time);
+        if (!tmModule.paused) {
+            notifications.setCustomYapper(yap, time);
+        }
+       
     }
 
     public string chooseRandomString(string[] strs)

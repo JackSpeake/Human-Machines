@@ -19,6 +19,8 @@ public class MessageSpawner : MonoBehaviour
     [Tooltip("A list of messages that are reliant on flags to be sent.")]
     [SerializeField] public List<MessageItem> spawnOnFlagMessages;
 
+    [SerializeField] private TimeoutModule tmModule;
+
     private List<(MessageItem, int)> messageCountSendQueue;
 
     public bool spawning = true;
@@ -34,7 +36,7 @@ public class MessageSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawning && GameManager.Instance.started)
+        if (spawning && GameManager.Instance.started && !tmModule.paused)
         {
             SpawnRandom();
             SpawnFlagMessage();
