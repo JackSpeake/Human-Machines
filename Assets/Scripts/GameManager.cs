@@ -31,7 +31,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private NotificationArea notifications;
     [SerializeField] private GameObject clockOut, clockIn, dayBreakdown;
     [SerializeField] private int[] WeeklyRates;
+    [SerializeField] private string[] promotionNames;
     [SerializeField] private MessageItemManager miManager;
+
+    [SerializeField] private GameObject confetti, congrats, newAssignment, newAssignmentAfterColorChange;
+
 
     private bool lost = false;
 
@@ -109,11 +113,6 @@ public class GameManager : MonoBehaviour
             if (time > lengthOfDay)
             {
                 NextDay();
-            }
-
-            if (day > daysInStage)
-            {
-                NextStage();
             }
         }
         
@@ -460,6 +459,84 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
+        if (++day > daysInStage)
+        {
+            day = 1;
+            stage++;
+            StartCoroutine(StartNewWeek());
+        }
+        else
+        {
+            clockIn.SetActive(true);
+        }    
+    }
+
+
+    // I copy pasted a lot of this oopsies i def should put them in their own class zzz
+    IEnumerator StartNewWeek()
+    {
+        yield return new WaitForEndOfFrame();
+
+        congrats.SetActive(true);
+
+        TMPro.TMP_Text headerText, lowerText;
+
+        headerText = congrats.GetComponentInChildren<TMPro.TMP_Text>();
+        List<TMPro.TMP_Text> texts = new List<TMPro.TMP_Text>(headerText.gameObject.GetComponentsInChildren<TMPro.TMP_Text>());
+        texts.Remove(headerText);
+        lowerText = texts[0];
+
+        headerText.maxVisibleCharacters = 0;
+        lowerText.maxVisibleCharacters = 0;
+
+        while (headerText.maxVisibleCharacters < headerText.text.Length)
+        {
+            headerText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(.1f);
+        }
+
+        yield return new WaitForSeconds(.5f);
+
+        while (lowerText.maxVisibleCharacters < lowerText.text.Length)
+        {
+            lowerText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(.03f);
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
+
+        confetti.SetActive(true);
+        congrats.SetActive(false);
+        newAssignment.SetActive(true);
+
+        yield return new WaitForSeconds(7.5f);
+
+        newAssignment.SetActive(false);
+        newAssignmentAfterColorChange.SetActive(true);
+       
+
+        TMPro.TMP_Text text = newAssignmentAfterColorChange.GetComponentInChildren<TMPro.TMP_Text>();
+
+        texts = new List<TMPro.TMP_Text>(text.gameObject.GetComponentsInChildren<TMPro.TMP_Text>());
+        texts.Remove(text);
+        lowerText = texts[0];
+
+        text.color = Color.red;
+        lowerText.color = Color.red;
+
+        yield return new WaitForSeconds(1f);
+
+        lowerText.text += "NEW ASSIGNMENT:";
+
+        yield return new WaitForSeconds(1f);
+
+        lowerText.text += "\n" + promotionNames[stage-2];
+
+        yield return new WaitForSeconds(3f);
+
+        confetti.SetActive(false);
+        newAssignmentAfterColorChange.SetActive(false);
         clockIn.SetActive(true);
     }
 
@@ -468,7 +545,6 @@ public class GameManager : MonoBehaviour
     {
         clockIn.SetActive(false);
 
-        day++;
         time = 0;
 
         yield return new WaitForSeconds(.5f);
