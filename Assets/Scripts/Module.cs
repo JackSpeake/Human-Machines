@@ -60,7 +60,7 @@ public class Module : MonoBehaviour
             {
                 rt.anchoredPosition = Vector2.Lerp(origin, destination, step * (1.0f / openSpeed));
                 rt.localScale = new Vector3(step * (1.0f / openSpeed), step * (1.0f / openSpeed), 1.0f);
-                step += Time.deltaTime;
+                step += Time.unscaledDeltaTime;
                 yield return new WaitForEndOfFrame();
             }
         }
@@ -70,7 +70,7 @@ public class Module : MonoBehaviour
             {
                 rt.anchoredPosition = Vector2.Lerp(destination, origin, step * (1.0f / openSpeed));
                 rt.localScale = new Vector3(step * (1.0f / openSpeed), step * (1.0f / openSpeed), 1.0f);
-                step -= Time.deltaTime;
+                step -= Time.unscaledDeltaTime;
                 yield return new WaitForEndOfFrame();
             }
             rt.localScale = new Vector3(0.0f, 0.0f, 0.0f);

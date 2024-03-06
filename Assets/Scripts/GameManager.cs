@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     // Checks hp and time to check if we need to progress game.
     void Update()
     {
-        if (started && !tmModule.paused)
+        if (started)
         {
             time += Time.deltaTime * daySpeedRatio;
 

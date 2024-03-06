@@ -35,19 +35,22 @@ public class TimeoutModule : MonoBehaviour
             button.enabled = false;
             body.text = "[ Reconfiguring . . .]\n[  Come back later  ]\n" + Mathf.Round(cooldown);
             paused = false;
+            Time.timeScale = 1;
         }
         else if (cooldown <= 200.0f) {
             img.color = new Color(0.44f, 0.44f, 0.34f, 1.0f);
             button.enabled = false;
             body.text = "[ INTERNET OUTAGE IN EFFECT ]\n" + Mathf.Clamp(Mathf.Round(cooldown - 180.0f), 0.0f, 20.0f);
             paused = true;
+            Time.timeScale = 0;
         }
 
-        cooldown = Mathf.Clamp(cooldown - Time.deltaTime, 0.0f, 200f);
+        cooldown = Mathf.Clamp(cooldown - Time.unscaledDeltaTime, 0.0f, 200f);
+
+        
     }
 
     public void Timeout() {
         cooldown = 200.0f;
-
     }
 }
