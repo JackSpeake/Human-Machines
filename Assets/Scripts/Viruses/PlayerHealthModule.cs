@@ -19,7 +19,6 @@ public class PlayerHealthModule : MonoBehaviour
             for (int x = 0; x < 5; x++)
             {
                 panelsSorted[x, y] = panelsUnsorted[(y * 5) + x];
-                panelsUnsorted[(y * 5) + x].panel.color = Color.green;
                 panelsUnsorted[(y * 5) + x].infected = false;
                 panelsUnsorted[(y * 5) + x].x = x;
                 panelsUnsorted[(y * 5) + x].y = y;
@@ -32,33 +31,12 @@ public class PlayerHealthModule : MonoBehaviour
         return panelsSorted[x, y];
     }
 
-    public void SetColorAtXY(int x, int y, Color c)
-    {
-        panelsSorted[x, y].panel.color = c;
-    }
-
     public List<HealthModulePanel> GetNeighborsOfXY(int x, int y)
     {
         int currX, currY;
         List<HealthModulePanel> toReturn = new List<HealthModulePanel>();
 
         // Gets each of the possible neighbors manually cause fuck loops
-        currX = x + 1; currY = y + 1;
-        if (InBounds(currX, currY))
-            toReturn.Add(panelsSorted[currX, currY]);
-
-        currX = x - 1; currY = y - 1;
-        if (InBounds(currX, currY))
-            toReturn.Add(panelsSorted[currX, currY]);
-
-        currX = x + 1; currY = y - 1;
-        if (InBounds(currX, currY))
-            toReturn.Add(panelsSorted[currX, currY]);
-
-        currX = x - 1; currY = y + 1;
-        if (InBounds(currX, currY))
-            toReturn.Add(panelsSorted[currX, currY]);
-
         currX = x + 1; currY = y;
         if (InBounds(currX, currY))
             toReturn.Add(panelsSorted[currX, currY]);
@@ -80,7 +58,7 @@ public class PlayerHealthModule : MonoBehaviour
 
     public bool InBounds(int x, int y)
     {
-        if (x >= 0 && x <= 5 && y >= 0 && y <= 5)
+        if (x >= 0 && x < 5 && y >= 0 && y < 5)
         {
             return true;
         }
@@ -106,5 +84,16 @@ public class PlayerHealthModule : MonoBehaviour
     public HealthModulePanel[,] GetAllPanels()
     {
         return panelsSorted;
+    }
+
+    public List<HealthModulePanel> GetInfectedPanels()
+    {
+        List<HealthModulePanel> toReturn = new List<HealthModulePanel>();
+
+        foreach (HealthModulePanel h in panelsUnsorted)
+            if (h.infected)
+                toReturn.Add(h);
+
+        return toReturn;
     }
 }

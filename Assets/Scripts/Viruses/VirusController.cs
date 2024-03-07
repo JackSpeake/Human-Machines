@@ -8,13 +8,121 @@ public class VirusController : MonoBehaviour
 {
     [SerializeField] private PlayerHealthModule HealthModule;
 
+    [Range(3f, 20f)]
+    [Tooltip("Range of how many seconds between infection attempts")]
+    [SerializeField] private float infectionSpeedMin = 5f;
+
+    [Range(20f, 60f)]
+    [Tooltip("Range of how many seconds between infection attempts")]
+    [SerializeField] private float infectionSpeedMax = 15f;
+
+    [Tooltip("The limit of how many panels 1 infection can spread to during an infection spread")]
+    [SerializeField] private int infectionSpreadMax = 1;
+
+    [Range(0.0f, 1f)]
+    [Tooltip("The odds of an infection spreading during an infection")]
+    [SerializeField] private float infectionLikelyhood = 1;
+
+    [Range(0.0f, 1f)]
+    [Tooltip("The odds of a new infection starting")]
+    [SerializeField] private float newInfectionLikelyhood = 1;
+
+    // SETS THE STATIC VARIABLES INSIDE THE PLAYER HEALTH PANELS
+    [SerializeField] private float infectionSpeed, disInfectionSpeed;
+
+    private int infectedPanelCount = 0;
+
+    float t = 0;
+    float currInfectionSpeed = 0;
+
+    bool staticValuesUpdated = false;
+
     private void Start()
     {
+        currInfectionSpeed = Random.Range(infectionSpeedMin, infectionSpeedMax);
+        t = 0;
+        infectedPanelCount = 0;
         
     }
 
     private void Update()
     {
-        
+        if (HealthModule && HealthModule.gameObject.activeInHierarchy)
+        {
+            if (!staticValuesUpdated)
+            {
+                HealthModule.GetCenterPanel().UpdateStaticVariables(infectionSpeed, disInfectionSpeed);
+                staticValuesUpdated = true;
+            }
+
+            t += Time.deltaTime;
+
+            if (t >= currInfectionSpeed)
+            {
+                InfectPanels();
+                t = 0;
+            }
+
+            if (HealthModule.GetCenterPanel().infected)
+            {
+                GameOver();
+            }
+        }
+    }
+
+    private void GameOver()
+    {
+
+    }
+
+    private void InfectPanels()
+    {
+        List<HealthModulePanel> infectedPanels = HealthModule.GetInfectedPanels();
+        infectedPanelCount = infectedPanels.Count;
+
+        if (infectedPanelCount > 0 && Random.Range(0f, 100f) / 100 > newInfectionLikelyhood)
+        {
+            foreach (HealthModulePanel h in infectedPanels)
+            {
+                int infectCount = 0;
+                IList<HealthModulePanel> neighbors = HealthModule.GetNeighborsOfXY(h.x, h.y).Shuffle();
+
+                foreach (HealthModulePanel n in neighbors)
+                {
+                    if (Random.Range(0f, 100f) / 100 > infectionLikelyhood && !n.infecting && !n.infected)
+                    {
+                        n.StartInfection();
+                        infectCount++;
+                    }
+
+                    if (infectCount >= infectionSpreadMax)
+                        break;
+                }
+            }
+        }
+        else
+        {
+            InfectFirstPanel();
+        }
+    }
+
+    private void InfectFirstPanel()
+    {
+        IList<HealthModulePanel> edgePanels = HealthModule.GetOutside().Shuffle();
+
+        if (Random.Range(0f, 100f) / 100 > infectionLikelyhood )
+        {
+            HealthModulePanel h;
+            bool infected = false;
+            do
+            {
+                h = edgePanels[Random.Range(0, edgePanels.Count - 1)];
+                if (!h.infecting && !h.infected)
+                {
+                    h.StartInfection();
+                    infected = true;
+                }
+            } while (!infected);
+        }
     }
 }
