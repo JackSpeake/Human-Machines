@@ -21,6 +21,8 @@ public class Shootout : MonoBehaviour
 
     // GAMEPLAY STUFF
     [SerializeField] private float LoseTime, minGameStartTime, maxGameStartTime;
+    [SerializeField] private VirusController vc;
+    [SerializeField] private int shieldAmount = 20;
 
     float timeForGameStart = 0;
     float currGameWaitTime;
@@ -30,8 +32,9 @@ public class Shootout : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("YO?");
         SavePositions();
-        Leave();
+        //Leave();
         drawButton.gameObject.SetActive(false);
         victoryText.gameObject.SetActive(false);
         currGameWaitTime = Random.Range(minGameStartTime, maxGameStartTime);
@@ -45,6 +48,7 @@ public class Shootout : MonoBehaviour
 
         if (timeForGameStart > currGameWaitTime)
         {
+            Leave();
             timeForGameStart = 0;
             currGameWaitTime = Random.Range(minGameStartTime, maxGameStartTime);
             StartCoroutine(ReturnToCenterCoroutine());
@@ -62,10 +66,24 @@ public class Shootout : MonoBehaviour
         enemyOrigin = enemy.localPosition;
         handOrigin = hand.localPosition;
         sunOrigin = sun.localPosition;
+
+        buildingsLeft.gameObject.SetActive(false);
+        buildingsRight.gameObject.SetActive(false);
+        ground.gameObject.SetActive(false);
+        enemy.gameObject.SetActive(false);
+        hand.gameObject.SetActive(false);
+        sun.gameObject.SetActive(false);
     }
 
     private void Leave()
     {
+        buildingsLeft.gameObject.SetActive(true);
+        buildingsRight.gameObject.SetActive(true);
+        ground.gameObject.SetActive(true);
+        enemy.gameObject.SetActive(true);
+        hand.gameObject.SetActive(true);
+        sun.gameObject.SetActive(true);
+
         buildingsLeft.Translate(new Vector3(-5, 0, 0));
         buildingsRight.Translate(new Vector3(5, 0, 0));
         ground.Translate(new Vector3(0, -5, 0));
@@ -260,6 +278,8 @@ public class Shootout : MonoBehaviour
         gunShot.gameObject.SetActive(true);
 
         drawButton.gameObject.SetActive(false);
+
+        vc.addShield(shieldAmount);
 
         StartCoroutine(Win());
     }

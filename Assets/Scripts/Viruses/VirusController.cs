@@ -37,6 +37,8 @@ public class VirusController : MonoBehaviour
 
     bool staticValuesUpdated = false;
 
+    private int shieldLevel = 0;
+
     private void Start()
     {
         currInfectionSpeed = Random.Range(infectionSpeedMin, infectionSpeedMax);
@@ -75,6 +77,18 @@ public class VirusController : MonoBehaviour
 
     }
 
+    public void addShield(int shieldAmount)
+    {
+        shieldLevel += shieldAmount;
+        HealthModule.SetShieldLevel(shieldLevel);
+    }
+
+    public void removeShield(int shieldAmount)
+    {
+        shieldLevel -= shieldAmount;
+        HealthModule.SetShieldLevel(shieldLevel);
+    }
+
     private void InfectPanels()
     {
         List<HealthModulePanel> infectedPanels = HealthModule.GetInfectedPanels();
@@ -91,7 +105,10 @@ public class VirusController : MonoBehaviour
                 {
                     if (Random.Range(0f, 100f) / 100 > infectionLikelyhood && !n.infecting && !n.infected)
                     {
-                        n.StartInfection();
+                        if (shieldLevel > 0)
+                            removeShield(1);
+                        else
+                            n.StartInfection();
                         infectCount++;
                     }
 
@@ -119,7 +136,10 @@ public class VirusController : MonoBehaviour
                 h = edgePanels[Random.Range(0, edgePanels.Count - 1)];
                 if (!h.infecting && !h.infected)
                 {
-                    h.StartInfection();
+                    if (shieldLevel > 0)
+                        removeShield(1);
+                    else
+                        h.StartInfection();
                     infected = true;
                 }
             } while (!infected);

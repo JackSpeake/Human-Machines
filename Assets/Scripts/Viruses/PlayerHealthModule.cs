@@ -8,6 +8,10 @@ public class PlayerHealthModule : MonoBehaviour
 {
     [SerializeField] private HealthModulePanel[] panelsUnsorted;
     private HealthModulePanel[,] panelsSorted;
+    [SerializeField] private UnityEngine.UI.Extensions.Gradient2 l1, l2, l3;
+
+    [SerializeField] private float shieldLevel = 0;
+    [SerializeField] private float maxShieldLevel = 100;
 
 
     // Start is called before the first frame update
@@ -24,6 +28,40 @@ public class PlayerHealthModule : MonoBehaviour
                 panelsUnsorted[(y * 5) + x].y = y;
             }
         }
+
+        l1.Offset = -1;
+        l2.Offset = -1;
+        l3.Offset = -1;
+    }
+
+    private void Update()
+    {
+        if (shieldLevel > maxShieldLevel)
+            shieldLevel = maxShieldLevel;
+
+        if (shieldLevel > maxShieldLevel / 3 * 2)
+        {
+            l3.Offset = (shieldLevel % (maxShieldLevel / 3)) / (maxShieldLevel / 3) * 2 - 1;
+            l2.Offset = 1;
+            l1.Offset = 1;
+        }
+        else if (shieldLevel > maxShieldLevel / 3)
+        {
+            l3.Offset = -1;
+            l2.Offset = (shieldLevel % (maxShieldLevel / 3)) / (maxShieldLevel / 3) * 2 - 1;
+            l1.Offset = 1;
+        }
+        else
+        {
+            l3.Offset = -1;
+            l2.Offset = -1;
+            l1.Offset = (shieldLevel % (maxShieldLevel / 3)) / (maxShieldLevel / 3) * 2 - 1;
+        }
+    }
+
+    public void SetShieldLevel(int sl)
+    {
+        shieldLevel = sl;
     }
 
     public HealthModulePanel GetPanelAtXY(int x, int y)
