@@ -17,11 +17,15 @@ public class Shootout : MonoBehaviour
     [SerializeField] private Button drawButton;
 
     [SerializeField] private GameObject gunShot;
+    [SerializeField] private Image panel;
 
     // GAMEPLAY STUFF
-    [SerializeField] private float LoseTime;
+    [SerializeField] private float LoseTime, minGameStartTime, maxGameStartTime;
 
+    float timeForGameStart = 0;
+    float currGameWaitTime;
     bool shot = false;
+    bool inProgress = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,20 +34,24 @@ public class Shootout : MonoBehaviour
         Leave();
         drawButton.gameObject.SetActive(false);
         victoryText.gameObject.SetActive(false);
+        currGameWaitTime = Random.Range(minGameStartTime, maxGameStartTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartCoroutine(ReturnToCenterCoroutine());
-        }
+        if (!inProgress)
+            timeForGameStart += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (timeForGameStart > currGameWaitTime)
         {
-            Leave();
+            timeForGameStart = 0;
+            currGameWaitTime = Random.Range(minGameStartTime, maxGameStartTime);
+            StartCoroutine(ReturnToCenterCoroutine());
+            inProgress = true;
         }
+            
+        
     }
 
     private void SavePositions()
@@ -166,11 +174,77 @@ public class Shootout : MonoBehaviour
             t += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+
+        if (!shot)
+        {
+            buildingsLeft.gameObject.SetActive(true);
+            buildingsRight.gameObject.SetActive(true);
+            ground.gameObject.SetActive(true);
+            enemy.gameObject.SetActive(true);
+            sun.gameObject.SetActive(true);
+            drawButton.gameObject.SetActive(false);
+            panel.color = Color.red;
+
+            StartCoroutine(FailState());
+        }
+        // GUNSHOT NOISE
+
+        buttonText.color = Color.white;
+
+        
     }
 
     private IEnumerator FailState()
     {
-        yield return new WaitForEndOfFrame();
+        float t = 0;
+        yield return new WaitForSeconds(fallOverTimeWin);
+
+        Vector3 startPos = sun.localPosition;
+        while (t < itemExitSpeed)
+        {
+            sun.localPosition = Vector3.Lerp(startPos, startPos + new Vector3(0, 5, 0), t / itemExitSpeed);
+            t += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        t = 0;
+
+        startPos = ground.localPosition;
+        while (t < itemExitSpeed)
+        {
+            ground.localPosition = Vector3.Lerp(startPos, startPos + new Vector3(0, -5, 0), t / itemExitSpeed);
+            t += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        t = 0;
+
+        startPos = buildingsLeft.localPosition;
+        while (t < itemExitSpeed)
+        {
+            buildingsLeft.localPosition = Vector3.Lerp(startPos, startPos + new Vector3(-5, 0, 0), t / itemExitSpeed);
+            t += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        t = 0;
+
+        startPos = buildingsRight.localPosition;
+        while (t < itemExitSpeed)
+        {
+            buildingsRight.localPosition = Vector3.Lerp(startPos, startPos + new Vector3(5, 0, 0), t / itemExitSpeed);
+            t += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        t = 0;
+
+        yield return new WaitForSeconds(delayBeforeExit);
+
+        // GUNSHOT NOISE
+
+        enemy.Translate(new Vector3(0, 5, 0));
+
+        hand.gameObject.SetActive(true);
+        hand.Translate(new Vector3(0, -5, 0));
+        panel.color = Color.black;
+        inProgress = false;
     }
 
     public void Shoot()
@@ -262,5 +336,6 @@ public class Shootout : MonoBehaviour
         gunShot.gameObject.SetActive(false);
 
         shot = false;
+        inProgress = false;
     }
 }

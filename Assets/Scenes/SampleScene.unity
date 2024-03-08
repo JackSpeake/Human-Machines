@@ -1063,7 +1063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00539
+      value: 147.00545
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14421,7 +14421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1299920200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22005,7 +22005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.098000005, y: 0.21000001}
   m_AnchorMax: {x: 0.65372896, y: 0.25}
-  m_AnchoredPosition: {x: 229, y: 201.00008}
+  m_AnchoredPosition: {x: 229, y: 201.00014}
   m_SizeDelta: {x: -852.44, y: 280.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5070123225617756245
@@ -22074,7 +22074,8 @@ MonoBehaviour:
   victoryText: {fileID: 1229915762}
   drawButton: {fileID: 1299920201}
   gunShot: {fileID: 1388359545}
-  LoseTime: 0
+  panel: {fileID: 5070123225617756242}
+  LoseTime: 3
 --- !u!1001 &5070123226181324475
 PrefabInstance:
   m_ObjectHideFlags: 0
