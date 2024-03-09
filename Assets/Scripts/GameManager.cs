@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxHP = 100;
     [SerializeField] private int hp;
 
-    [SerializeField] private TMPro.TMP_Text firedText;
+    [SerializeField] private TMPro.TMP_Text firedText, hackedText;
     [SerializeField] private GameObject restartPanel;
 
     [SerializeField] private NotificationArea notifications;
@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
     bool halfDay = false;
     bool dayAlmostOver = false;
     bool dayOver = false;
+
+    public bool hackLose = false;
 
     public int currMessages = 0;
 
@@ -282,7 +284,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Runs if hp hits 0. If it runs, begin lose coroutine
-    void Lose()
+    public void Lose()
     {
         miManager.Reset();
 
@@ -328,15 +330,23 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(loseDestroyBaseTime);
 
-        firedText.enabled = true;
+        if (hackLose)
+            hackedText.enabled = true;
+        else
+            firedText.enabled = true;
 
         yield return new WaitForSeconds(loseDestroyBaseTime * 4);
 
-        firedText.enabled = false;
+        if (hackLose)
+            hackedText.enabled = false;
+        else
+            firedText.enabled = false;
 
         yield return new WaitForSeconds(loseDestroyBaseTime * 3);
 
         restartPanel.SetActive(true);
+
+        hackLose = false;
 
         //Destroy(spawner);
     }
@@ -547,6 +557,9 @@ public class GameManager : MonoBehaviour
         clockIn.SetActive(false);
 
         time = 0;
+
+        if (day > 1)
+            SetFlags.addFlag(Flags.DayOneCompleted);
 
         yield return new WaitForSeconds(.5f);
 

@@ -7,7 +7,10 @@ public enum Flags
     GameStarted,
     tutorialAccepted,
     tutorialDeclined,
-    phase2Started
+    phase2Started,
+    DayOneCompleted,
+    WeekOneCompleted,
+    ReblockerPurchased
 }
 
 public static class SetFlags

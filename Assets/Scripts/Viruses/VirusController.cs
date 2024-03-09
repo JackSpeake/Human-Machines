@@ -27,17 +27,26 @@ public class VirusController : MonoBehaviour
     [Tooltip("The odds of a new infection starting")]
     [SerializeField] private float newInfectionLikelyhood = 1;
 
+    [SerializeField] private string[] firstHealthOpenInstructions;
+
     // SETS THE STATIC VARIABLES INSIDE THE PLAYER HEALTH PANELS
     [SerializeField] private float infectionSpeed, disInfectionSpeed;
 
     private int infectedPanelCount = 0;
+    private float infectionPercent;
+
+    [Tooltip("If 1, infectionPercent chance of a virus every 1 second")]
+    [SerializeField] private int virusEffectsTryRate = 10;
 
     float t = 0;
+    float tVirus = 0;
     float currInfectionSpeed = 0;
 
     bool staticValuesUpdated = false;
 
     private int shieldLevel = 0;
+
+    private bool firstEnable = true;
 
     private void Start()
     {
@@ -51,6 +60,14 @@ public class VirusController : MonoBehaviour
     {
         if (HealthModule && HealthModule.gameObject.activeInHierarchy)
         {
+            if (firstEnable)
+            {
+                foreach (string s in firstHealthOpenInstructions)
+                    GameManager.Instance.SendNotification(s);
+            }
+
+            firstEnable = false;
+            infectionPercent = ((float) infectedPanelCount) / 25f * 100f;
             if (!staticValuesUpdated)
             {
                 HealthModule.GetCenterPanel().UpdateStaticVariables(infectionSpeed, disInfectionSpeed);
@@ -58,6 +75,17 @@ public class VirusController : MonoBehaviour
             }
 
             t += Time.deltaTime;
+            tVirus += Time.deltaTime;
+
+            if (tVirus >= virusEffectsTryRate)
+            {
+                tVirus = 0;
+
+                if (Random.Range(0, 100) < infectionPercent)
+                {
+                    SendVirusEffect();
+                }
+            }
 
             if (t >= currInfectionSpeed)
             {
@@ -72,9 +100,18 @@ public class VirusController : MonoBehaviour
         }
     }
 
+    // not efficient (do we care?)
+    private void SendVirusEffect()
+    {
+        GameObject[] viruses = GameObject.FindGameObjectsWithTag("Virus");
+        Debug.Log("Sending Virus Effect");
+        viruses[Random.Range(0, viruses.Length)].GetComponent<VirusEffectA>().RunEffect();
+    }
+
     private void GameOver()
     {
-
+        GameManager.Instance.hackLose = true;
+        GameManager.Instance.Lose();
     }
 
     public void addShield(int shieldAmount)
