@@ -1549,6 +1549,55 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+--- !u!1 &3365297561290648029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8750680637398868986}
+  - component: {fileID: 6523241433906220867}
+  m_Layer: 5
+  m_Name: Virus
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8750680637398868986
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365297561290648029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6365249259015724400}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6523241433906220867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365297561290648029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14920062e976e7b40bad56267018da9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthThreshold: 30
 --- !u!1 &6365249257678673089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1766,7 @@ RectTransform:
   m_Children:
   - {fileID: 2164360394125712926}
   - {fileID: 2164360393727565958}
+  - {fileID: 8750680637398868986}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1789,6 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openSpeed: 1
+  open: 0
   originTransform: {fileID: 0}
 --- !u!114 &6365249259015724412
 MonoBehaviour:
@@ -1808,6 +1859,8 @@ MonoBehaviour:
   enemy: {fileID: 2164360394223928583}
   hand: {fileID: 2164360394434328396}
   sun: {fileID: 2164360394815067516}
+  sunGood: {fileID: 0}
+  sunEvil: {fileID: 0}
   moveInTime: 0.4
   sunRiseTime: 3
   enemyWaitDelay: 1
@@ -1825,3 +1878,6 @@ MonoBehaviour:
   LoseTime: 3
   minGameStartTime: 5
   maxGameStartTime: 20
+  vc: {fileID: 0}
+  shieldAmount: 20
+  hardMode: 0

@@ -9,6 +9,8 @@ public class Shootout : MonoBehaviour
     private Vector3 blOrigin, brOrigin, groundOrigin, enemyOrigin, handOrigin, sunOrigin;
     [SerializeField] public Transform buildingsLeft, buildingsRight, ground, enemy, hand, sun;
 
+    [SerializeField] public Sprite sunGood, sunEvil;
+
     [SerializeField] private float moveInTime, sunRiseTime;
     [SerializeField] private float enemyWaitDelay, sunWaitDelay, drawWaitDelay;
     [SerializeField] private float fallOverTimeWin, delayBeforeExit, itemExitSpeed, bodyExitTime, victoryTextTime;
@@ -23,6 +25,8 @@ public class Shootout : MonoBehaviour
     [SerializeField] private float LoseTime, minGameStartTime, maxGameStartTime;
     [SerializeField] private VirusController vc;
     [SerializeField] private int shieldAmount = 20;
+
+    public bool hardMode = false;
 
     float timeForGameStart = 0;
     float currGameWaitTime;
@@ -95,6 +99,12 @@ public class Shootout : MonoBehaviour
     private IEnumerator ReturnToCenterCoroutine()
     {
         float t = 0;
+
+        if (hardMode)
+            sun.GetComponent<SpriteRenderer>().sprite = sunEvil;
+        else
+            sun.GetComponent<SpriteRenderer>().sprite = sunGood;
+
 
         Vector3 startPos = buildingsLeft.localPosition;
         while (t < moveInTime)
@@ -185,10 +195,15 @@ public class Shootout : MonoBehaviour
     private IEnumerator FailTimer()
     {
         float t = 0;
+        float loseTimeAdj = LoseTime;
+
+        if (hardMode)
+            loseTimeAdj /= 2;
+
         TMPro.TMP_Text buttonText = drawButton.GetComponentInChildren<TMPro.TMP_Text>();
-        while (!shot && t <= LoseTime )
+        while (!shot && t <= loseTimeAdj)
         {
-            buttonText.color = Color.Lerp(Color.white, Color.red, t / LoseTime);
+            buttonText.color = Color.Lerp(Color.white, Color.red, t / loseTimeAdj);
             t += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
@@ -263,6 +278,7 @@ public class Shootout : MonoBehaviour
         hand.Translate(new Vector3(0, -5, 0));
         panel.color = Color.black;
         inProgress = false;
+        hardMode = false;
     }
 
     public void Shoot()
@@ -354,6 +370,8 @@ public class Shootout : MonoBehaviour
         victoryText.gameObject.SetActive(false);
 
         gunShot.gameObject.SetActive(false);
+
+        hardMode = false;
 
         shot = false;
         inProgress = false;

@@ -12,6 +12,8 @@ public class Module : MonoBehaviour
     private float height;
     private bool started = false;
 
+    public bool open = false;
+
     [SerializeField] private Transform originTransform;
 
 
@@ -34,17 +36,28 @@ public class Module : MonoBehaviour
         if (!started) {
             Start();
         }
-        //origin = new Vector2(700.0f, 250.0f);
-        origin = new Vector2(originTransform.position.x, originTransform.position.y);
-        destination = new Vector2(Random.Range(-400, 500), Random.Range(0, 500));
-        StartCoroutine(Move(true));
+
+        if (!open)
+        {
+            open = true;
+            //origin = new Vector2(700.0f, 250.0f);
+            origin = new Vector2(originTransform.position.x, originTransform.position.y);
+            destination = new Vector2(Random.Range(-400, 500), Random.Range(0, 500));
+            StartCoroutine(Move(true));
+        }
+        
     }
 
     public void Close() {
-        origin = rt.anchoredPosition;
-        //destination = new Vector2(700.0f, 250.0f);
-        destination = new Vector2(originTransform.position.x, originTransform.position.y);
-        StartCoroutine(Move(false));
+        if (open)
+        {
+            open = false;
+            origin = rt.anchoredPosition;
+            //destination = new Vector2(700.0f, 250.0f);
+            destination = new Vector2(originTransform.position.x, originTransform.position.y);
+            StartCoroutine(Move(false));
+        }
+        
     }
 
     public void MoveLeft(RectTransform panel)

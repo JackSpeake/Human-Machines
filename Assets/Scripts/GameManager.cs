@@ -609,12 +609,20 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void SendEvilNotification(string m)
+    {
+        if (!tmModule.paused)
+        {
+            notifications.showMessage(m, true);
+        }
+
+    }
+
     public void SendCustomYap(YapperState yap, float time)
     {
         if (!tmModule.paused) {
             notifications.setCustomYapper(yap, time);
         }
-       
     }
 
     public string chooseRandomString(string[] strs)

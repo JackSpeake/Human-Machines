@@ -14,12 +14,15 @@ public class NotificationArea : MonoBehaviour
     [SerializeField] private float stayTimeBeforeNextMessage;
 
     [SerializeField] private YapperState[] otherYappers;
-    [SerializeField] private YapperState defaultYapper, openMouthYapper;
+    [SerializeField] private YapperState defaultYapper, openMouthYapper, defaultEvilYapper, openMouthEvilYapper;
 
     private bool displaying = false;
     private bool animating = false;
     private Queue<string> stringQueue;
+    private Queue<bool> evilQueue;
     private bool customYap = false;
+
+    bool currentlyEvil = false;
 
     float t = 0;
     float randTime = 0;
@@ -29,7 +32,7 @@ public class NotificationArea : MonoBehaviour
     private void Start()
     {
         stringQueue = new Queue<string>();
-
+        evilQueue = new Queue<bool>();
     }
 
     public bool isDone()
@@ -55,9 +58,14 @@ public class NotificationArea : MonoBehaviour
     {
         t += Time.deltaTime;
 
+        if (currentlyEvil)
+            animationText.color = Color.red;
+        else
+            animationText.color = Color.white;
+
         if (!displaying && stringQueue.Count != 0)
         {
-            showMessage(stringQueue.Dequeue());
+            showMessage(stringQueue.Dequeue(), evilQueue.Dequeue());
         }
 
         if (!animating && !customYap)
@@ -96,11 +104,31 @@ public class NotificationArea : MonoBehaviour
         if (displaying)
         {
             stringQueue.Enqueue(message);
+            evilQueue.Enqueue(false);
         }
         else
         {
             displaying = true;
-            StartCoroutine(displayMessageOverTime(message));
+            StartCoroutine(displayMessageOverTime(message, false));
+            if (!animating)
+            {
+                StartCoroutine(animateFace());
+            }
+        }
+    }
+
+    // Begins the message animation if not animating, if animating, puts the message into the queue
+    public void showMessage(string message, bool evil)
+    {
+        if (displaying)
+        {
+            stringQueue.Enqueue(message);
+            evilQueue.Enqueue(evil);
+        }
+        else
+        {
+            displaying = true;
+            StartCoroutine(displayMessageOverTime(message, evil));
             if (!animating)
             {
                 StartCoroutine(animateFace());
@@ -109,11 +137,19 @@ public class NotificationArea : MonoBehaviour
     }
 
     // Coroutine that displays the message one character at a time
-    private IEnumerator displayMessageOverTime(string message)
+    private IEnumerator displayMessageOverTime(string message, bool evil)
     {
         messageText.text = message;
         messageText.maxVisibleCharacters = 0;
         messageText.linkedTextComponent.maxVisibleCharacters = 0;
+
+        if (evil)
+        {
+            messageText.color = Color.red;
+            currentlyEvil = true;
+        }
+        else
+            currentlyEvil = false;
 
 
         while (messageText.maxVisibleCharacters < messageText.text.Length)
@@ -134,6 +170,9 @@ public class NotificationArea : MonoBehaviour
 
         yield return new WaitForSeconds(stayTimeBeforeNextMessage);
         messageText.text = "";
+
+        messageText.color = Color.white;
+        currentlyEvil = false;
         displaying = false;
     }
 
@@ -143,16 +182,34 @@ public class NotificationArea : MonoBehaviour
         animating = true;
         animationText.text = "";
 
+        
         while (displaying)
         {
-            if (animationText.text != openMouthYapper.yapImg)
+
+            if (currentlyEvil)
             {
-                animationText.text = openMouthYapper.yapImg;
+                if (animationText.text != openMouthEvilYapper.yapImg)
+                {
+                    animationText.text = openMouthEvilYapper.yapImg;
+                }
+                else
+                {
+                    animationText.text = defaultEvilYapper.yapImg;
+                }
             }
             else
             {
-                animationText.text = defaultYapper.yapImg;
+                if (animationText.text != openMouthYapper.yapImg)
+                {
+                    animationText.text = openMouthYapper.yapImg;
+                }
+                else
+                {
+                    animationText.text = defaultYapper.yapImg;
+                }
             }
+
+            
             yield return new WaitForSeconds(displayRate * 3);
         }
 
