@@ -24,6 +24,8 @@ public class SimonSays : MonoBehaviour
     [SerializeField] private float betweenExampleDelay = 2f;
     [SerializeField] private float lockoutTime = 2f;
 
+    [SerializeField] private VirusController vc;
+
 
     // Start is called before the first frame update
     void Start()
@@ -97,6 +99,9 @@ public class SimonSays : MonoBehaviour
             b.color = buttonOffColors[i];
             i++;
         }
+
+        // VICTORYYYYY
+        vc.DisinfectOne();
 
         lockout = false;
     }

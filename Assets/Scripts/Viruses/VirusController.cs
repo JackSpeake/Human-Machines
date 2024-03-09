@@ -145,4 +145,13 @@ public class VirusController : MonoBehaviour
             } while (!infected);
         }
     }
+
+    public void DisinfectOne()
+    {
+        List<HealthModulePanel> infectedPanels = HealthModule.GetInfectedPanels();
+
+        int rand = Random.Range(0, infectedPanels.Count - 1);
+
+        infectedPanels[rand].Disinfect();
+    }
 }
