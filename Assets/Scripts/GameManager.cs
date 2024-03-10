@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject confetti, congrats, newAssignment, newAssignmentAfterColorChange;
 
+    private AudioSource shutdownSound;
 
     private bool lost = false;
 
@@ -84,6 +85,8 @@ public class GameManager : MonoBehaviour
         {
             tutorial = true;
         }
+
+        shutdownSound = GetComponentInChildren<AudioSource>();
 
         StartUp();
     }
@@ -139,10 +142,12 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(startUpBaseTime);
 
         screenHeaders.SetActive(true);
+        shutdownSound.Play();
 
         yield return new WaitForSeconds(startUpBaseTime);
 
         notificationPanel.SetActive(true);
+        shutdownSound.Play();
 
         // do thing
         if (tutorial)
@@ -160,6 +165,7 @@ public class GameManager : MonoBehaviour
        
 
         messagePanel.SetActive(true);
+        shutdownSound.Play();
 
         // do thing
         if (tutorial)
@@ -204,6 +210,7 @@ public class GameManager : MonoBehaviour
         }
 
         consoleCommandsPanel.SetActive(true);
+        shutdownSound.Play();
 
         // do thing
         if (tutorial)
@@ -219,6 +226,7 @@ public class GameManager : MonoBehaviour
         }
 
         clockPanel.SetActive(true);
+        shutdownSound.Play();
 
         // do thing
         if (tutorial)
@@ -234,6 +242,7 @@ public class GameManager : MonoBehaviour
         }
 
         moduleControlPanel.SetActive(true);
+        shutdownSound.Play();
 
         // do thing
         if (tutorial)
@@ -249,6 +258,7 @@ public class GameManager : MonoBehaviour
         }
 
         controlButtonsPanel.SetActive(true);
+        shutdownSound.Play();
 
         // do thing
         if (tutorial)
@@ -324,6 +334,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject g in panels)
         {
             Destroy(g);
+            shutdownSound.Play();
             yield return new WaitForSeconds(newTime);
             newTime *= loseDestroySpeedupRate;
         }
@@ -335,6 +346,8 @@ public class GameManager : MonoBehaviour
         else
             firedText.enabled = true;
 
+        shutdownSound.Play();
+
         yield return new WaitForSeconds(loseDestroyBaseTime * 4);
 
         if (hackLose)
@@ -342,9 +355,13 @@ public class GameManager : MonoBehaviour
         else
             firedText.enabled = false;
 
+        shutdownSound.Play();
+
         yield return new WaitForSeconds(loseDestroyBaseTime * 3);
 
         restartPanel.SetActive(true);
+
+        shutdownSound.Play();
 
         hackLose = false;
 
@@ -387,6 +404,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject g in panels)
         {
             g.SetActive(false);
+            shutdownSound.Play();
             yield return new WaitForSeconds(newTime);
             newTime *= loseDestroySpeedupRate;
         }
@@ -570,6 +588,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject g in panels)
         {
             g.SetActive(true);
+            shutdownSound.Play();
             yield return new WaitForSeconds(newTime);
             newTime *= loseDestroySpeedupRate;
         }
