@@ -17,9 +17,9 @@ MonoBehaviour:
 
 '
   correct: 0
-  noFail: 0
+  noFail: 1
   failPoints: 0
-  timeToFail: 0
+  timeToFail: 15
   messageType: 0
   flagsRequired: 
   repeat: 0
