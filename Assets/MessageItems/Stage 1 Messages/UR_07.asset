@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 42
   message: 'URGENT: xxxsitexxx.com'
   correct: 0
-  noFail: 1
+  noFail: 0
   failPoints: 2
   timeToFail: 5
   messageType: 0

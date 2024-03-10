@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 44
   message: 'URGENT: turb-taxes.com'
   correct: 1
-  noFail: 1
+  noFail: 0
   failPoints: 2
   timeToFail: 5
   messageType: 0

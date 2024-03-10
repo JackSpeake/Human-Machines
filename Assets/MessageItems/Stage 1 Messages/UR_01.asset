@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 36
   message: 'URGENT: i-love-horses.net'
   correct: 0
-  noFail: 1
+  noFail: 0
   failPoints: 2
   timeToFail: 5
   messageType: 0
