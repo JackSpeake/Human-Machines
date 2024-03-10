@@ -411,6 +411,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
+        shutdownSound.Play();
         clockOut.SetActive(true);
     }
 
@@ -429,8 +430,10 @@ public class GameManager : MonoBehaviour
     IEnumerator DayBreakdown()
     {
         clockOut.SetActive(false);
+        shutdownSound.Play();
 
         yield return new WaitForSeconds(.5f);
+
 
         dayBreakdown.SetActive(true);
 
@@ -497,6 +500,7 @@ public class GameManager : MonoBehaviour
         else
         {
             clockIn.SetActive(true);
+            shutdownSound.Play();
         }    
     }
 
