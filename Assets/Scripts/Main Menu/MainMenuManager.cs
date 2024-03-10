@@ -11,6 +11,9 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private float waitTime = 2f;
     [SerializeField] private GameObject hiredText, tutorialMessage;
 
+    [SerializeField] private AudioSource gunshot, notification;
+    
+
     private void Start()
     {
         // CHECK IF WEB BUILD
@@ -34,12 +37,14 @@ public class MainMenuManager : MonoBehaviour
         foreach (GameObject m in mainMenuElements)
         {
             yield return new WaitForSeconds(deleteTime);
+            gunshot.Play();
             Destroy(m);
         }
 
         yield return new WaitForSeconds(waitTime);
 
         hiredText.SetActive(true);
+        gunshot.Play();
 
         yield return new WaitForSeconds(waitTime);
 
@@ -48,6 +53,7 @@ public class MainMenuManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         tutorialMessage.SetActive(true);
+        notification.Play();
 
     }
 
