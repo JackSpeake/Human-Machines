@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
+  m_Name: MR_08
+  m_EditorClassIdentifier: 
+  MESSAGE_ID: 30
+  message: "Message Recieved: TeamSolid.com/Interview-Questions\r"
+  correct: 0
+  noFail: 0
+  failPoints: 0
+  timeToFail: 15
+  messageType: 1
+  flagsRequired: 
+  repeat: 0
+  messageWaitCount: 0
+  delayBeforeSending: 10
+  completeRaiseFlag: 0
+  acceptRaiseFlag: 5
+  declineRaiseFlag: 5
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 168e782dbf7b6c94aad5f4488ab3c050, type: 2}
+  declineFollowingMessage: {fileID: 0}
+  reblocked: 0

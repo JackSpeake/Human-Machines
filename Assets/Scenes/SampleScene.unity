@@ -1264,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00667
+      value: 147.00671
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6651,7 +6651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.0041308403, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15108,15 +15108,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5070123225585993768, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.75294125
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993768, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.75294125
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993768, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.75294125
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993769, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_Name
@@ -15213,6 +15213,10 @@ PrefabInstance:
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070123225694225364, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225694225366, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -15831,7 +15835,7 @@ MonoBehaviour:
   - {fileID: 875479117}
   - {fileID: 1671371146}
   - {fileID: 1529459375}
-  victoryLockoutColor: {r: 0.101014614, g: 1, b: 0, a: 1}
+  victoryLockoutColor: {r: 0, g: 1, b: 0, a: 1}
   failureLockoutColor: {r: 1, g: 0, b: 0, a: 1}
   numberOfBeeps: 4
   pressedTime: 3
@@ -16957,7 +16961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8857969, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18123,7 +18127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15487158, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22729,7 +22733,7 @@ GameObject:
   - component: {fileID: 2038908749126648062}
   - component: {fileID: 2038908749126648057}
   m_Layer: 5
-  m_Name: Settings Button
+  m_Name: Handbook Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22755,7 +22759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 620d884891b419a42b8be8b067ab900c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa2e576b32984d1448bc86959c8354e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23236,7 +23240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00136
+      value: 201.0014
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
