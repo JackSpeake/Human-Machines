@@ -359,6 +359,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(loseDestroyBaseTime * 3);
 
+        SetFlags.ResetFlags();
+
         restartPanel.SetActive(true);
 
         shutdownSound.Play();
@@ -487,8 +489,9 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
+        DayBreakdownClass.Reset();
         dayBreakdown.SetActive(false);
-
+        
         yield return new WaitForSeconds(.5f);
 
         if (++day > daysInStage)
