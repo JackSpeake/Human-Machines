@@ -102,7 +102,7 @@ public class MessageSpawner : MonoBehaviour
     // Runs once per frame, checks messages with flags attached then deals with them accordingly.
     void SpawnFlagMessage()
     {
-        foreach (MessageItem m in spawnOnFlagMessages)
+        foreach (MessageItem m in spawnOnFlagMessages.ToArray())
         {
             if (SetFlags.containsAllFlags(m.flagsRequired))
             {
