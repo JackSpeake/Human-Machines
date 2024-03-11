@@ -14,8 +14,7 @@ public class MessageSpawner : MonoBehaviour
 
     private float timeSinceSpawnedMessage = 0.0f;
 
-    [Tooltip("A list of the messages that can be randomly sent at any time.")]
-    [SerializeField] public List<MessageItem> availableRandomMessageItems;
+    private List<MessageItem> availableRandomMessageItems;
     [Tooltip("A list of messages that are reliant on flags to be sent.")]
     [SerializeField] public List<MessageItem> spawnOnFlagMessages;
 
@@ -38,8 +37,9 @@ public class MessageSpawner : MonoBehaviour
     {
         if (spawning && GameManager.Instance.started && !tmModule.paused)
         {
-            SpawnRandom();
+            availableRandomMessageItems.Clear();
             SpawnFlagMessage();
+            SpawnRandom();
         }
     }
 
@@ -63,6 +63,11 @@ public class MessageSpawner : MonoBehaviour
         {
             messageCountSendQueue.Add((message, message.messageWaitCount));
         }
+        else if (message.messageType == MessageType.random)
+        {
+            availableRandomMessageItems.Add(message);
+        }
+
     }
 
     // Coroutine that waits to spawn a delayed message.
@@ -102,7 +107,7 @@ public class MessageSpawner : MonoBehaviour
             {
                 SpawnMessage(m);
 
-                if (m.repeat == false || m.following)
+                if (m.repeat == false)
                 {
                     spawnOnFlagMessages.Remove(m);
                 }
