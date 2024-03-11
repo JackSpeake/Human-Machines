@@ -163,6 +163,8 @@ public class VirusController : MonoBehaviour
     private void InfectFirstPanel()
     {
         IList<HealthModulePanel> edgePanels = HealthModule.GetOutside().Shuffle();
+        int i = 0;
+
 
         if (Random.Range(0f, 100f) / 100 > infectionLikelyhood )
         {
@@ -179,7 +181,9 @@ public class VirusController : MonoBehaviour
                         h.StartInfection();
                     infected = true;
                 }
-            } while (!infected);
+
+                i++;
+            } while (!infected && i < edgePanels.Count - 1);
         }
     }
 
