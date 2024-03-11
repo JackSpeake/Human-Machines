@@ -68,7 +68,7 @@ public class VirusController : MonoBehaviour
 
             firstEnable = false;
             infectionPercent = ((float) infectedPanelCount) / 25f * 100f;
-            if (!staticValuesUpdated)
+            if (!staticValuesUpdated && HealthModule.started)
             {
                 HealthModule.GetCenterPanel().UpdateStaticVariables(infectionSpeed, disInfectionSpeed);
                 staticValuesUpdated = true;
@@ -93,7 +93,7 @@ public class VirusController : MonoBehaviour
                 t = 0;
             }
 
-            if (HealthModule.GetCenterPanel().infected)
+            if (HealthModule.started && HealthModule.GetCenterPanel().infected)
             {
                 GameOver();
             }
