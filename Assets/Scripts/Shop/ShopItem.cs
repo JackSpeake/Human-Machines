@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class ShopItem : MonoBehaviour
+public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
     [SerializeField] private GameManager gm;
     [SerializeField] public string itemName;
+    [SerializeField] private string itemDescription;
     [SerializeField] public Sprite icon;
     [SerializeField] public int originalPrice;
     [SerializeField] public int price;
     [SerializeField] private TMP_Text text;
     [SerializeField] private GameObject moduleButton;
+    
     [SerializeField] private YapperState purchaseYapper;
+    [SerializeField] private GameObject put;
+
+    private Button purchaseButton;
 
     private bool purchased = false;
     private bool discounted = false;
@@ -23,6 +30,7 @@ public class ShopItem : MonoBehaviour
     void Start()
     {
         text.text = itemName + "\n$" + price;
+        purchaseButton = GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -59,5 +67,16 @@ public class ShopItem : MonoBehaviour
         text.text = itemName + "\n$" + price;
         text.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         discounted = false;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        put.SetActive(true);
+        put.GetComponent<PopUpText>().SetPopUpText(itemDescription);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        put.SetActive(false);
     }
 }

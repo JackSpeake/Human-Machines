@@ -1264,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.0073
+      value: 147.00757
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3956,12 +3956,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: System Health
+  itemDescription: 
   icon: {fileID: 21300000, guid: ccf04581d381f3e4fb9feafb36d86c43, type: 3}
   originalPrice: 100
   price: 100
   text: {fileID: 267970978}
   moduleButton: {fileID: 1782199431}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
+  put: {fileID: 1196573185}
 --- !u!1 &517116905
 GameObject:
   m_ObjectHideFlags: 0
@@ -5932,6 +5934,7 @@ RectTransform:
   - {fileID: 2135477700}
   - {fileID: 168078404}
   - {fileID: 1515830954}
+  - {fileID: 6409046247841807726}
   m_Father: {fileID: 1286983256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6296,12 +6299,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Reblocker
+  itemDescription: 'Reblocker Module: It''s lit.'
   icon: {fileID: 21300000, guid: 5365c9b0d98bccc4d959f3444249d4ec, type: 3}
   originalPrice: 80
   price: 80
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
+  put: {fileID: 1196573185}
 --- !u!1 &751309214
 GameObject:
   m_ObjectHideFlags: 0
@@ -14246,6 +14251,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183115578}
   m_CullTransparentMesh: 1
+--- !u!1 &1196573185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1765880751354398081, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+  m_PrefabInstance: {fileID: 1765880750269237120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1212498751
 GameObject:
   m_ObjectHideFlags: 0
@@ -14776,12 +14786,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Coupon
+  itemDescription: 'Coupon Module: it''s epic'
   icon: {fileID: 21300000, guid: 464e848222b6aed4b9d58c47e154d2d4, type: 3}
   originalPrice: 20
   price: 20
   text: {fileID: 1265449328}
   moduleButton: {fileID: 885936490}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
+  put: {fileID: 1196573185}
 --- !u!1 &1265449326
 GameObject:
   m_ObjectHideFlags: 0
@@ -16901,12 +16913,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Timeout
+  itemDescription: 'Timeout Module: it''s lit!'
   icon: {fileID: 21300000, guid: cd9db5391f335f5418886337b35b3928, type: 3}
   originalPrice: 50
   price: 50
   text: {fileID: 1911331404}
   moduleButton: {fileID: 717998038}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
+  put: {fileID: 1196573185}
 --- !u!1 &1500859361
 GameObject:
   m_ObjectHideFlags: 0
@@ -20787,12 +20801,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Simon Says
+  itemDescription: 'Simon Says: that''s what i''m sayin'' dawg'
   icon: {fileID: 21300000, guid: 722c69166281fb246818ca32f3021edf, type: 3}
   originalPrice: 45
   price: 45
   text: {fileID: 430397707}
   moduleButton: {fileID: 535783794}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
+  put: {fileID: 1196573185}
 --- !u!114 &2075642080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21602,6 +21618,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1485674203}
     - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
+      propertyPath: put
+      value: 
+      objectReference: {fileID: 1196573185}
+    - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
       propertyPath: icon
       value: 
       objectReference: {fileID: 21300000, guid: 8af96a0e23b3b0048ad6487212625042, type: 3}
@@ -21609,6 +21629,10 @@ PrefabInstance:
       propertyPath: price
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
+      propertyPath: putPF
+      value: 
+      objectReference: {fileID: 1196573185}
     - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
       propertyPath: itemName
       value: Shootout
@@ -21621,8 +21645,69 @@ PrefabInstance:
       propertyPath: originalPrice
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
+      propertyPath: itemDescription
+      value: 'Shootout: lmao'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 407236cf5002b034badf36fee06249f6, type: 3}
+--- !u!1001 &1765880750269237120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 708551952}
+    m_Modifications:
+    - target: {fileID: 1765880751354398081, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_Name
+      value: Pop-up Textbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
 --- !u!1 &2038908747367281413
 GameObject:
   m_ObjectHideFlags: 0
@@ -23518,7 +23603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00198
+      value: 201.00226
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -23921,6 +24006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2ba684bc30515489c9a00ebadc1c1d, type: 3}
+--- !u!4 &6409046247841807726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+  m_PrefabInstance: {fileID: 1765880750269237120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8043313936920539232
 RectTransform:
   m_ObjectHideFlags: 0
