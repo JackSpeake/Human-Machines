@@ -189,6 +189,7 @@ public class VirusController : MonoBehaviour
 
         int rand = Random.Range(0, infectedPanels.Count - 1);
 
-        infectedPanels[rand].Disinfect();
+        if (infectedPanels.Count > 0)
+            infectedPanels[rand].Disinfect();
     }
 }
