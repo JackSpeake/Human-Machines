@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 41
   message: 'URGENT: moneymover.net'
   correct: 0
-  noFail: 1
+  noFail: 0
   failPoints: 2
   timeToFail: 5
   messageType: 0

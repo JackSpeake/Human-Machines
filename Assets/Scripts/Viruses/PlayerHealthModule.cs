@@ -13,6 +13,8 @@ public class PlayerHealthModule : MonoBehaviour
     [SerializeField] private float shieldLevel = 0;
     [SerializeField] private float maxShieldLevel = 100;
 
+    public bool started = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,8 @@ public class PlayerHealthModule : MonoBehaviour
                 panelsUnsorted[(y * 5) + x].y = y;
             }
         }
+
+        started = true;
 
         l1.Offset = -1;
         l2.Offset = -1;

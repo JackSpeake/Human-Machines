@@ -68,7 +68,7 @@ public class VirusController : MonoBehaviour
 
             firstEnable = false;
             infectionPercent = ((float) infectedPanelCount) / 25f * 100f;
-            if (!staticValuesUpdated)
+            if (!staticValuesUpdated && HealthModule.started)
             {
                 HealthModule.GetCenterPanel().UpdateStaticVariables(infectionSpeed, disInfectionSpeed);
                 staticValuesUpdated = true;
@@ -93,7 +93,7 @@ public class VirusController : MonoBehaviour
                 t = 0;
             }
 
-            if (HealthModule.GetCenterPanel().infected)
+            if (HealthModule.started && HealthModule.GetCenterPanel().infected)
             {
                 GameOver();
             }
@@ -163,6 +163,8 @@ public class VirusController : MonoBehaviour
     private void InfectFirstPanel()
     {
         IList<HealthModulePanel> edgePanels = HealthModule.GetOutside().Shuffle();
+        int i = 0;
+
 
         if (Random.Range(0f, 100f) / 100 > infectionLikelyhood )
         {
@@ -179,7 +181,9 @@ public class VirusController : MonoBehaviour
                         h.StartInfection();
                     infected = true;
                 }
-            } while (!infected);
+
+                i++;
+            } while (!infected && i < edgePanels.Count - 1);
         }
     }
 
@@ -189,6 +193,7 @@ public class VirusController : MonoBehaviour
 
         int rand = Random.Range(0, infectedPanels.Count - 1);
 
-        infectedPanels[rand].Disinfect();
+        if (infectedPanels.Count > 0)
+            infectedPanels[rand].Disinfect();
     }
 }

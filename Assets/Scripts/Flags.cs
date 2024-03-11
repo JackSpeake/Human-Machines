@@ -27,6 +27,11 @@ public static class SetFlags
         activeFlags.Remove(f);
     }
 
+    public static void ResetFlags()
+    {
+        activeFlags.Clear();
+    }
+
     public static bool containsAllFlags(Flags[] f)
     {
         foreach (Flags flag in f)

@@ -14,8 +14,7 @@ public class MessageSpawner : MonoBehaviour
 
     private float timeSinceSpawnedMessage = 0.0f;
 
-    [Tooltip("A list of the messages that can be randomly sent at any time.")]
-    [SerializeField] public List<MessageItem> availableRandomMessageItems;
+    private List<MessageItem> availableRandomMessageItems;
     [Tooltip("A list of messages that are reliant on flags to be sent.")]
     [SerializeField] public List<MessageItem> spawnOnFlagMessages;
 
@@ -31,6 +30,7 @@ public class MessageSpawner : MonoBehaviour
     {
         currWaitTime = Random.Range(minWaitTime, maxWaitTime);
         messageCountSendQueue = new List<(MessageItem, int)>();
+        availableRandomMessageItems = new List<MessageItem>();
     }
 
     // Update is called once per frame
@@ -38,8 +38,9 @@ public class MessageSpawner : MonoBehaviour
     {
         if (spawning && GameManager.Instance.started && !tmModule.paused)
         {
-            SpawnRandom();
+            availableRandomMessageItems.Clear();
             SpawnFlagMessage();
+            SpawnRandom();
         }
     }
 
@@ -63,6 +64,11 @@ public class MessageSpawner : MonoBehaviour
         {
             messageCountSendQueue.Add((message, message.messageWaitCount));
         }
+        else if (message.messageType == MessageType.random)
+        {
+            availableRandomMessageItems.Add(message);
+        }
+
     }
 
     // Coroutine that waits to spawn a delayed message.
@@ -96,13 +102,13 @@ public class MessageSpawner : MonoBehaviour
     // Runs once per frame, checks messages with flags attached then deals with them accordingly.
     void SpawnFlagMessage()
     {
-        foreach (MessageItem m in spawnOnFlagMessages)
+        foreach (MessageItem m in spawnOnFlagMessages.ToArray())
         {
             if (SetFlags.containsAllFlags(m.flagsRequired))
             {
                 SpawnMessage(m);
 
-                if (m.repeat == false || m.following)
+                if (m.repeat == false)
                 {
                     spawnOnFlagMessages.Remove(m);
                 }
@@ -116,17 +122,12 @@ public class MessageSpawner : MonoBehaviour
     {
         timeSinceSpawnedMessage += Time.deltaTime;
 
-        if (timeSinceSpawnedMessage > currWaitTime)
+        if (timeSinceSpawnedMessage > currWaitTime && availableRandomMessageItems.Count > 0)
         {
             currWaitTime = Random.Range(minWaitTime, maxWaitTime);
             timeSinceSpawnedMessage = 0;
             MessageItem m = availableRandomMessageItems[Random.Range(0, availableRandomMessageItems.Count)];
             SpawnMessage(m);
-
-            if (m.repeat == false || m.following)
-            {
-                availableRandomMessageItems.Remove(m);
-            }
         }
     }
 }

@@ -12,7 +12,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject hiredText, tutorialMessage;
 
     [SerializeField] private AudioSource gunshot, notification;
-    
+
+    bool clicked = false;
 
     private void Start()
     {
@@ -27,7 +28,12 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(DeleteMenuElements());
+        if (!clicked)
+        {
+            clicked = true;
+            StartCoroutine(DeleteMenuElements());
+        }
+            
     }
 
     IEnumerator DeleteMenuElements()
