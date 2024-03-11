@@ -30,6 +30,7 @@ public class MessageSpawner : MonoBehaviour
     {
         currWaitTime = Random.Range(minWaitTime, maxWaitTime);
         messageCountSendQueue = new List<(MessageItem, int)>();
+        availableRandomMessageItems = new List<MessageItem>();
     }
 
     // Update is called once per frame
@@ -121,17 +122,12 @@ public class MessageSpawner : MonoBehaviour
     {
         timeSinceSpawnedMessage += Time.deltaTime;
 
-        if (timeSinceSpawnedMessage > currWaitTime)
+        if (timeSinceSpawnedMessage > currWaitTime && availableRandomMessageItems.Count > 0)
         {
             currWaitTime = Random.Range(minWaitTime, maxWaitTime);
             timeSinceSpawnedMessage = 0;
             MessageItem m = availableRandomMessageItems[Random.Range(0, availableRandomMessageItems.Count)];
             SpawnMessage(m);
-
-            if (m.repeat == false || m.following)
-            {
-                availableRandomMessageItems.Remove(m);
-            }
         }
     }
 }

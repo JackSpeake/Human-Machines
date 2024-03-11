@@ -359,6 +359,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(loseDestroyBaseTime * 3);
 
+        SetFlags.ResetFlags();
+
         restartPanel.SetActive(true);
 
         shutdownSound.Play();
