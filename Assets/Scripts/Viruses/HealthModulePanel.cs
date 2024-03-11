@@ -30,9 +30,13 @@ public class HealthModulePanel : MonoBehaviour
 
     public void StartInfection()
     {
-        infecting = true;
-        disinfecting = false;
-        StartCoroutine(StartInfectionCoroutine());
+        if (!infecting && !infected)
+        {
+            infecting = true;
+            disinfecting = false;
+            StartCoroutine(StartInfectionCoroutine());
+        }
+        
     }
 
     public IEnumerator StartInfectionCoroutine()
@@ -56,9 +60,13 @@ public class HealthModulePanel : MonoBehaviour
 
     public void Disinfect()
     {
-        infecting = false;
-        disinfecting = true;
-        StartCoroutine(StartDisinfectionCoroutine());
+        if (!disinfecting && infected)
+        {
+            infecting = false;
+            disinfecting = true;
+            StartCoroutine(StartDisinfectionCoroutine());
+        }
+            
     }
 
     public IEnumerator StartDisinfectionCoroutine()
