@@ -632,7 +632,7 @@ public class GameManager : MonoBehaviour
     // Reloads the scene, aka START OVER
     public void Retry()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     // This doesn't technically need to be here, but it will make it easier to send notifications to the notification zone
