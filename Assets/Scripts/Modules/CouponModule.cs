@@ -11,6 +11,8 @@ public class CouponModule : MonoBehaviour
 
     [SerializeField]
     private Button claimButton;
+    [SerializeField]
+    private Text claimButtonText;
 
     [SerializeField] 
     private TMPro.TMP_Text moduleForSaleText;
@@ -29,10 +31,22 @@ public class CouponModule : MonoBehaviour
 
     [SerializeField]
     private bool dealActive;
+    [SerializeField]
+    private bool dealClaimed = false;
 
     [SerializeField]
     private int dealAppearanceRange;
 
+    [SerializeField]
+    private ShopItem[] items;
+
+    [SerializeField]
+    private ShopItem dealTarget;
+    [SerializeField]
+    private int dealTargetIndex = -1;
+
+    [SerializeField]
+    private int activeTargetIndex = -1;
     private float dealTime;
     private int dealPercentage;
     private string moduleForSale;
@@ -75,10 +89,14 @@ public class CouponModule : MonoBehaviour
     }
 
     void CreateDeal() {
+        dealClaimed = false;
+        dealTargetIndex = Random.Range(0, items.Length); 
+        dealTarget = items[dealTargetIndex];
         // Change this later to be randomized
-        moduleForSale = "ANTIVIRUS";
+        moduleForSale = dealTarget.itemName.ToUpper();
 
         // Do the same for the module icon
+        moduleIconRenderer.sprite = dealTarget.icon;
 
         dealTime =  Random.Range(10, 120);
         dealPercentage = Random.Range(0, 100);
@@ -86,6 +104,9 @@ public class CouponModule : MonoBehaviour
         moduleForSaleText.text = moduleForSale + " MODULE !!!";
         discountText.text = dealPercentage + "% OFF !!!";
         offerEndsText.text = "Offer Ends In:\n" + SecondsToMinutes((int)dealTime);
+        claimText.text = "CLAIM NOW !!!";
+        claimButtonText.text = "$$$";
+        claimButton.interactable = true;
 
 
         claimButton.gameObject.SetActive(true);
@@ -98,10 +119,22 @@ public class CouponModule : MonoBehaviour
 
     }
 
-    public void ActivateDeal() {
-        // IMPLEMENT LOGIC SO THAT WHEN BUTTON CLICKED, SETS THE CURRENT DEAL TO THE CURRENT DEAL AFFECTING THE SHOP
-        // IMPLEMENT LOGIC SO THAT THE CURRENT ACTIVE DEAL AFFECTS THE SHOP PRICE
+    public void ClaimDeal() {
+        if (!dealClaimed) {
+            if (activeTargetIndex != -1) {
+                items[activeTargetIndex].RevertPrice();
+            }
+            // IMPLEMENT LOGIC SO THAT WHEN BUTTON CLICKED, SETS THE CURRENT DEAL TO THE CURRENT DEAL AFFECTING THE SHOP
+            activeTargetIndex = dealTargetIndex;
+            items[activeTargetIndex].DiscountPrice((int)(items[activeTargetIndex].originalPrice * (1.0 - ((float)dealPercentage / 100))));
+            // IMPLEMENT LOGIC SO THAT THE CURRENT ACTIVE DEAL AFFECTS THE SHOP PRICE
+            dealClaimed = true;
+            claimButton.interactable = false;
+            claimButtonText.text = "( $ _ $ )";
+            claimText.text = "THXX !1!!1!11!";
+        }
     }
+        
 
     string SecondsToMinutes(int t) {
         if (t % 60 < 10) {
