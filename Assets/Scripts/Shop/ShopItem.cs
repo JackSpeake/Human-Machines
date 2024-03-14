@@ -73,6 +73,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         put.SetActive(true);
         put.GetComponent<PopUpText>().SetPopUpText(itemDescription);
+        put.GetComponent<PopUpText>().SetPosition();
     }
 
     public void OnPointerExit(PointerEventData eventData)

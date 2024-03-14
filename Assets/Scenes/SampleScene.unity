@@ -1264,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00757
+      value: 147.00763
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15985,6 +15985,7 @@ MonoBehaviour:
   l3: {fileID: 402819489}
   shieldLevel: 0
   maxShieldLevel: 30
+  started: 0
 --- !u!1 &1410391851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5070123225585993769, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
@@ -21630,17 +21631,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pop-up Textbox
       objectReference: {fileID: 0}
+    - target: {fileID: 1765880751354398081, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765880751354398082, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
+      propertyPath: mousePos
+      value: 
+      objectReference: {fileID: 155103253}
     - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4643258171166997230, guid: 629e5b746d9663b43a84bd5444e8ce06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23571,7 +23580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00226
+      value: 201.00232
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
