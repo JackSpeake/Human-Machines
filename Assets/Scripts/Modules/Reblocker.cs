@@ -10,15 +10,19 @@ public class Reblocker : MonoBehaviour
     [SerializeField] private float deletionTime;
     [SerializeField] private TMPro.TMP_Text moduleText;
     public bool isActive = false;
-    public List<string> blocked_messages = new List<string>();
+    public List<List<string>> blocked_messages = new List<List<string>>();
     public MessageObject[] messagesOnScreen;
+
+    [SerializeField] private int num_pages = 1;
+    [SerializeField] private int current_page = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        moduleText.text = "--- Reblocker Module ---\n Blocked Messages:\n\n";
+        moduleText.text = "Reblocker Module - Page 1\n Blocked Messages:\n\n";
         isActive = false;
         blocked_messages.Clear();
+        blocked_messages.Add(new List<string>());
         //blocked_messages.Add("Request Recieved: NOTAVIRUS.virus");
     }
 
@@ -31,12 +35,12 @@ public class Reblocker : MonoBehaviour
             //Debug.Log(msg.GetMessageText());
             // if (blocked_messages.Contains(msg.GetMessageText()) && msg.state != MessageObject.MessageState.Reblocked) {
             //     Debug.Log("HIT");
-            if (msg.GetMessageItem().reblocked && !blocked_messages.Contains(msg.GetMessageText())) {
-                blocked_messages.Add(msg.GetMessageText());
+            if (msg.GetMessageItem().reblocked && !blocked_messages[num_pages - 1].Contains(msg.GetMessageText()) && blocked_messages[num_pages - 1].Count <= 5) {
+                blocked_messages[num_pages - 1].Add(msg.GetMessageText());
                 moduleText.text = moduleText.text + "> " + msg.GetMessageText() + "\n";
             }
             
-            if ((blocked_messages.Contains(msg.GetMessageText()) && msg.state != MessageObject.MessageState.Reblocked) ) {
+            if ((CanReblock(msg.GetMessageText()) && msg.state != MessageObject.MessageState.Reblocked) ) {
                 msg.state = MessageObject.MessageState.Reblocked;
                 StartCoroutine(Reblock(msg));
             }
@@ -46,19 +50,20 @@ public class Reblocker : MonoBehaviour
         }
     }
 
-    public void BlockMessage(TMPro.TMP_Text msgItem) {
-        Debug.Log("Hit");
-        string msg = msgItem.text;
-        if (!blocked_messages.Contains(msg)) {
-            blocked_messages.Add(msg);
-        }
-    }
+    // public void BlockMessage(TMPro.TMP_Text msgItem) {
+    //     Debug.Log("Hit");
+    //     string msg = msgItem.text;
+    //     if (!blocked_messages.Contains(msg)) {
+    //         blocked_messages.Add(msg);
+    //     }
+    // }
 
     bool CanReblock(string msg) {
-        foreach (string block in blocked_messages) {
-            Debug.Log("Tried Comparison with ---" + block + "--- and ---" + msg + "---\n");
-            if (block.Equals(msg)) {
-                return true;
+        foreach (List<string> block in blocked_messages) {
+            foreach (string blocked in block) {
+                if (blocked.Equals(msg)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -85,6 +90,23 @@ public class Reblocker : MonoBehaviour
             msg.Decline();    
         }     
         
+    }
+
+    public void PageUp() {
+        current_page = Mathf.Clamp(current_page + 1, 1, num_pages);
+        UpdateReblockerText();
+    }
+
+    public void PageDown() {
+        current_page = Mathf.Clamp(current_page - 1, 1, num_pages);
+        UpdateReblockerText();
+    }
+
+    private void UpdateReblockerText() {
+        moduleText.text = "Reblocker Module - Page " + current_page + "\n Blocked Messages:\n\n";
+        foreach (string msg in blocked_messages[current_page - 1]) {
+            moduleText.text = moduleText.text + "> " + msg + "\n";
+        }
     }
 
 
