@@ -72,6 +72,10 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         put.SetActive(true);
+        foreach (Transform child in put.GetComponent<Transform>())
+        {
+            child.gameObject.SetActive(true);
+        }
         put.GetComponent<PopUpText>().SetPopUpText(itemDescription);
         put.GetComponent<PopUpText>().SetPosition();
     }

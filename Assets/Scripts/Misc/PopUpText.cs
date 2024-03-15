@@ -27,10 +27,10 @@ public class PopUpText : MonoBehaviour
 
     public void SetPosition() {
         if (mousePos.position.x > -15) {
-            GetComponent<Transform>().position = new Vector2(-10f, 0f);
+            GetComponent<Transform>().position = new Vector2(mousePos.position.x - 5f, mousePos.position.y);
         }
         else {
-            GetComponent<Transform>().position = new Vector2(-20f, 0f);
+            GetComponent<Transform>().position = new Vector2(mousePos.position.x + 5f, 0f);
         }
     }
 

@@ -45,6 +45,10 @@ public class Module : MonoBehaviour
             destination = new Vector2(Random.Range(-400, 500), Random.Range(0, 500));
             StartCoroutine(Move(true));
         }
+        else
+        {
+            Close();
+        }
         
     }
 
