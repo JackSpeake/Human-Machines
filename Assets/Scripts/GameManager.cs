@@ -681,7 +681,7 @@ public class GameManager : MonoBehaviour
 
     public void SetTutorialMode(bool mode)
     {
-        notifications.tutorial = mode;
+        notifications.SetTutorialMode(mode);
     }
 
     public bool GetNotificationStatus()

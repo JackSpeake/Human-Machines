@@ -16,6 +16,8 @@ public class NotificationArea : MonoBehaviour
     [SerializeField] private YapperState[] otherYappers;
     [SerializeField] private YapperState defaultYapper, openMouthYapper, defaultEvilYapper, openMouthEvilYapper;
 
+    [SerializeField] private GlowLerp tutorialGlow;
+
     public bool tutorial = false;
 
     bool pressingSpace = false;
@@ -261,6 +263,12 @@ public class NotificationArea : MonoBehaviour
 
         animationText.text = defaultYapper.yapImg;
         animating = false;
+    }
+
+    public void SetTutorialMode(bool mode)
+    {
+        tutorial = mode;
+        tutorialGlow.ToggleGlow(mode);
     }
 
 }

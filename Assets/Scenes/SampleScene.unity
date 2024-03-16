@@ -270,13 +270,14 @@ GameObject:
   - component: {fileID: 16860400}
   - component: {fileID: 16860402}
   - component: {fileID: 16860401}
+  - component: {fileID: 16860403}
   m_Layer: 5
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &16860400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -286,7 +287,7 @@ RectTransform:
   m_GameObject: {fileID: 16860399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 50, z: 1}
+  m_LocalScale: {x: 35.1, y: 46.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1645756535}
   m_RootOrder: 5
@@ -355,6 +356,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16860399}
   m_CullTransparentMesh: 1
+--- !u!114 &16860403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16860399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca44fd6947d0e14ebcdfaf16bbd4738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m: {fileID: 2100000, guid: d6c2430862f048b45a47ba270d8c0210, type: 2}
+  lerpTime: 0.3
+  baseColor: {r: 1, g: 1, b: 1, a: 0}
+  startColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &18339718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1493,7 +1510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00845
+      value: 147.00865
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17069,7 +17086,7 @@ MonoBehaviour:
   loseDestroySpeedupRate: 0.7
   time: 0
   lengthOfDay: 64800
-  daySpeedRatio: 300
+  daySpeedRatio: 500
   maxHP: 100
   hp: 0
   firedText: {fileID: 1687871482}
@@ -18797,6 +18814,7 @@ MonoBehaviour:
   openMouthYapper: {fileID: 11400000, guid: 2d9fc5e6c51554344a58053262522a65, type: 2}
   defaultEvilYapper: {fileID: 11400000, guid: ac6a5b46b9780cd42b66eb80a4fbe4a0, type: 2}
   openMouthEvilYapper: {fileID: 11400000, guid: 9e6ed99be380b9342b09988cfada99ef, type: 2}
+  tutorialGlow: {fileID: 16860403}
   tutorial: 0
   displaying: 0
 --- !u!1 &1671371143
@@ -24198,7 +24216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00305
+      value: 201.00325
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

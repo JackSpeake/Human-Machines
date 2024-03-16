@@ -53,7 +53,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 1
-    m_Value: 0.99
+    m_Value: 0.9
     min: 0.01
     max: 5
 --- !u!114 &-3810161930576009906
