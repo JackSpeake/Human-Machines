@@ -9,7 +9,7 @@ public class MainMenuManager : MonoBehaviour
     public Button quitButton;
     [SerializeField] private float deleteTime = .75f;
     [SerializeField] private float waitTime = 2f;
-    [SerializeField] private GameObject hiredText, tutorialMessage;
+    [SerializeField] private GameObject hiredText, assignmentText1, assignmentText2, tutorialMessage;
 
     [SerializeField] private AudioSource gunshot, notification;
 
@@ -55,6 +55,21 @@ public class MainMenuManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         hiredText.SetActive(false);
+
+        yield return new WaitForSeconds(waitTime);
+
+        assignmentText1.SetActive(true);
+        gunshot.Play();
+
+        yield return new WaitForSeconds(waitTime);
+
+        assignmentText2.SetActive(true);
+        gunshot.Play();
+
+        yield return new WaitForSeconds(waitTime * 1.5f);
+
+        assignmentText1.SetActive(false);
+        assignmentText2.SetActive(false);
 
         yield return new WaitForSeconds(waitTime);
 
