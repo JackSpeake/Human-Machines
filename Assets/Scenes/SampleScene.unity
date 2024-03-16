@@ -24588,6 +24588,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 685140806}
     - target: {fileID: 5500357379324325403, guid: 1b2ba684bc30515489c9a00ebadc1c1d, type: 3}
+      propertyPath: reMsg
+      value: 
+      objectReference: {fileID: 11400000, guid: 41fbc72c847c3a14aada04bb79c08059, type: 2}
+    - target: {fileID: 5500357379324325403, guid: 1b2ba684bc30515489c9a00ebadc1c1d, type: 3}
       propertyPath: num_pages
       value: 1
       objectReference: {fileID: 0}

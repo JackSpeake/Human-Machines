@@ -24,11 +24,14 @@ public class MessageObject : MonoBehaviour
     private static bool firstBeginTimeout = false;
 
     public Reblocker reblocker;
+    public bool reblockable = false;
 
     [TextArea]
     [SerializeField] private string[] failedToAnswerMessages;
 
     public MessageState state;
+
+    [SerializeField] ReblockedMessages reMsg;
 
     private void Start()
     {
@@ -235,7 +238,8 @@ public class MessageObject : MonoBehaviour
     }
 
     public void Reblock() {
-        this.messageItem.reblocked = true;
+        //this.messageItem.reblocked = true;
+        reMsg.TryAdd(this);
     }
 }
 
