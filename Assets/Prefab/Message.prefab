@@ -205,12 +205,14 @@ MonoBehaviour:
   jitAngleInc: 0.1
   jitCurveMult: 0.1
   reblocker: {fileID: 0}
+  reblockable: 0
   failedToAnswerMessages:
   - You failed to answer the request in time. Your client is not going to be happy.
   - Don't let that happen again.
   - FASTER FASTER FASTER FASTER FASTER.
   - Pathetic.
   state: 0
+  reMsg: {fileID: 11400000, guid: 41fbc72c847c3a14aada04bb79c08059, type: 2}
 --- !u!82 &-431610508958886159
 AudioSource:
   m_ObjectHideFlags: 0
