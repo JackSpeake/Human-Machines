@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text firedText, hackedText;
     [SerializeField] private GameObject restartPanel;
 
-    [SerializeField] private NotificationArea notifications;
+    [SerializeField] public NotificationArea notifications;
     [SerializeField] private GameObject clockOut, clockIn, dayBreakdown;
     [SerializeField] private int[] WeeklyRates;
     [SerializeField] private string[] promotionNames;
@@ -149,10 +149,22 @@ public class GameManager : MonoBehaviour
         notificationPanel.SetActive(true);
         shutdownSound.Play();
 
+        SetTutorialMode(true);
+
         // do thing
         if (tutorial)
         {
-            SendNotification("Welcome to Human Machines... This is your notification panel, where you will recieve correspondance from your superiors.");
+            SendNotification("Welcome to Human Machines... This is your notification panel, press space to continue.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+
+            SendNotification("This panel is where you will recieve correspondance from your superiors.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+
+            SendNotification("It will only wait for you to continue during tutorials, so pay attention when you see the panel glow!");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
@@ -203,6 +215,12 @@ public class GameManager : MonoBehaviour
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
+
+            SendNotification("As an employee of Human Machines, your job is to screen incoming requests, judging good from bad on the user's behalf");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+
         }
         else
         {
@@ -280,9 +298,13 @@ public class GameManager : MonoBehaviour
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
+
+            SetTutorialMode(false);
         }
         else
         {
+            SetTutorialMode(false);
+
             SendNotification("Welcome back to Human Machines. Your shift starts now, USER NUMBER " + Random.Range(10000, 99999).ToString() + ".");
 
             while (!notifications.isDone())
@@ -655,6 +677,16 @@ public class GameManager : MonoBehaviour
             notifications.showMessage(m, true);
         }
 
+    }
+
+    public void SetTutorialMode(bool mode)
+    {
+        notifications.tutorial = mode;
+    }
+
+    public bool GetNotificationStatus()
+    {
+        return notifications.displaying;
     }
 
     public void SendCustomYap(YapperState yap, float time)

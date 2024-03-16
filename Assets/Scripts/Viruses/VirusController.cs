@@ -42,11 +42,14 @@ public class VirusController : MonoBehaviour
     float tVirus = 0;
     float currInfectionSpeed = 0;
 
+    int messageCount = 0;
+
     bool staticValuesUpdated = false;
 
     private int shieldLevel = 0;
 
     private bool firstEnable = true;
+    private bool waitingForFirstEnableDone = false;
 
     private void Start()
     {
@@ -58,15 +61,39 @@ public class VirusController : MonoBehaviour
 
     private void Update()
     {
-        if (HealthModule && HealthModule.gameObject.activeInHierarchy)
+        if (GameManager.Instance.day == 2 && GameManager.Instance.notifications.isActiveAndEnabled)
         {
+            if (waitingForFirstEnableDone && !GameManager.Instance.GetNotificationStatus())
+            {
+                if (messageCount == firstHealthOpenInstructions.Length - 1)
+                {
+                    Time.timeScale = 1;
+                    GameManager.Instance.started = true;
+                    waitingForFirstEnableDone = false;
+                    GameManager.Instance.SetTutorialMode(true);
+                }
+                else
+                    messageCount++;
+            }
+
             if (firstEnable)
             {
+                Time.timeScale = 0;
+
+                GameManager.Instance.started = false;
+                waitingForFirstEnableDone = true;
+
+                GameManager.Instance.SetTutorialMode(true);
+
                 foreach (string s in firstHealthOpenInstructions)
                     GameManager.Instance.SendNotification(s);
             }
 
             firstEnable = false;
+        }
+
+        if (HealthModule && HealthModule.gameObject.activeInHierarchy)
+        {
             infectionPercent = ((float) infectedPanelCount) / 25f * 100f;
             if (!staticValuesUpdated && HealthModule.started)
             {

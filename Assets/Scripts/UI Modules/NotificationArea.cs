@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +16,11 @@ public class NotificationArea : MonoBehaviour
     [SerializeField] private YapperState[] otherYappers;
     [SerializeField] private YapperState defaultYapper, openMouthYapper, defaultEvilYapper, openMouthEvilYapper;
 
-    private bool displaying = false;
+    public bool tutorial = false;
+
+    bool pressingSpace = false;
+
+    public bool displaying = false;
     private bool animating = false;
     private Queue<string> stringQueue;
     private Queue<bool> evilQueue;
@@ -56,7 +60,13 @@ public class NotificationArea : MonoBehaviour
     // Checks if we are displaying, if we arent, display next from the queue
     private void Update()
     {
-        t += Time.deltaTime;
+        t += Time.unscaledDeltaTime;
+
+
+        if (tutorial && Input.GetKeyDown(KeyCode.Space))
+            pressingSpace = true;
+        else
+            pressingSpace = false;
 
         if (currentlyEvil)
             animationText.color = Color.red;
@@ -168,7 +178,43 @@ public class NotificationArea : MonoBehaviour
             yield return new WaitForSeconds(displayRate);
         }
 
-        yield return new WaitForSeconds(stayTimeBeforeNextMessage);
+        if (tutorial)
+        {
+            messageText.text = messageText.text + "█";
+            bool backAndForth = true;
+            float t = 0;
+
+            while (tutorial)
+            {
+                
+                t += Time.unscaledDeltaTime;
+                if (backAndForth && t > .5f)
+                {
+                    messageText.linkedTextComponent.maxVisibleCharacters++;
+                    messageText.maxVisibleCharacters++;
+                    backAndForth = false;
+                    t = 0;
+                }
+                else if (t > .5f)
+                {
+                    messageText.linkedTextComponent.maxVisibleCharacters--;
+                    messageText.maxVisibleCharacters--;
+                    backAndForth = true;
+                    t = 0;
+                }
+
+                if (pressingSpace)
+                    break;
+
+                yield return new WaitForEndOfFrame();
+
+            }
+        }
+        else
+        {
+            yield return new WaitForSeconds(stayTimeBeforeNextMessage);
+        }
+
         messageText.text = "";
 
         messageText.color = Color.white;
