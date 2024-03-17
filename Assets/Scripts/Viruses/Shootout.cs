@@ -16,7 +16,7 @@ public class Shootout : MonoBehaviour
     [SerializeField] private float fallOverTimeWin, delayBeforeExit, itemExitSpeed, bodyExitTime, victoryTextTime;
     [SerializeField] private TMPro.TMP_Text victoryText;
 
-    [SerializeField] private Button drawButton;
+    [SerializeField] private Button drawButton, earlyShoot;
 
     [SerializeField] private GameObject gunShot;
     [SerializeField] private Image panel;
@@ -33,6 +33,8 @@ public class Shootout : MonoBehaviour
     bool shot = false;
     bool inProgress = false;
 
+    bool canEarlyShoot = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class Shootout : MonoBehaviour
         SavePositions();
         //Leave();
         drawButton.gameObject.SetActive(false);
+        earlyShoot.gameObject.SetActive(true);
         victoryText.gameObject.SetActive(false);
         currGameWaitTime = Random.Range(minGameStartTime, maxGameStartTime);
     }
@@ -153,8 +156,10 @@ public class Shootout : MonoBehaviour
 
         yield return new WaitForSeconds(enemyWaitDelay);
 
+        canEarlyShoot = true;
+
         startPos = enemy.localPosition;
-        while (t < sunRiseTime)
+        while (t < sunRiseTime && !shot)
         {
             enemy.localPosition = Vector3.Lerp(startPos, enemyOrigin, t / sunRiseTime);
             t += Time.deltaTime;
@@ -165,7 +170,7 @@ public class Shootout : MonoBehaviour
         yield return new WaitForSeconds(sunWaitDelay);
 
         startPos = sun.localPosition;
-        while (t < sunRiseTime)
+        while (t < sunRiseTime && !shot)
         {
             sun.localPosition = Vector3.Lerp(startPos, sunOrigin, t / sunRiseTime);
             t += Time.deltaTime;
@@ -174,19 +179,21 @@ public class Shootout : MonoBehaviour
         t = 0;
 
         yield return new WaitForSeconds(drawWaitDelay);
-        DrawButton();
+        if (!shot)
+            DrawButton();
 
     }
 
     private void DrawButton()
     {
+        canEarlyShoot = false;
         buildingsLeft.gameObject.SetActive(false);
         buildingsRight.gameObject.SetActive(false);
         ground.gameObject.SetActive(false);
         enemy.gameObject.SetActive(false);
         hand.gameObject.SetActive(false);
         sun.gameObject.SetActive(false);
-
+        earlyShoot.gameObject.SetActive(false);
         drawButton.gameObject.SetActive(true);
 
         StartCoroutine(FailTimer());
@@ -216,6 +223,7 @@ public class Shootout : MonoBehaviour
             enemy.gameObject.SetActive(true);
             sun.gameObject.SetActive(true);
             drawButton.gameObject.SetActive(false);
+            earlyShoot.gameObject.SetActive(true);
             panel.color = Color.red;
 
             StartCoroutine(FailState());
@@ -225,6 +233,18 @@ public class Shootout : MonoBehaviour
         buttonText.color = Color.white;
 
         
+    }
+
+    public void EarlyShot()
+    {
+        if (canEarlyShoot)
+        {
+            shot = true;
+            panel.color = Color.red;
+            canEarlyShoot = false;
+            StartCoroutine(FailState());
+
+        }
     }
 
     private IEnumerator FailState()
@@ -279,6 +299,7 @@ public class Shootout : MonoBehaviour
         panel.color = Color.black;
         inProgress = false;
         hardMode = false;
+        shot = false;
     }
 
     public void Shoot()

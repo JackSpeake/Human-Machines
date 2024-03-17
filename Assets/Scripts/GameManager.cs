@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     // This is lowkey bad design but it will make this shit SOOOOOO much easier
     [SerializeField] private GameObject messagePanel, consoleCommandsPanel, clockPanel, controlButtonsPanel, moduleControlPanel, notificationPanel, screenHeaders;
-    [SerializeField] private MessageItem tutorialMessageItem;
+    [SerializeField] private MessageItem tutorialMessageItem, tutorialMessageGood, tutorialMessageBad;
 
     [TextArea]
     [SerializeField] private string[] halfwayDoneMessages, almostDoneMessages, finishUpMessages, goodbyeMessages, welcomeBackMessages;
@@ -221,6 +221,21 @@ public class GameManager : MonoBehaviour
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
 
+            SendNotification("Here is an example of a good message");
+            m.SpawnMessage(tutorialMessageGood);
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+
+            SendNotification("And here is an example of a bad message");
+            m.SpawnMessage(tutorialMessageBad);
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+
+            SendNotification("You can read more about your current client in the handbook in the bottom right part of the screen.");
+
+            while (!notifications.isDone())
+                yield return new WaitForEndOfFrame();
+
         }
         else
         {
@@ -281,7 +296,7 @@ public class GameManager : MonoBehaviour
         // do thing
         if (tutorial)
         {
-            SendNotification("The shop, exit and credits can be accessed from these buttons.");
+            SendNotification("The shop, exit and handbook can be accessed from these buttons.");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
