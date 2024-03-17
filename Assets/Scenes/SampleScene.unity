@@ -1512,7 +1512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.00885
+      value: 147.00897
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3938,7 +3938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &446659907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24110,6 +24110,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 708551952}
     m_Modifications:
+    - target: {fileID: 2164360394033642120, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164360394252692308, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164360394321107043, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6365249257678673088, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_SizeDelta.x
       value: 100.79
@@ -24196,7 +24208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00345
+      value: 201.00357
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24250,6 +24262,10 @@ PrefabInstance:
       propertyPath: LoseTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6365249259015724412, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
+      propertyPath: earlyShoot
+      value: 
+      objectReference: {fileID: 446659908}
     - target: {fileID: 6365249259015724412, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: shieldAmount
       value: 5
