@@ -70,7 +70,7 @@ public class VirusController : MonoBehaviour
                     Time.timeScale = 1;
                     GameManager.Instance.started = true;
                     waitingForFirstEnableDone = false;
-                    GameManager.Instance.SetTutorialMode(true);
+                    GameManager.Instance.SetTutorialMode(false);
                 }
                 else
                     messageCount++;
@@ -104,7 +104,7 @@ public class VirusController : MonoBehaviour
             t += Time.deltaTime;
             tVirus += Time.deltaTime;
 
-            if (tVirus >= virusEffectsTryRate)
+            if (tVirus >= virusEffectsTryRate && waitingForFirstEnableDone)
             {
                 tVirus = 0;
 
@@ -114,7 +114,7 @@ public class VirusController : MonoBehaviour
                 }
             }
 
-            if (t >= currInfectionSpeed)
+            if (t >= currInfectionSpeed && waitingForFirstEnableDone)
             {
                 InfectPanels();
                 t = 0;

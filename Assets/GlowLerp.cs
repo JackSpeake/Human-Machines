@@ -7,6 +7,7 @@ public class GlowLerp : MonoBehaviour
 {
     [SerializeField] private Material m;
     [SerializeField] private float lerpTime = .1f;
+    [SerializeField] private float lowFloat, highFloat;
     [SerializeField] private Color baseColor;
     [SerializeField] private Color startColor;
 
@@ -34,24 +35,24 @@ public class GlowLerp : MonoBehaviour
             sr.enabled = true;
             while (t < lerpTime)
             {
-                m.SetColor("_EmissionColor", baseColor * Mathf.Lerp(-1, 1.5f, t / lerpTime));
+                m.SetColor("_EmissionColor", baseColor * Mathf.Lerp(lowFloat, highFloat, t / lerpTime));
                 t += Time.unscaledDeltaTime;
                 yield return new WaitForEndOfFrame();
             }
 
-            m.SetColor("_EmissionColor", baseColor * 1.5f);
+            m.SetColor("_EmissionColor", baseColor * highFloat);
         }
 
         else
         {
             while (t < lerpTime)
             {
-                m.SetColor("_EmissionColor", baseColor * Mathf.Lerp(1.5f, -1, t / lerpTime));
+                m.SetColor("_EmissionColor", baseColor * Mathf.Lerp(highFloat, lowFloat, t / lerpTime));
                 t += Time.unscaledDeltaTime;
                 yield return new WaitForEndOfFrame();
             }
 
-            m.SetColor("_EmissionColor", baseColor * -1);
+            m.SetColor("_EmissionColor", baseColor * lowFloat);
             sr.enabled = false;
         }
 

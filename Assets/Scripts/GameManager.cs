@@ -149,11 +149,11 @@ public class GameManager : MonoBehaviour
         notificationPanel.SetActive(true);
         shutdownSound.Play();
 
-        SetTutorialMode(true);
-
         // do thing
         if (tutorial)
         {
+            SetTutorialMode(true);
+
             SendNotification("Welcome to Human Machines... This is your notification panel, press space to continue.");
 
             while (!notifications.isDone())
