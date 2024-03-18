@@ -4,5 +4,15 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
+    public bool play1 = false;
+    private AudioSource track1;
     
+    void Start ()
+    {
+        track1 = GetComponent<AudioSource>();
+        if (play1)
+        {
+            track1.Play(0);
+        }
+    }
 }
