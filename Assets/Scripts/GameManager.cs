@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float daySpeedRatio = 20;
 
     [SerializeField] private int maxHP = 100;
-    [SerializeField] private int hp;
+    [SerializeField] public int hp;
 
     [SerializeField] private TMPro.TMP_Text firedText, hackedText;
     [SerializeField] private GameObject restartPanel;

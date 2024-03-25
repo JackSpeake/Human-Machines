@@ -8,7 +8,7 @@ public class PlayerHealthModule : MonoBehaviour
 {
     [SerializeField] private HealthModulePanel[] panelsUnsorted;
     private HealthModulePanel[,] panelsSorted;
-    [SerializeField] private UnityEngine.UI.Extensions.Gradient2 l1, l2, l3;
+    [SerializeField] private Image l1, l2, l3;
 
     [SerializeField] private float shieldLevel = 0;
     [SerializeField] private float maxShieldLevel = 100;
@@ -33,9 +33,9 @@ public class PlayerHealthModule : MonoBehaviour
 
         started = true;
 
-        l1.Offset = -1;
-        l2.Offset = -1;
-        l3.Offset = -1;
+        l1.enabled = false;
+        l2.enabled = false;
+        l3.enabled = false;
     }
 
     private void Update()
@@ -43,23 +43,67 @@ public class PlayerHealthModule : MonoBehaviour
         if (shieldLevel > maxShieldLevel)
             shieldLevel = maxShieldLevel;
 
-        if (shieldLevel > maxShieldLevel / 3 * 2)
+        // Shield level 3
+        if (shieldLevel >= maxShieldLevel / 3 * 2)
         {
-            l3.Offset = (shieldLevel % (maxShieldLevel / 3)) / (maxShieldLevel / 3) * 2 - 1;
-            l2.Offset = 1;
-            l1.Offset = 1;
+            l1.enabled = true;
+            l2.enabled = true;
+            l3.enabled = true;
+
+            l1.color = new Color
+                (l1.color.r,
+                l1.color.g,
+                l1.color.b,
+                1);
+
+            l2.color = new Color
+                (l2.color.r,
+                l2.color.g,
+                l2.color.b,
+                1);
+
+            l3.color = new Color
+                (l3.color.r,
+                l3.color.g,
+                l3.color.b,
+                shieldLevel / maxShieldLevel);
         }
-        else if (shieldLevel > maxShieldLevel / 3)
+        // Shield level 2
+        else if (shieldLevel >= maxShieldLevel / 3)
         {
-            l3.Offset = -1;
-            l2.Offset = (shieldLevel % (maxShieldLevel / 3)) / (maxShieldLevel / 3) * 2 - 1;
-            l1.Offset = 1;
+            l1.enabled = true;
+            l2.enabled = true;
+            l3.enabled = false;
+            l1.color = new Color
+                (l1.color.r,
+                l1.color.g,
+                l1.color.b,
+                1);
+
+            l2.color = new Color
+                (l2.color.r,
+                l2.color.g,
+                l2.color.b,
+                shieldLevel % (maxShieldLevel / 3) / (maxShieldLevel / 3));
+        }
+        // Shield level 1
+        else if (shieldLevel > 0)
+        {
+            l1.enabled = true;
+            l2.enabled = false;
+            l3.enabled = false;
+            
+            l1.color = new Color
+                (l1.color.r,
+                l1.color.g,
+                l1.color.b,
+                shieldLevel % (maxShieldLevel / 3) / (maxShieldLevel / 3));
         }
         else
         {
-            l3.Offset = -1;
-            l2.Offset = -1;
-            l1.Offset = (shieldLevel % (maxShieldLevel / 3)) / (maxShieldLevel / 3) * 2 - 1;
+            l1.enabled = false;
+            l2.enabled = false;
+            l3.enabled = false;
         }
     }
 
