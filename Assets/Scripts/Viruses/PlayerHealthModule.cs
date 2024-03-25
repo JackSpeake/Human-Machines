@@ -44,24 +44,41 @@ public class PlayerHealthModule : MonoBehaviour
             shieldLevel = maxShieldLevel;
 
         // Shield level 3
-        if (shieldLevel > maxShieldLevel / 3 * 2)
+        if (shieldLevel >= maxShieldLevel / 3 * 2)
         {
             l1.enabled = true;
             l2.enabled = true;
             l3.enabled = true;
 
+            l1.color = new Color
+                (l1.color.r,
+                l1.color.g,
+                l1.color.b,
+                1);
+
+            l2.color = new Color
+                (l2.color.r,
+                l2.color.g,
+                l2.color.b,
+                1);
+
             l3.color = new Color
                 (l3.color.r,
                 l3.color.g,
                 l3.color.b,
-                shieldLevel % (maxShieldLevel / 3) / (maxShieldLevel / 3));
+                shieldLevel / maxShieldLevel);
         }
         // Shield level 2
-        else if (shieldLevel > maxShieldLevel / 3)
+        else if (shieldLevel >= maxShieldLevel / 3)
         {
             l1.enabled = true;
             l2.enabled = true;
             l3.enabled = false;
+            l1.color = new Color
+                (l1.color.r,
+                l1.color.g,
+                l1.color.b,
+                1);
 
             l2.color = new Color
                 (l2.color.r,
@@ -75,7 +92,7 @@ public class PlayerHealthModule : MonoBehaviour
             l1.enabled = true;
             l2.enabled = false;
             l3.enabled = false;
-
+            
             l1.color = new Color
                 (l1.color.r,
                 l1.color.g,
