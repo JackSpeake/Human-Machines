@@ -74,7 +74,13 @@ public class Reblocker : MonoBehaviour
     }
 
     public void Activate() {
-        isActive = true;
+        if(!isActive) {
+            Start();
+            isActive = true;
+        }
+        if (reMsg.num_pages <= 5) {
+            Upgrade();
+        }
     }
 
     private IEnumerator Reblock(MessageObject msg) {
@@ -92,6 +98,7 @@ public class Reblocker : MonoBehaviour
         
         if (msg != null) {
             msg.Decline();    
+            msg.Reblock();
         }     
         
     }
@@ -111,6 +118,13 @@ public class Reblocker : MonoBehaviour
         foreach (string msg in reMsg.blocked_messages[reMsg.current_page - 1]) {
             moduleText.text = moduleText.text + "> " + msg + "\n";
         }
+    }
+
+    public void Upgrade() {
+        reMsg.blocked_messages.Add(new List<string>());
+        reMsg.num_pages += 1;
+        reMsg.current_page = reMsg.num_pages;
+        UpdateReblockerText();
     }
 
 

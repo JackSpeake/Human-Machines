@@ -10,8 +10,10 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     [SerializeField] private GameManager gm;
     [SerializeField] public string itemName;
-    [SerializeField] private string itemDescription;
+    [SerializeField] public string itemDescription;
     [SerializeField] public Sprite icon;
+    [SerializeField] private Sprite purchasedIcon;
+    [SerializeField] public Image im;
     [SerializeField] public int originalPrice;
     [SerializeField] public int price;
     [SerializeField] private TMP_Text text;
@@ -19,6 +21,9 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     
     [SerializeField] private YapperState purchaseYapper;
     [SerializeField] private GameObject put;
+
+    [SerializeField] private List<ShopItem> upgrades;
+    [SerializeField] private bool isUpgrade;
 
     private Button purchaseButton;
 
@@ -46,12 +51,37 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void Purchase() {
         if (!purchased && gm.money >= price) {
-            purchased = true;
             gm.money -= price;
-            text.text = itemName + "\n---";
-            moduleButton.SetActive(true);
-            GameManager.Instance.SendCustomYap(purchaseYapper, 1);
-            text.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            if (!isUpgrade) {
+                moduleButton.SetActive(true);
+            }
+
+            if (upgrades.Count <= 0) {
+                purchased = true;
+                text.text = itemName + "\n---";
+                GameManager.Instance.SendCustomYap(purchaseYapper, 1);
+                text.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                im.sprite = purchasedIcon;
+            }
+            else {
+                itemName = upgrades[0].itemName;
+                itemDescription = upgrades[0].itemDescription;
+                originalPrice = upgrades[0].originalPrice;
+                price =  upgrades[0].price;
+                icon = upgrades[0].icon;
+                isUpgrade = true;
+
+                text.text = itemName + "\n$" + price;
+                im.sprite = icon;
+
+                upgrades.Remove(upgrades[0]);
+                
+            }
+            
+            
+            
+
+            
         }
     }
 
