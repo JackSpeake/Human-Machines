@@ -248,7 +248,7 @@ public class GameManager : MonoBehaviour
         // do thing
         if (tutorial)
         {
-            SendNotification("This is the console, you may access various commands from here.");
+            SendNotification("This is the console, it doesn't do anything... Probably.");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
