@@ -13,7 +13,7 @@ public class HandbookModule : MonoBehaviour
 
     private GameManager gm;
 
-    int stage = 0;
+    int stage = 1;
 
     [SerializeField] private TMPro.TMP_Text pageOne, pageTwo;
 
@@ -23,14 +23,16 @@ public class HandbookModule : MonoBehaviour
         pageOne.text = overviewPage;
         pageTwo.text = userPages[stage - 1];
         gm = GameManager.Instance;
+        stage = 0;
 
         pageOne.enabled = true;
         pageTwo.enabled = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        gm = GameManager.Instance;
         if (stage != gm.stage)
         {
             stage = gm.stage;
