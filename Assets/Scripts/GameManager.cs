@@ -535,6 +535,8 @@ public class GameManager : MonoBehaviour
         {
             day = 1;
             stage++;
+            if (stage == 2)
+                SetFlags.addFlag(Flags.DaySixCompleted);
             StartCoroutine(StartNewWeek());
         }
         else
