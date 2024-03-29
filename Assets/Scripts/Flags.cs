@@ -10,6 +10,11 @@ public enum Flags
     phase2Started,
     DayOneCompleted,
     WeekOneCompleted,
+    DaySixCompleted,
+    DaySevenCompleted,
+    DayEightCompleted,
+    DayNineCompleted,
+    WeekTwoCompleted,
     ReblockerPurchased
 }
 
