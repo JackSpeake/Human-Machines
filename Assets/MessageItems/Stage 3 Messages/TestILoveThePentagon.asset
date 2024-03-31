@@ -19,7 +19,7 @@ MonoBehaviour:
   failPoints: 0
   timeToFail: 15
   messageType: 3
-  flagsRequired: 0a000000
+  flagsRequired: 0d000000
   flagsNotAllow: 
   repeat: 1
   messageWaitCount: 0

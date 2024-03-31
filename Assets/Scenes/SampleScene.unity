@@ -17799,12 +17799,10 @@ MonoBehaviour:
   clockOut: {fileID: 751309214}
   clockIn: {fileID: 401298546}
   dayBreakdown: {fileID: 77721851}
-  WeeklyRates: 640000002c010000f4010000e8030000b80b0000
+  WeeklyRates: 640000002c010000f4010000
   promotionNames:
   - Local Buissiness
-  - The Bank
-  - The big g Office
-  - The Pentagon
+  - The Governor
   miManager: {fileID: 761044963}
   tmModule: {fileID: 281496292}
   confetti: {fileID: 902680865}
