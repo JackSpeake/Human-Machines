@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: TestILoveThePentagon
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 
+  message: i love the pentagon
   correct: 0
-  noFail: 0
+  noFail: 1
   failPoints: 0
-  timeToFail: 0
-  messageType: 0
-  flagsRequired: 
+  timeToFail: 15
+  messageType: 3
+  flagsRequired: 0a000000
   flagsNotAllow: 
-  repeat: 0
+  repeat: 1
   messageWaitCount: 0
   delayBeforeSending: 0
   completeRaiseFlag: 0

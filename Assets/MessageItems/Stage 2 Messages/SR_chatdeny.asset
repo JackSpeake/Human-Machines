@@ -22,7 +22,7 @@ MonoBehaviour:
   timeToFail: 15
   messageType: 1
   flagsRequired: 06000000
-  flagsNotAllow: 
+  flagsNotAllow: 0a000000
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 10

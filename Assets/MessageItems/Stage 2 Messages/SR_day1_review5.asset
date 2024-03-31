@@ -21,7 +21,7 @@ MonoBehaviour:
   timeToFail: 20
   messageType: 3
   flagsRequired: 06000000
-  flagsNotAllow: 
+  flagsNotAllow: 0a000000
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 0
