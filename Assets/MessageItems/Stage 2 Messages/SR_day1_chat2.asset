@@ -16,12 +16,13 @@ MonoBehaviour:
   message: "Private: messages.net\r\nChat: \u201Cfr i cant take these conditions\u201D"
   correct: 1
   noFail: 0
-  failPoints: 1
+  failPoints: 5
   timeToFail: 15
   messageType: 2
   flagsRequired: 06000000
+  flagsNotAllow: 
   repeat: 0
-  messageWaitCount: 0
+  messageWaitCount: 2
   delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0

@@ -18,10 +18,11 @@ MonoBehaviour:
     Chat: "msg isnt sending lemme get off wifi"'
   correct: 0
   noFail: 1
-  failPoints: 0
+  failPoints: 5
   timeToFail: 15
   messageType: 1
   flagsRequired: 06000000
+  flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 10

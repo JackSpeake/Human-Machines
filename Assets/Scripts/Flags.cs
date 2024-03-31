@@ -47,4 +47,15 @@ public static class SetFlags
 
         return true;
     }
+
+    public static bool containsNoFlags(Flags[] f)
+    {
+        foreach (Flags flag in f)
+        {
+            if (activeFlags.Contains(flag))
+                return false;
+        }
+
+        return true;
+    }
 }

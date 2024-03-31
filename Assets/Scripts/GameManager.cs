@@ -537,6 +537,10 @@ public class GameManager : MonoBehaviour
             stage++;
             if (stage == 2)
                 SetFlags.addFlag(Flags.DaySixCompleted);
+            if (stage == 3)
+                SetFlags.addFlag(Flags.WeekTwoCompleted);
+
+            messagePanel.GetComponentInChildren<MessageSpawner>().ResetMessages();
             StartCoroutine(StartNewWeek());
         }
         else
@@ -609,6 +613,8 @@ public class GameManager : MonoBehaviour
         lowerText.text += "\n" + promotionNames[stage-2];
 
         yield return new WaitForSeconds(3f);
+
+        lowerText.text = "";
 
         confetti.SetActive(false);
         newAssignmentAfterColorChange.SetActive(false);

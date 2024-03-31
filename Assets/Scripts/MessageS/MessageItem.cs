@@ -28,6 +28,8 @@ public class MessageItem : ScriptableObject
     [SerializeField] public MessageType messageType;
     [Tooltip("Message type will come into effect when all flags are popped")]
     [SerializeField] public Flags[] flagsRequired;
+    [Tooltip("Message type will not come into effect if any of these flags are popped")]
+    [SerializeField] public Flags[] flagsNotAllow;
     [Tooltip("The message will be sent again and again. If unchecked it will send ONE TIME")]
     [SerializeField] public bool repeat;
     [Tooltip("The number of messages it waits to send this message")]

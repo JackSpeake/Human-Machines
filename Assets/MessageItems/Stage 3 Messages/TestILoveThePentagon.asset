@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: UR_moneymover
+  m_Name: TestILoveThePentagon
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 41
-  message: 'URGENT: moneymover.net'
+  MESSAGE_ID: 0
+  message: 
   correct: 0
   noFail: 0
-  failPoints: 2
-  timeToFail: 5
-  messageType: 3
+  failPoints: 0
+  timeToFail: 0
+  messageType: 0
   flagsRequired: 
-  flagsNotAllow: 06000000
-  repeat: 1
+  flagsNotAllow: 
+  repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 0
   completeRaiseFlag: 0

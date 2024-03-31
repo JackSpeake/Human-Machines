@@ -43,6 +43,12 @@ public class MessageSpawner : MonoBehaviour
         }
     }
 
+    public void ResetMessages()
+    {
+        messageCountSendQueue.Clear();
+        availableRandomMessageItems.Clear();
+    }
+
     // Just spawns the message attached
     public void SpawnMessage(MessageItem message)
     {
@@ -106,13 +112,16 @@ public class MessageSpawner : MonoBehaviour
         {
             if (SetFlags.containsAllFlags(m.flagsRequired) || m.flagsRequired.Length == 0)
             {
-                //if (m.messageType == MessageType.random)
-                  //  Debug.Log("Made it here");
-                SpawnMessage(m);
-
-                if (m.repeat == false || m.messageType == MessageType.random)
+                if (m.flagsNotAllow.Length == 0 || SetFlags.containsNoFlags(m.flagsNotAllow))
                 {
-                    spawnOnFlagMessages.Remove(m);
+                    //if (m.messageType == MessageType.random)
+                    //  Debug.Log("Made it here");
+                    SpawnMessage(m);
+
+                    if (m.repeat == false || m.messageType == MessageType.random)
+                    {
+                        spawnOnFlagMessages.Remove(m);
+                    }
                 }
             }
         }

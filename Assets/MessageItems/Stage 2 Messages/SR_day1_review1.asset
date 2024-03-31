@@ -17,10 +17,11 @@ MonoBehaviour:
     food at such a low price!\u201D"
   correct: 1
   noFail: 0
-  failPoints: 1
+  failPoints: 5
   timeToFail: 20
   messageType: 3
   flagsRequired: 06000000
+  flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 0
