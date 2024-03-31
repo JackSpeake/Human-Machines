@@ -9,12 +9,19 @@ public enum Flags
     tutorialDeclined,
     phase2Started,
     DayOneCompleted,
-    WeekOneCompleted,
+    DayTwoCompleted,
+    DayThreeCompleted,
+    DayFourCompleted,
+    DayFiveCompleted,
     DaySixCompleted,
     DaySevenCompleted,
     DayEightCompleted,
     DayNineCompleted,
-    WeekTwoCompleted,
+    DayTenCompleted,
+    DayElevenCompleted,
+    DayTwelveCompleted,
+    DayThriteenCompleted,
+    DayFourteenCompleted,
     ReblockerPurchased
 }
 

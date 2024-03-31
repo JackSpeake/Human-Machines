@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
 
+    private Flags[] dayFlags = { Flags.DayOneCompleted, Flags.DayTwoCompleted, Flags.DayThreeCompleted, Flags.DayFourCompleted, Flags.DayFiveCompleted, Flags.DaySixCompleted, Flags.DaySevenCompleted, Flags.DayEightCompleted, Flags.DayNineCompleted, Flags.DayTenCompleted, Flags.DayElevenCompleted, Flags.DayTwelveCompleted, Flags.DayThriteenCompleted, Flags.DayFourteenCompleted };
+
     public static GameManager Instance { get { return _instance; } }
 
     // FOR SINGLETON. DO NOT DELETE.
@@ -535,11 +537,6 @@ public class GameManager : MonoBehaviour
         {
             day = 1;
             stage++;
-            if (stage == 2)
-                SetFlags.addFlag(Flags.DaySixCompleted);
-            if (stage == 3)
-                SetFlags.addFlag(Flags.WeekTwoCompleted);
-
             messagePanel.GetComponentInChildren<MessageSpawner>().ResetMessages();
             StartCoroutine(StartNewWeek());
         }
@@ -547,7 +544,12 @@ public class GameManager : MonoBehaviour
         {
             clockIn.SetActive(true);
             shutdownSound.Play();
-        }    
+        }
+
+        //
+        SetFlags.addFlag(dayFlags[(day - 2) + ((stage - 1) * 5)]);
+
+
     }
 
 
