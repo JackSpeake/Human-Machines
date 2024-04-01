@@ -1804,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.01077
+      value: 147.01088
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5087,7 +5087,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Radio
-  itemDescription: 'Radio Module: Grants access to a selection of songs to play.'
+  itemDescription: "Radio Module: it\u2019s a radio station with 2 songs and a lovable
+    radio host! What more can you ask for?"
   icon: {fileID: 21300000, guid: 4486e60f4e092d24cb5aacdb77fdbc31, type: 3}
   purchasedIcon: {fileID: 21300000, guid: f98727838b58dd842879a51dc1123be7, type: 3}
   im: {fileID: 509573281}
@@ -7542,7 +7543,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Reblocker
-  itemDescription: 'Reblocker Module: It''s lit.'
+  itemDescription: 'Reblocker Module: when declining a message, it will be added
+    to a list. These messages are then automatically declined upon spawning again.
+    Each page is limited to 5. Upgrades for more storage are purchasable after the
+    initial module purchase.'
   icon: {fileID: 21300000, guid: 6ecc320ab3ea68c47af7aa1ffe924f4d, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 6bd50fb85db47cc4fb539b52b76b7e31, type: 3}
   im: {fileID: 737870068}
@@ -8478,8 +8482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.73123, y: -35.110004}
-  m_SizeDelta: {x: 294.4875, y: 70.22}
+  m_AnchoredPosition: {x: 603.975, y: -35.110004}
+  m_SizeDelta: {x: 1207.95, y: 70.22}
   m_Pivot: {x: 0.5, y: 0.49999994}
 --- !u!1 &902680865
 GameObject:
@@ -15800,7 +15804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafe83ddc07d2f046938f1918426c24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSpeed: 0.3
+  openSpeed: 0.15
   open: 0
   originTransform: {fileID: 685140806}
 --- !u!1 &1177171077
@@ -16679,7 +16683,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Coupon
-  itemDescription: 'Coupon Module: it''s epic'
+  itemDescription: 'Coupon Module: after a certain amount of time, this module will
+    generate a deal for a percent off on another item in the shop. This deal isn''t
+    automatically activated, and must be claimed from this module.'
   icon: {fileID: 21300000, guid: 42ecbf1ec1913584f9a523e11c558a3f, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 23bfad57296a10346906d10300d09580, type: 3}
   im: {fileID: 1252133992}
@@ -19307,7 +19313,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Timeout
-  itemDescription: 'Timeout Module: it''s lit!'
+  itemDescription: 'Timeout Module: When charged, stops the shift clock, freezes
+    any messages in the System, and prevents any new messages from coming in. Frozen
+    messages can still be approved or declined. '
   icon: {fileID: 21300000, guid: 8e624616aaf941348aff9d88cf9f7053, type: 3}
   purchasedIcon: {fileID: 21300000, guid: fbbd6fa61eee703448b3076178e4c0a5, type: 3}
   im: {fileID: 1498037171}
@@ -24412,7 +24420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1485674203}
   itemName: Simon Says
-  itemDescription: 'Simon Says: that''s what i''m sayin'' dawg'
+  itemDescription: 'Simon Says: repeat the pattern shown to remove some virus accumulated
+    on your system!'
   icon: {fileID: 21300000, guid: aa5d780f725498a488d985ce47c4ac6a, type: 3}
   purchasedIcon: {fileID: 21300000, guid: e1fc02f86c266184bbbcad80c1b822dd, type: 3}
   im: {fileID: 2075642081}
@@ -25424,7 +25433,9 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b43bc8b81d2d2184fbb226188f5cbf6a, type: 3}
     - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
       propertyPath: itemDescription
-      value: 'Shootout: lmao'
+      value: "Shootout: It\u2019s the wild wild west out here on your system. Wait
+        for the scene to come into view, and get ready to DRAW your gun. With quick
+        enough reflexes, you\u2019ll shield yourself from virus attacks."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 407236cf5002b034badf36fee06249f6, type: 3}
@@ -27473,7 +27484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00537
+      value: 201.00548
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28226,7 +28237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.098000005, y: 0.21000001}
   m_AnchorMax: {x: 0.65372896, y: 0.25}
-  m_AnchoredPosition: {x: 409, y: 182.50131}
+  m_AnchoredPosition: {x: 409, y: 182.50142}
   m_SizeDelta: {x: -797.28, y: 419.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5070123225570991109
