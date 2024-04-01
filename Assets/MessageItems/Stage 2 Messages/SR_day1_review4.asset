@@ -19,11 +19,11 @@ MonoBehaviour:
   noFail: 0
   failPoints: 2
   timeToFail: 20
-  messageType: 3
-  flagsRequired: 0b000000
+  messageType: 2
+  flagsRequired: 08000000
   flagsNotAllow: 0d000000
   repeat: 0
-  messageWaitCount: 0
+  messageWaitCount: 13
   delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
