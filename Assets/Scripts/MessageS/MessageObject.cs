@@ -119,7 +119,7 @@ public class MessageObject : MonoBehaviour
             GameManager gm = GameManager.Instance;
             DayBreakdownClass.messagesMissed++;
             gm.SendNotification(gm.chooseRandomString(failedToAnswerMessages));
-            gm.takeDamage(messageItem.failPoints);
+            gm.takeDamage(10);
             Destroy(this.gameObject);
         }
     }
