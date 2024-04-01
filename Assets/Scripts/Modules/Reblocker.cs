@@ -21,7 +21,7 @@ public class Reblocker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moduleText.text = "Reblocker Module - Page 1\n Blocked Messages:\n\n";
+        moduleText.text = "     --- Page 1 / 1 ---\n Blocked Messages:\n\n";
         isActive = false;
         reMsg.blocked_messages.Clear();
         reMsg.blocked_messages.Add(new List<string>());
@@ -115,9 +115,12 @@ public class Reblocker : MonoBehaviour
     }
 
     private void UpdateReblockerText() {
-        moduleText.text = "Reblocker Module - Page " + reMsg.current_page + "\n Blocked Messages:\n\n";
+        moduleText.text = "     --- Page " + reMsg.current_page + " / " + reMsg.num_pages + " ---\n Blocked Messages:\n\n";
         foreach (string msg in reMsg.blocked_messages[reMsg.current_page - 1]) {
             moduleText.text = moduleText.text + "> " + msg + "\n";
+        }
+        if (reMsg.blocked_messages[reMsg.current_page - 1].Count >= 5) {
+            moduleText.text = moduleText.text + "\n   --- FULL ---";
         }
     }
 
