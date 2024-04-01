@@ -18,7 +18,7 @@ public class CouponModule : MonoBehaviour
     private TMPro.TMP_Text moduleForSaleText;
 
     [SerializeField] 
-    private SpriteRenderer moduleIconRenderer;
+    private Image moduleIconRenderer;
 
     [SerializeField] 
     private TMPro.TMP_Text discountText;
