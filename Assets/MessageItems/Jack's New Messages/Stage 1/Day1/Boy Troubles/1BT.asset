@@ -21,12 +21,12 @@ MonoBehaviour:
   noFail: 1
   failPoints: 2
   timeToFail: 15
-  messageType: 3
+  messageType: 1
   flagsRequired: 
   flagsNotAllow: 08000000
   repeat: 0
-  messageWaitCount: 0
-  delayBeforeSending: 0
+  messageWaitCount: 15
+  delayBeforeSending: 25
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
