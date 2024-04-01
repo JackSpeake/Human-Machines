@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 3
+  m_Name: 6
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: woogle.com/STOP-TOILET-SPRAYING-WATER '
-  correct: 0
+  message: 'Request Recieved: winstagram.com/jonnie-b '
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 1
+  messageType: 3
   flagsRequired: 
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 4
+  delayBeforeSending: 2
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 587396b026826514681e6a8ff242df16, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 587396b026826514681e6a8ff242df16, type: 2}
+  following: 0
+  acceptFollowingMessage: {fileID: 0}
+  declineFollowingMessage: {fileID: 0}
   reblocked: 0

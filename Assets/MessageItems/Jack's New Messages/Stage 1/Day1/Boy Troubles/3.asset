@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: woogle.com/STOP-TOILET-SPRAYING-WATER '
-  correct: 0
+  message: 'Request Recieved: namecompatibility.com/jonnie-ashley'
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 1
+  messageType: 3
   flagsRequired: 
   flagsNotAllow: 08000000
   repeat: 0
@@ -28,6 +28,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 587396b026826514681e6a8ff242df16, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 587396b026826514681e6a8ff242df16, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 3996a2cd6bb6f0e42a0b5123d81967f6, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 3996a2cd6bb6f0e42a0b5123d81967f6, type: 2}
   reblocked: 0
