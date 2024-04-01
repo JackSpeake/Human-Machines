@@ -17801,7 +17801,7 @@ MonoBehaviour:
   dayBreakdown: {fileID: 77721851}
   WeeklyRates: 640000002c010000f4010000
   promotionNames:
-  - Local Buissiness
+  - Bistro Baguette
   - The Governor
   miManager: {fileID: 761044963}
   tmModule: {fileID: 281496292}
