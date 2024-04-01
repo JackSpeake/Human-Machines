@@ -218,7 +218,7 @@ public class GameManager : MonoBehaviour
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
 
-            SendNotification("As an employee of Human Machines, your job is to screen incoming requests, judging good from bad on the user's behalf");
+            SendNotification("As an employee of Human Machines, your job is to screen incoming requests, judging the good from the bad");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
@@ -233,7 +233,7 @@ public class GameManager : MonoBehaviour
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
 
-            SendNotification("You can read more about your current client in the handbook in the bottom right part of the screen.");
+            SendNotification("You can read more about your current client and your goals for them in the handbook.");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
