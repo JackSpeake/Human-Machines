@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject confetti, congrats, newAssignment, newAssignmentAfterColorChange;
 
+    [SerializeField] private ReblockedMessages reMsg;
+
     private AudioSource shutdownSound;
 
     private bool lost = false;
@@ -82,6 +84,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         hp = maxHP;
+
+        reMsg.blocked_messages.Clear();
+        reMsg.num_pages = 0;
+        reMsg.num_pages = 0;
+
 
         if (PlayerPrefs.GetInt("Tutorial", 0) == 1)
         {
