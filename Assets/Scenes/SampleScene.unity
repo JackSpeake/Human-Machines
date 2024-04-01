@@ -1646,7 +1646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.01021
+      value: 147.01022
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17868,7 +17868,7 @@ MonoBehaviour:
   infectionSpeedMax: 20
   infectionSpreadMax: 1
   infectionLikelyhood: 0.4
-  newInfectionLikelyhood: 0.8
+  newInfectionLikelyhood: 0.393
   firstHealthOpenInstructions:
   - This is the player health module. It can be opened in modules.
   - This module informs you of Virus infections.
@@ -17877,7 +17877,7 @@ MonoBehaviour:
   - Don't let the infection reach the center, or you will lose.
   - Infection can be fought off with other modules.
   - We recommend buying simon says. Quickly.
-  infectionSpeed: 8
+  infectionSpeed: 6
   disInfectionSpeed: 2
   virusEffectsTryRate: 2
 --- !u!1 &1492266837
@@ -17979,8 +17979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ee867dc72a64b45a5929e3706b81ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minWaitTime: 2
-  maxWaitTime: 6
+  minWaitTime: 1
+  maxWaitTime: 12
   messagePrefab: {fileID: 1262349676427394085, guid: 6453564d62ad75f4f8b042e468f2c2a2, type: 3}
   spawnOnFlagMessages:
   - {fileID: 11400000, guid: a3c71107bda0b144c8e23c8dc3f1527f, type: 2}
@@ -25574,7 +25574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.0048
+      value: 201.00482
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26168,7 +26168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.098000005, y: 0.21000001}
   m_AnchorMax: {x: 0.65372896, y: 0.25}
-  m_AnchoredPosition: {x: 409, y: 182.50075}
+  m_AnchoredPosition: {x: 409, y: 182.50076}
   m_SizeDelta: {x: -797.28, y: 419.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5070123225570991109
