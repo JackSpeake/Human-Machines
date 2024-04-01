@@ -74,13 +74,14 @@ public class Reblocker : MonoBehaviour
     }
 
     public void Activate() {
-        if(!isActive) {
+        if (isActive && reMsg.num_pages <= 5) {
+            Upgrade();
+        }
+        else if(!isActive) {
             Start();
             isActive = true;
         }
-        if (reMsg.num_pages <= 5) {
-            Upgrade();
-        }
+        
     }
 
     private IEnumerator Reblock(MessageObject msg) {
