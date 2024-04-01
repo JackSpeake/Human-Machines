@@ -21,4 +21,32 @@ public class Radio : MonoBehaviour
     {
         
     }
+
+    public void VolumeMax() {
+        source.volume = 1.0f;
+    }
+
+    public void VolumeFive() {
+        source.volume = 0.83f;
+    }
+
+    public void VolumeFour() {
+        source.volume = 0.66f;
+    }
+
+    public void VolumeThree() {
+        source.volume = 0.5f;
+    }
+
+    public void VolumeTwo() {
+        source.volume = 0.33f;
+    }
+
+    public void VolumeOne() {
+        source.volume = 0.16f;
+    }
+
+    public void VolumeOff() {
+        source.volume = 0.0f;
+    }
 }
