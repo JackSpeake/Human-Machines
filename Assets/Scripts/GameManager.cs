@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -552,6 +553,8 @@ public class GameManager : MonoBehaviour
             clockIn.SetActive(true);
             shutdownSound.Play();
         }
+
+        hp += 40;
 
         //
         SetFlags.addFlag(dayFlags[(day - 2) + ((stage - 1) * 5)]);
