@@ -7,6 +7,7 @@ public class Radio : MonoBehaviour
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip[] tracks;
     [SerializeField] private int track_num = 0;
+    [SerializeField] private Transform dialTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -39,29 +40,36 @@ public class Radio : MonoBehaviour
 
     public void VolumeMax() {
         source.volume = 1.0f;
+        dialTransform.rotation = Quaternion.Euler(0f, 0f, -140f);
     }
 
     public void VolumeFive() {
         source.volume = 0.83f;
+        dialTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
     }
 
     public void VolumeFour() {
         source.volume = 0.66f;
+        dialTransform.rotation = Quaternion.Euler(0f, 0f, -49f);
     }
 
     public void VolumeThree() {
         source.volume = 0.5f;
+        dialTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public void VolumeTwo() {
         source.volume = 0.33f;
+        dialTransform.rotation = Quaternion.Euler(0f, 0f, 49f);
     }
 
     public void VolumeOne() {
         source.volume = 0.16f;
+        dialTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
     }
 
     public void VolumeOff() {
         source.volume = 0.0f;
+        dialTransform.rotation = Quaternion.Euler(0f, 0f, 140f);
     }
 }
