@@ -9,12 +9,19 @@ public enum Flags
     tutorialDeclined,
     phase2Started,
     DayOneCompleted,
-    WeekOneCompleted,
+    DayTwoCompleted,
+    DayThreeCompleted,
+    DayFourCompleted,
+    DayFiveCompleted,
     DaySixCompleted,
     DaySevenCompleted,
     DayEightCompleted,
     DayNineCompleted,
-    WeekTwoCompleted,
+    DayTenCompleted,
+    DayElevenCompleted,
+    DayTwelveCompleted,
+    DayThriteenCompleted,
+    DayFourteenCompleted,
     ReblockerPurchased
 }
 
@@ -42,6 +49,17 @@ public static class SetFlags
         foreach (Flags flag in f)
         {
             if (!activeFlags.Contains(flag))
+                return false;
+        }
+
+        return true;
+    }
+
+    public static bool containsNoFlags(Flags[] f)
+    {
+        foreach (Flags flag in f)
+        {
+            if (activeFlags.Contains(flag))
                 return false;
         }
 

@@ -16,10 +16,11 @@ MonoBehaviour:
   message: 'Message Recieved: goodlookingmen.xyz'
   correct: 0
   noFail: 0
-  failPoints: 0
+  failPoints: 2
   timeToFail: 15
   messageType: 1
   flagsRequired: 
+  flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 15

@@ -12,19 +12,20 @@ public class ReblockedMessages : ScriptableObject
     public int current_page = 1;
 
     public void TryAdd(MessageObject msg) {
-        if (msg.GetMessageItem().repeat) {
-            string msgText = msg.GetMessageText();
-            foreach (List<string> block in blocked_messages) {
-                foreach (string blocked in block) {
-                    if (blocked.Equals(msgText)) {
-                        return;
+        if (num_pages > 0) {
+                if (msg.GetMessageItem().repeat) {
+                string msgText = msg.GetMessageText();
+                foreach (List<string> block in blocked_messages) {
+                    foreach (string blocked in block) {
+                        if (blocked.Equals(msgText)) {
+                            return;
+                        }
                     }
                 }
+                if (blocked_messages[current_page - 1].Count < 5) {
+                    blocked_messages[current_page - 1].Add(msgText);
+                }
             }
-            if (blocked_messages[current_page - 1].Count < 5) {
-                blocked_messages[current_page - 1].Add(msgText);
-            }
-        }
-        
+        }        
     }
 }

@@ -18,8 +18,9 @@ MonoBehaviour:
   noFail: 0
   failPoints: 2
   timeToFail: 5
-  messageType: 0
+  messageType: 3
   flagsRequired: 
+  flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 0

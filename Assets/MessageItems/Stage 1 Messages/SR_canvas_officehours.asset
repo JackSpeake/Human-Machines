@@ -16,10 +16,11 @@ MonoBehaviour:
   message: 'Message Recieved: canvas.com/office-hours'
   correct: 1
   noFail: 1
-  failPoints: 1
+  failPoints: 2
   timeToFail: 15
-  messageType: 1
+  messageType: 2
   flagsRequired: 
+  flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 3
   delayBeforeSending: 0

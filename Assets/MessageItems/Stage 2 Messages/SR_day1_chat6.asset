@@ -16,17 +16,18 @@ MonoBehaviour:
   message: "Private: messages.net\r\nChat: \u201CAre you staying?\u201D"
   correct: 1
   noFail: 0
-  failPoints: 1
+  failPoints: 2
   timeToFail: 15
   messageType: 2
-  flagsRequired: 06000000
+  flagsRequired: 08000000
+  flagsNotAllow: 0d000000
   repeat: 0
-  messageWaitCount: 0
+  messageWaitCount: 1
   delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
+  following: 1
   acceptFollowingMessage: {fileID: 11400000, guid: 61e848363f1519647a2db0a111ff2a61, type: 2}
   declineFollowingMessage: {fileID: 11400000, guid: 5d08b4ea25743c74ab6e96e727666699, type: 2}
   reblocked: 0

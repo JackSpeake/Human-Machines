@@ -38,10 +38,15 @@ public class MessageSpawner : MonoBehaviour
     {
         if (spawning && GameManager.Instance.started && !tmModule.paused)
         {
-            availableRandomMessageItems.Clear();
             SpawnFlagMessage();
             SpawnRandom();
         }
+    }
+
+    public void ResetMessages()
+    {
+        messageCountSendQueue.Clear();
+        availableRandomMessageItems.Clear();
     }
 
     // Just spawns the message attached
@@ -58,6 +63,7 @@ public class MessageSpawner : MonoBehaviour
         else if (message.messageType == MessageType.delayed)
         {
             StartCoroutine(DelayedMessage(message));
+            
         }
         // If delayed by message count, save for later.
         else if (message.messageType == MessageType.afterMessageCount)
@@ -67,8 +73,8 @@ public class MessageSpawner : MonoBehaviour
         else if (message.messageType == MessageType.random)
         {
             availableRandomMessageItems.Add(message);
+            Debug.Log("Random!");
         }
-
     }
 
     // Coroutine that waits to spawn a delayed message.
@@ -104,13 +110,18 @@ public class MessageSpawner : MonoBehaviour
     {
         foreach (MessageItem m in spawnOnFlagMessages.ToArray())
         {
-            if (SetFlags.containsAllFlags(m.flagsRequired))
+            if (SetFlags.containsAllFlags(m.flagsRequired) || m.flagsRequired.Length == 0)
             {
-                SpawnMessage(m);
-
-                if (m.repeat == false)
+                if (m.flagsNotAllow.Length == 0 || SetFlags.containsNoFlags(m.flagsNotAllow))
                 {
-                    spawnOnFlagMessages.Remove(m);
+                    //if (m.messageType == MessageType.random)
+                    //  Debug.Log("Made it here");
+                    SpawnMessage(m);
+
+                    if (m.repeat == false || m.messageType == MessageType.random)
+                    {
+                        spawnOnFlagMessages.Remove(m);
+                    }
                 }
             }
         }
@@ -122,12 +133,18 @@ public class MessageSpawner : MonoBehaviour
     {
         timeSinceSpawnedMessage += Time.deltaTime;
 
+        if (availableRandomMessageItems.Count > 0)
+            Debug.Log("Available messages: " + availableRandomMessageItems.Count);
+
         if (timeSinceSpawnedMessage > currWaitTime && availableRandomMessageItems.Count > 0)
         {
             currWaitTime = Random.Range(minWaitTime, maxWaitTime);
             timeSinceSpawnedMessage = 0;
             MessageItem m = availableRandomMessageItems[Random.Range(0, availableRandomMessageItems.Count)];
-            SpawnMessage(m);
+            Instantiate(messagePrefab, this.transform).GetComponent<MessageObject>().SetMessageItem(m);
+            if (!m.repeat)
+                availableRandomMessageItems.Remove(m);
+            updateMessageCountMessages();
         }
     }
 }

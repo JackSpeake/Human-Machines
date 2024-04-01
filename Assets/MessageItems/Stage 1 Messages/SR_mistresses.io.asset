@@ -16,10 +16,11 @@ MonoBehaviour:
   message: 'Message Recieved: mistresses.io'
   correct: 0
   noFail: 1
-  failPoints: 1
+  failPoints: 2
   timeToFail: 15
-  messageType: 0
+  messageType: 3
   flagsRequired: 
+  flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 0

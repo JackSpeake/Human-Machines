@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: GR_woogle
+  m_Name: TestILoveThePentagon
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 17
-  message: 'Request Recieved: woogle.com'
+  MESSAGE_ID: 0
+  message: i love the pentagon
   correct: 0
   noFail: 1
-  failPoints: 2
+  failPoints: 0
   timeToFail: 15
   messageType: 3
-  flagsRequired: 
-  flagsNotAllow: 08000000
+  flagsRequired: 0d000000
+  flagsNotAllow: 
   repeat: 1
   messageWaitCount: 0
   delayBeforeSending: 0

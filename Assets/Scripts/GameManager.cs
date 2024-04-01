@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject confetti, congrats, newAssignment, newAssignmentAfterColorChange;
 
+    [SerializeField] private ReblockedMessages reMsg;
+
     private AudioSource shutdownSound;
 
     private bool lost = false;
@@ -61,6 +63,8 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
 
+    private Flags[] dayFlags = { Flags.DayOneCompleted, Flags.DayTwoCompleted, Flags.DayThreeCompleted, Flags.DayFourCompleted, Flags.DayFiveCompleted, Flags.DaySixCompleted, Flags.DaySevenCompleted, Flags.DayEightCompleted, Flags.DayNineCompleted, Flags.DayTenCompleted, Flags.DayElevenCompleted, Flags.DayTwelveCompleted, Flags.DayThriteenCompleted, Flags.DayFourteenCompleted };
+
     public static GameManager Instance { get { return _instance; } }
 
     // FOR SINGLETON. DO NOT DELETE.
@@ -80,6 +84,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         hp = maxHP;
+
+        reMsg.blocked_messages.Clear();
+        reMsg.num_pages = 0;
+        reMsg.num_pages = 0;
+
 
         if (PlayerPrefs.GetInt("Tutorial", 0) == 1)
         {
@@ -216,7 +225,7 @@ public class GameManager : MonoBehaviour
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
 
-            SendNotification("As an employee of Human Machines, your job is to screen incoming requests, judging good from bad on the user's behalf");
+            SendNotification("As an employee of Human Machines, your job is to screen incoming requests, judging the good from the bad");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
@@ -231,7 +240,7 @@ public class GameManager : MonoBehaviour
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
 
-            SendNotification("You can read more about your current client in the handbook in the bottom right part of the screen.");
+            SendNotification("You can read more about your current client and your goals for them in the handbook.");
 
             while (!notifications.isDone())
                 yield return new WaitForEndOfFrame();
@@ -535,13 +544,19 @@ public class GameManager : MonoBehaviour
         {
             day = 1;
             stage++;
+            messagePanel.GetComponentInChildren<MessageSpawner>().ResetMessages();
             StartCoroutine(StartNewWeek());
         }
         else
         {
             clockIn.SetActive(true);
             shutdownSound.Play();
-        }    
+        }
+
+        //
+        SetFlags.addFlag(dayFlags[(day - 2) + ((stage - 1) * 5)]);
+
+
     }
 
 
@@ -607,6 +622,8 @@ public class GameManager : MonoBehaviour
         lowerText.text += "\n" + promotionNames[stage-2];
 
         yield return new WaitForSeconds(3f);
+
+        lowerText.text = "";
 
         confetti.SetActive(false);
         newAssignmentAfterColorChange.SetActive(false);
