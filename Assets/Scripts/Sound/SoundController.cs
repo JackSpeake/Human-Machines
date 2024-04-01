@@ -15,4 +15,14 @@ public class SoundController : MonoBehaviour
             track1.Play(0);
         }
     }
+
+    void playTrack()
+    {
+        track1.Play(0);
+    }
+
+    void stopTrack()
+    {
+        track1.Stop();
+    }
 }
