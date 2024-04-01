@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Radio : MonoBehaviour
-{
-    public float volume = 100.0f;
-    
+{  
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip[] tracks;
+    [SerializeField] private int track_num = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +19,22 @@ public class Radio : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void NextTrack() {
+        track_num = (track_num + 1 ) % tracks.Length;
+        source.clip = tracks[track_num];
+        source.Play(0);
+    }
+
+    public void PrevTrack() {
+        track_num -= 1;
+        if (track_num < 0) {
+            track_num = tracks.Length - 1;
+        }
+
+        source.clip = tracks[track_num];
+        source.Play(0);
     }
 
     public void VolumeMax() {
