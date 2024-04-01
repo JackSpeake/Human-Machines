@@ -17,7 +17,7 @@ MonoBehaviour:
     You just don\u2019t see reasonably priced food these days!\u201D\r"
   correct: 1
   noFail: 0
-  failPoints: 5
+  failPoints: 2
   timeToFail: 20
   messageType: 3
   flagsRequired: 0a000000

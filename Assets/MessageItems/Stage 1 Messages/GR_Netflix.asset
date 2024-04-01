@@ -16,7 +16,7 @@ MonoBehaviour:
   message: 'Request Recieved: netfilx.com'
   correct: 1
   noFail: 0
-  failPoints: 0
+  failPoints: 2
   timeToFail: 15
   messageType: 3
   flagsRequired: 

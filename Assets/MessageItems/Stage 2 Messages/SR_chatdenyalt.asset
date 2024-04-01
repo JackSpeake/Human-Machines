@@ -18,7 +18,7 @@ MonoBehaviour:
     Chat: "Is the wifi not working too?"'
   correct: 0
   noFail: 1
-  failPoints: 5
+  failPoints: 2
   timeToFail: 15
   messageType: 1
   flagsRequired: 08000000
