@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day1_review3
+  m_Name: SR_day2_review3
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 102
-  message: "Guest: reviews.woogle.com\r\nPost review: \u201CDelicious and affordable.
-    You just don\u2019t see reasonably priced food these days!\u201D\r"
+  MESSAGE_ID: 105
+  message: "Guest: woohooreviews.com\r\nPost review: \u201CLong wait just for bad
+    food.\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 20
   messageType: 2
-  flagsRequired: 08000000
-  flagsNotAllow: 09000000
+  flagsRequired: 09000000
+  flagsNotAllow: 0a000000
   repeat: 0
   messageWaitCount: 9
   delayBeforeSending: 0
