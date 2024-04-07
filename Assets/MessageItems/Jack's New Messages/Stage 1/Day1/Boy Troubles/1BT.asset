@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
+  m_Name: 1BT
+  m_EditorClassIdentifier: 
+  MESSAGE_ID: 0
+  message: 'Request Recieved: messages.com
+
+    Send: Jonnie is gross, LMAO, no i
+    dont like him'
+  correct: 1
+  noFail: 1
+  failPoints: 2
+  timeToFail: 15
+  messageType: 1
+  flagsRequired: 
+  flagsNotAllow: 08000000
+  repeat: 0
+  messageWaitCount: 15
+  delayBeforeSending: 25
+  completeRaiseFlag: 0
+  acceptRaiseFlag: 0
+  declineRaiseFlag: 0
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: dee635c35fb988143a3a05a27d890199, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: dee635c35fb988143a3a05a27d890199, type: 2}
+  reblocked: 0

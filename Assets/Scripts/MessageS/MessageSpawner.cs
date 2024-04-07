@@ -73,7 +73,7 @@ public class MessageSpawner : MonoBehaviour
         else if (message.messageType == MessageType.random)
         {
             availableRandomMessageItems.Add(message);
-            Debug.Log("Random!");
+            
         }
     }
 
