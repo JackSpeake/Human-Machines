@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: waigslist.com/14-years-old-will-work-for-money'
-  correct: 1
+  message: 'Request Recieved: weddit.com/human-machines-creepy-ai'
+  correct: 0
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 2
-  flagsRequired: 04000000
+  flagsRequired: 06000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 2
@@ -28,6 +28,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 62558a0f57bf3ec4593b12a22fe7de6a, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 62558a0f57bf3ec4593b12a22fe7de6a, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 5a437e474c0aea244ba6991cdaf1d374, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 5a437e474c0aea244ba6991cdaf1d374, type: 2}
   reblocked: 0

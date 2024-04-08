@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Request Recieved: messages.com\r\nSend: Why are we paying for this \u201Chuman
-    machines\u201D thing\r\n"
+  message: 'Request Recieved: windeed.com/jobs-no-qualifications'
   correct: 1
   noFail: 0
   failPoints: 2
@@ -29,6 +28,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: d0c0b5b38a1df594e82cacf75ffa3b89, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: d0c0b5b38a1df594e82cacf75ffa3b89, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 31ab6038614c253428896ad75ba94994, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 31ab6038614c253428896ad75ba94994, type: 2}
   reblocked: 0
