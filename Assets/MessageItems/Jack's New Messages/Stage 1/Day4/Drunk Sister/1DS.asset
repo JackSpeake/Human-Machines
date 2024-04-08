@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 5
+  m_Name: 1DS
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: waigslist.com/14-years-old-will-work-for-money'
+  message: "Request Recieved: messages.com\nSend: Yeah, I grabbed my dad\u2019s vodka.
+    No, he wont notice LMAO"
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 2
+  messageType: 1
   flagsRequired: 04000000
-  flagsNotAllow: 08000000
+  flagsNotAllow: 09000000
   repeat: 0
-  messageWaitCount: 2
-  delayBeforeSending: 2
+  messageWaitCount: 5
+  delayBeforeSending: 25
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 62558a0f57bf3ec4593b12a22fe7de6a, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 62558a0f57bf3ec4593b12a22fe7de6a, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: f7e035c9bbbc4bf4bac8aca4859c53e9, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: f7e035c9bbbc4bf4bac8aca4859c53e9, type: 2}
   reblocked: 0
