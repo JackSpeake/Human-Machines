@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 1JS
+  m_Name: 4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: humanmachines.com/faq'
+  message: 'Request Recieved: AMIGAY.com/results
+
+'
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 04000000
-  flagsNotAllow: 08000000
+  flagsRequired: 07000000
+  flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 50
+  delayBeforeSending: 3.42
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 8830569a4afec2b4aa94c9a6396aabda, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 8830569a4afec2b4aa94c9a6396aabda, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: f0e55e2eb1f512e46bc841ea4c94711b, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: f0e55e2eb1f512e46bc841ea4c94711b, type: 2}
   reblocked: 0

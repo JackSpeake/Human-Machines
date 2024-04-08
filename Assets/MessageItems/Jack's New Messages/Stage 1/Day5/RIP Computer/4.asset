@@ -10,24 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 2
+  m_Name: 4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: weddit.com/relationshipadvice'
-  correct: 0
+  message: 'Request Recieved: wiscordmobile.com
+
+    Send: MY PSYCHO DAD JUST THREW
+    OUT MY PC
+
+'
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 1
-  flagsRequired: 
+  messageType: 2
+  flagsRequired: 07000000
   flagsNotAllow: 08000000
   repeat: 0
-  messageWaitCount: 0
-  delayBeforeSending: 4.71
+  messageWaitCount: 3
+  delayBeforeSending: 1
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 718a353d029c0f049bfbd7cb3987514f, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 718a353d029c0f049bfbd7cb3987514f, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 9197177d9449148429941e9546f65309, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 9197177d9449148429941e9546f65309, type: 2}
   reblocked: 0

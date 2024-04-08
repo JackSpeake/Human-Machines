@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 5
+  m_Name: 2
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: woogle.com/howtowinmarraigecounseling'
-  correct: 0
+  message: "Request Recieved: wiscord.com\r\nSend: I\u2019m downloading, I will be
+    on in a sec\r\n"
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 1
-  flagsRequired: 
+  messageType: 2
+  flagsRequired: 07000000
   flagsNotAllow: 08000000
   repeat: 0
-  messageWaitCount: 0
-  delayBeforeSending: 1.94
+  messageWaitCount: 5
+  delayBeforeSending: 2
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 11400000, guid: ecdfdc71dc169b34ba721632a3d5317e, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: ecdfdc71dc169b34ba721632a3d5317e, type: 2}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 430e9e418f74cc542b7f8f7ad422db69, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 430e9e418f74cc542b7f8f7ad422db69, type: 2}
   reblocked: 0

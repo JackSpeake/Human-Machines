@@ -13,14 +13,19 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Request Recieved: messages.com\r\nSend: Why are we paying for this \u201Chuman
-    machines\u201D thing\r\n"
-  correct: 1
-  noFail: 0
+  message: 'Request Recieved: messages.com
+
+    Send: I read a ton last night im
+    not crazy i promise
+
+
+'
+  correct: 0
+  noFail: 1
   failPoints: 2
   timeToFail: 15
   messageType: 2
-  flagsRequired: 04000000
+  flagsRequired: 07000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 3
@@ -29,6 +34,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: d0c0b5b38a1df594e82cacf75ffa3b89, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: d0c0b5b38a1df594e82cacf75ffa3b89, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: e5c664f0ef3a6f14b8b8a375432c54a4, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: e5c664f0ef3a6f14b8b8a375432c54a4, type: 2}
   reblocked: 0
