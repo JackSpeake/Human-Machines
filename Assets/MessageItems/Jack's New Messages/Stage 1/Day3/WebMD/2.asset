@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: weddit.com/relationshipadvice'
-  correct: 0
+  message: 'Request Recieved: webmd.com/cancer-symptoms'
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 
+  flagsRequired: 05000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 4.71
+  delayBeforeSending: 3.03
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 718a353d029c0f049bfbd7cb3987514f, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 718a353d029c0f049bfbd7cb3987514f, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 79df6046b7f7c474a8c1e9684a972461, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 79df6046b7f7c474a8c1e9684a972461, type: 2}
   reblocked: 0

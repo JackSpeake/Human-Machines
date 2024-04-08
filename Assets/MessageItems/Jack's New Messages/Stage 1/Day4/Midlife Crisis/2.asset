@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: woogle.com/how-to-download-movies-free-legal'
+  message: 'Request Recieved: wacebook.com/happy-and-successful-friends'
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 2
-  flagsRequired: 04000000
+  messageType: 1
+  flagsRequired: 06000000
   flagsNotAllow: 08000000
   repeat: 0
-  messageWaitCount: 5
-  delayBeforeSending: 2
+  messageWaitCount: 0
+  delayBeforeSending: 4.71
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: ddfa960cb2f7c904b9114f1dbfc1102a, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: ddfa960cb2f7c904b9114f1dbfc1102a, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: d46ecc9adbfb83d4ea3292efc8eb6965, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: d46ecc9adbfb83d4ea3292efc8eb6965, type: 2}
   reblocked: 0

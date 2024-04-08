@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: woogle.com/howtowinmarraigecounseling'
-  correct: 0
+  message: 'Request Recieved: webmd.com/hangover-cures'
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 
+  flagsRequired: 05000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0

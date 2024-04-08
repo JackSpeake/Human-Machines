@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Request Recieved: messages.net\r\nSend: Hey honey\u2026 Dinner on the
-    9th? 6:00PM?\r\n"
-  correct: 0
+  message: 'Request Recieved: woogle.com/am-i-gonna-die
+
+'
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 
+  flagsRequired: 05000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
@@ -29,6 +30,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 89a0cc4c950b9ee44b949771359305d6, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 89a0cc4c950b9ee44b949771359305d6, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: f106bf2686c62f749896f09f96ed9dee, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: f106bf2686c62f749896f09f96ed9dee, type: 2}
   reblocked: 0

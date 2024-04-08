@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
   message: 'Request Recieved: woutube.com/lib-owned-facts-logic '
-  correct: 1
+  correct: 0
   noFail: 0
   failPoints: 2
   timeToFail: 15

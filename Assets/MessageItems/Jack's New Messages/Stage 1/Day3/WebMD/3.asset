@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: marraigecounslersforcheap.net
-
-    Schedule: June
-    9th, 6:00PM
+  message: 'Request Recieved: woogle.com/brain-and-stomach-cancer-at-17
 
 '
-  correct: 0
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 
+  flagsRequired: 05000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
@@ -33,6 +30,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: a2fcba18c9b7f784b83e04f91de61555, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: a2fcba18c9b7f784b83e04f91de61555, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 7ce97a6e43940f84ab2701acd1ff6f41, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 7ce97a6e43940f84ab2701acd1ff6f41, type: 2}
   reblocked: 0

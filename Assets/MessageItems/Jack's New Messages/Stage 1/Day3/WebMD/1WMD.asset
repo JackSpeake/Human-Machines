@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 1WMD
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: wiktok.com/redditdivorcestories
+  message: 'Request Recieved: webmd.com/terrible-headache-stomachache'
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 
+  flagsRequired: 05000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
@@ -28,6 +28,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 0d81ad787b87edb4588aeaee538ea08f, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 0d81ad787b87edb4588aeaee538ea08f, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: f858a09e72904d34082060651a1e11b9, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: f858a09e72904d34082060651a1e11b9, type: 2}
   reblocked: 0

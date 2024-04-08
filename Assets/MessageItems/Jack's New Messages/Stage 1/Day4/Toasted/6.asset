@@ -10,26 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 4
+  m_Name: 6
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: wikihow.com/remove-smell-vodka-vomit
-
-'
+  message: 'Request Recieved: w.com/my-post/delete '
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 1
-  flagsRequired: 04000000
+  messageType: 2
+  flagsRequired: 06000000
   flagsNotAllow: 
   repeat: 0
-  messageWaitCount: 0
-  delayBeforeSending: 3.42
+  messageWaitCount: 3
+  delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: bd6ad4011e20db54b9ef5b3f5d0bda7b, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: bd6ad4011e20db54b9ef5b3f5d0bda7b, type: 2}
+  following: 0
+  acceptFollowingMessage: {fileID: 0}
+  declineFollowingMessage: {fileID: 0}
   reblocked: 0

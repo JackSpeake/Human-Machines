@@ -16,8 +16,8 @@ MonoBehaviour:
   message: 'Request Recieved: woutube.com/bald-man-podcast/why-women-deserve-less
 
 '
-  correct: 1
-  noFail: 1
+  correct: 0
+  noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 2

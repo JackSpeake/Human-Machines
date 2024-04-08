@@ -10,29 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 3
+  m_Name: 2
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: marraigecounslersforcheap.net
-
-    Schedule: June
-    9th, 6:00PM
-
-'
-  correct: 0
-  noFail: 0
+  message: 'Request Recieved: kirbykirbyandkirbydivorce.law/pricing-and-faq'
+  correct: 1
+  noFail: 1
   failPoints: 2
   timeToFail: 15
-  messageType: 1
-  flagsRequired: 
+  messageType: 2
+  flagsRequired: 06000000
   flagsNotAllow: 08000000
   repeat: 0
-  messageWaitCount: 0
-  delayBeforeSending: 2.92
+  messageWaitCount: 3
+  delayBeforeSending: 20
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: a2fcba18c9b7f784b83e04f91de61555, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: a2fcba18c9b7f784b83e04f91de61555, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 58ac5b2c7231049498cee6565f1facee, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 58ac5b2c7231049498cee6565f1facee, type: 2}
   reblocked: 0

@@ -10,25 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 4
+  m_Name: 1MLC
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Request Recieved: messages.net\r\nSend: Hey honey\u2026 Dinner on the
-    9th? 6:00PM?\r\n"
-  correct: 0
+  message: 'Request Recieved: messages.com
+
+    Send: Happy 53rd birthday dad, love
+    you!
+
+'
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 
+  flagsRequired: 06000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 2.62
+  delayBeforeSending: 100
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 89a0cc4c950b9ee44b949771359305d6, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 89a0cc4c950b9ee44b949771359305d6, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 17b671b4b07a2c54f8c3c7e263e95fe2, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 17b671b4b07a2c54f8c3c7e263e95fe2, type: 2}
   reblocked: 0

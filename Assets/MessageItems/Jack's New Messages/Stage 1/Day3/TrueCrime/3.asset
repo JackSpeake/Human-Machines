@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: woogle.com/how-to-make-money-14-years-old'
+  message: 'Request Recieved: localnews.com/tips
+
+    Send: Scary teenagers loitering
+    around local middle school
+
+'
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 2
-  flagsRequired: 04000000
+  flagsRequired: 05000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 2
@@ -28,6 +33,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 871ea64f982f038408a8f39a09c350a6, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 871ea64f982f038408a8f39a09c350a6, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: c443c6898da32fa41960504d6fde8217, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: c443c6898da32fa41960504d6fde8217, type: 2}
   reblocked: 0

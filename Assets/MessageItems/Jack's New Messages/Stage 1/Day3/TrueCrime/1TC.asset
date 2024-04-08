@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: 1TC
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Request Recieved: messages.com\r\nSend: Don\u2019t download illegal stuff
-    on the wifi, I just got an email from the isp\r\n"
+  message: 'Request Recieved: localnews.com/rise-in-loitering-teenagers'
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 04000000
+  flagsRequired: 05000000
   flagsNotAllow: 08000000
   repeat: 0
   messageWaitCount: 15
@@ -29,6 +28,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: c437518a6b4e20c4fabfd24d73f6eade, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: c437518a6b4e20c4fabfd24d73f6eade, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: ed57d7a2cba376144ad5ca0148a0181d, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: ed57d7a2cba376144ad5ca0148a0181d, type: 2}
   reblocked: 0

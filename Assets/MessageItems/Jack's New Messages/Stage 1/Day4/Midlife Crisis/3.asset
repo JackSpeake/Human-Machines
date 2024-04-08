@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: 2
+  m_Name: 3
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Request Recieved: woutube.com/self-defense-techniques'
+  message: 'Request Recieved: winstagram.com/happier-and-more-successful-strangers
+
+'
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 2
-  flagsRequired: 05000000
+  messageType: 1
+  flagsRequired: 06000000
   flagsNotAllow: 08000000
   repeat: 0
-  messageWaitCount: 5
-  delayBeforeSending: 2
+  messageWaitCount: 0
+  delayBeforeSending: 2.92
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 0f0ba019b389369458b9c276c9207b3b, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 0f0ba019b389369458b9c276c9207b3b, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 34e062c224bfe32409afb89d7541cc61, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 34e062c224bfe32409afb89d7541cc61, type: 2}
   reblocked: 0
