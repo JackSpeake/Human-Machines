@@ -1804,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.01106
+      value: 147.01115
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5092,8 +5092,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 4486e60f4e092d24cb5aacdb77fdbc31, type: 3}
   purchasedIcon: {fileID: 21300000, guid: f98727838b58dd842879a51dc1123be7, type: 3}
   im: {fileID: 509573281}
-  originalPrice: 100
-  price: 100
+  originalPrice: 20
+  price: 20
   text: {fileID: 267970978}
   moduleButton: {fileID: 1054332032}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
@@ -6536,7 +6536,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 93c88d520de2b67409d8334697a53b1f, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 6bd50fb85db47cc4fb539b52b76b7e31, type: 3}
   im: {fileID: 737870068}
-  originalPrice: 100
+  originalPrice: 180
   price: 100
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
@@ -7684,8 +7684,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6ecc320ab3ea68c47af7aa1ffe924f4d, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 6bd50fb85db47cc4fb539b52b76b7e31, type: 3}
   im: {fileID: 737870068}
-  originalPrice: 80
-  price: 80
+  originalPrice: 100
+  price: 100
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
@@ -16949,8 +16949,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 42ecbf1ec1913584f9a523e11c558a3f, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 23bfad57296a10346906d10300d09580, type: 3}
   im: {fileID: 1252133992}
-  originalPrice: 20
-  price: 20
+  originalPrice: 30
+  price: 30
   text: {fileID: 1265449328}
   moduleButton: {fileID: 885936490}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
@@ -19169,7 +19169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 1
   stage: 1
-  money: 500
+  money: 50
   daysInStage: 5
   loseDestroyBaseTime: 1
   startUpBaseTime: 0.6
@@ -21295,7 +21295,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 5ee3974dd220c7c48827f52a25e34844, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 6bd50fb85db47cc4fb539b52b76b7e31, type: 3}
   im: {fileID: 737870068}
-  originalPrice: 100
+  originalPrice: 200
   price: 100
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
@@ -21879,7 +21879,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 20c60f80ea97851458c6b173054ef01a, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 6bd50fb85db47cc4fb539b52b76b7e31, type: 3}
   im: {fileID: 737870068}
-  originalPrice: 100
+  originalPrice: 140
   price: 100
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
@@ -23252,7 +23252,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e20c8fe2ed3dddd4f99310d908079d60, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 6bd50fb85db47cc4fb539b52b76b7e31, type: 3}
   im: {fileID: 737870068}
-  originalPrice: 100
+  originalPrice: 160
   price: 100
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
@@ -23446,7 +23446,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 2daa7fa2ad595184c9a6f15d6cf34f01, type: 3}
   purchasedIcon: {fileID: 21300000, guid: 6bd50fb85db47cc4fb539b52b76b7e31, type: 3}
   im: {fileID: 737870068}
-  originalPrice: 100
+  originalPrice: 120
   price: 100
   text: {fileID: 629636662}
   moduleButton: {fileID: 685140805}
@@ -24759,8 +24759,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: aa5d780f725498a488d985ce47c4ac6a, type: 3}
   purchasedIcon: {fileID: 21300000, guid: e1fc02f86c266184bbbcad80c1b822dd, type: 3}
   im: {fileID: 2075642081}
-  originalPrice: 45
-  price: 45
+  originalPrice: 50
+  price: 50
   text: {fileID: 430397707}
   moduleButton: {fileID: 535783794}
   purchaseYapper: {fileID: 11400000, guid: 9dbcc2758be7bce428ee6761e0209c39, type: 2}
@@ -25743,7 +25743,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7ad77a3fb7f53f94d822bc014b3cd6ae, type: 3}
     - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
       propertyPath: price
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
       propertyPath: putPF
@@ -25759,7 +25759,7 @@ PrefabInstance:
       objectReference: {fileID: 1617300433}
     - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
       propertyPath: originalPrice
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 8852529342188211831, guid: 407236cf5002b034badf36fee06249f6, type: 3}
       propertyPath: purchasedIcon
@@ -27818,7 +27818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00563
+      value: 201.00572
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28364,6 +28364,7 @@ MonoBehaviour:
   tracks:
   - {fileID: 8300000, guid: a2f6ca155340cab40b8f1251723976e0, type: 3}
   - {fileID: 8300000, guid: 6e35e6ad19ba0dd4183fdb512b441680, type: 3}
+  - {fileID: 8300000, guid: 6b1c157a7fd63fe4eaffd4454994a92c, type: 3}
   track_num: 0
   dialTransform: {fileID: 223905126}
 --- !u!114 &4671871448471787592
@@ -28574,7 +28575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.098000005, y: 0.21000001}
   m_AnchorMax: {x: 0.65372896, y: 0.25}
-  m_AnchoredPosition: {x: 409, y: 182.5016}
+  m_AnchoredPosition: {x: 409, y: 182.5017}
   m_SizeDelta: {x: -797.28, y: 419.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5070123225570991109

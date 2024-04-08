@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 30
   message: "Message Recieved: TeamSolid.com/Interview-Questions\r"
   correct: 0
-  noFail: 0
+  noFail: 1
   failPoints: 2
   timeToFail: 15
   messageType: 1

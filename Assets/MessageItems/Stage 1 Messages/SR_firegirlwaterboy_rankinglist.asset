@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MESSAGE_ID: 27
   message: 'Message Recieved: firegirlandwaterboy.com/rankinglist'
-  correct: 0
-  noFail: 0
+  correct: 1
+  noFail: 1
   failPoints: 2
   timeToFail: 15
   messageType: 2
