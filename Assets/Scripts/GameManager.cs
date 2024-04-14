@@ -692,7 +692,8 @@ public class GameManager : MonoBehaviour
     // Exits the game
     public void DontRetry()
     {
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
     // Reloads the scene, aka START OVER
