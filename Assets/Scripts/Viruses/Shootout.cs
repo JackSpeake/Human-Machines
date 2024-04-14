@@ -35,6 +35,8 @@ public class Shootout : MonoBehaviour
 
     bool canEarlyShoot = false;
 
+    [SerializeField] private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -239,6 +241,7 @@ public class Shootout : MonoBehaviour
     {
         if (canEarlyShoot)
         {
+            source.Play(0);
             shot = true;
             panel.color = Color.red;
             canEarlyShoot = false;
@@ -305,6 +308,7 @@ public class Shootout : MonoBehaviour
     public void Shoot()
     {
         shot = true;
+        source.Play(0);
 
         buildingsLeft.gameObject.SetActive(true);
         buildingsRight.gameObject.SetActive(true);

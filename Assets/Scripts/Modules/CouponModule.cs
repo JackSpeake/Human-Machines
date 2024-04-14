@@ -51,6 +51,9 @@ public class CouponModule : MonoBehaviour
     private int dealPercentage;
     private string moduleForSale;
 
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip claimSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +124,7 @@ public class CouponModule : MonoBehaviour
 
     public void ClaimDeal() {
         if (!dealClaimed) {
+            source.Play(0);
             if (activeTargetIndex != -1) {
                 items[activeTargetIndex].RevertPrice();
             }
