@@ -26,10 +26,14 @@ public class SimonSays : MonoBehaviour
 
     [SerializeField] private VirusController vc;
 
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip[] tracks;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        source.clip = tracks[0];
         int i = 0;
         foreach (Image b in buttons)
         {
@@ -45,7 +49,7 @@ public class SimonSays : MonoBehaviour
     {
         for (int i = 0; i < numberOfBeeps; i++)
         {
-            order[i] = Random.Range(0, buttons.Length - 1);
+            order[i] = Random.Range(0, buttons.Length);
         }
     }
 
@@ -136,6 +140,8 @@ public class SimonSays : MonoBehaviour
     private IEnumerator ButtonFlash(int buttonIndex)
     {
         float t = 0;
+        source.clip = tracks[buttonIndex];
+        source.Play(0);
 
         while (t < buttonFlashTime)
         {
@@ -183,9 +189,15 @@ public class SimonSays : MonoBehaviour
 
         int i = 0;
         float t = 0;
+        bool sfxplayed = false;
 
         while (!pressed && i < 4)
         {
+            if (!sfxplayed) {
+                source.clip = tracks[order[i]];
+                source.Play(0);
+                sfxplayed = true;
+            }
             t += Time.deltaTime;
             if (t < buttonFlashTime)
             {
@@ -196,6 +208,7 @@ public class SimonSays : MonoBehaviour
                 t = 0;
                 i++;
                 yield return new WaitForSeconds(betweenButtonDelay);
+                sfxplayed = false;
             }
 
             yield return new WaitForEndOfFrame();

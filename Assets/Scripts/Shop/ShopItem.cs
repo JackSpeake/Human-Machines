@@ -25,6 +25,9 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private List<ShopItem> upgrades;
     [SerializeField] private bool isUpgrade;
 
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip purchaseSound;
+
     private Button purchaseButton;
 
     private bool purchased = false;
@@ -36,6 +39,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         text.text = itemName + "\n$" + price;
         purchaseButton = GetComponent<Button>();
+        source.clip = purchaseSound;
     }
 
     // Update is called once per frame
@@ -52,6 +56,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Purchase() {
         if (!purchased && gm.money >= price) {
             gm.money -= price;
+            source.Play(0);
             if (!isUpgrade) {
                 moduleButton.SetActive(true);
             }
