@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject confetti, congrats, newAssignment, newAssignmentAfterColorChange;
 
     [SerializeField] private ReblockedMessages reMsg;
-
-    private AudioSource shutdownSound;
+    [SerializeField] private AudioSource shutdownSound;
+    [SerializeField] private AudioSource promotionSound;
 
     private bool lost = false;
 
@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     [TextArea]
     [SerializeField] private string[] halfwayDoneMessages, almostDoneMessages, finishUpMessages, goodbyeMessages, welcomeBackMessages;
+
 
     private static GameManager _instance;
 
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour
             tutorial = true;
         }
 
-        shutdownSound = GetComponentInChildren<AudioSource>();
+        //shutdownSound = GetComponentInChildren<AudioSource>();
 
         StartUp();
     }
@@ -136,6 +137,11 @@ public class GameManager : MonoBehaviour
 
     void StartUp()
     {
+        // audiosource.volume = 0.1f;
+        // audiosource.pitch = 2.46f;
+        // audiosource.reverbZoneMix = 0.99087f;
+        // audiosource.clip = shutdownSound;
+
         miManager.Reset();
         GameObject[] panels = GameObject.FindGameObjectsWithTag("Module");
 
@@ -152,12 +158,12 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(startUpBaseTime);
 
         screenHeaders.SetActive(true);
-        shutdownSound.Play();
+        shutdownSound.Play(0);
 
         yield return new WaitForSeconds(startUpBaseTime);
 
         notificationPanel.SetActive(true);
-        shutdownSound.Play();
+        shutdownSound.Play(0);
 
         // do thing
         if (tutorial)
@@ -596,7 +602,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-
+        promotionSound.Play(0);
         confetti.SetActive(true);
         congrats.SetActive(false);
         newAssignment.SetActive(true);
