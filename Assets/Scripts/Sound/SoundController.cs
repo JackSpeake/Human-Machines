@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    public bool play1 = false;
-    private AudioSource track1;
-    
-    void Start ()
+    private AudioSource trackYapper;
+    private AudioSource trackKeyboard;
+
+    public NotificationArea notificationArea;
+
+    private void Start()
     {
-        track1 = GetComponent<AudioSource>();
-        if (play1)
+        trackYapper = GetComponent<AudioSource>();
+    }
+
+    void Update ()
+    {
+        if (notificationArea != null)
         {
-            track1.Play(0);
+            if (notificationArea.messageText.maxVisibleCharacters < notificationArea.messageText.text.Length - 1
+                && !trackYapper.isPlaying)
+            {
+                trackYapper.time = Random.Range(0f, 8f);
+                trackYapper.Play(0);
+            }
+            else if (notificationArea.messageText.maxVisibleCharacters >= notificationArea.messageText.text.Length)
+                trackYapper.Stop();
         }
-    }
-
-    void playTrack()
-    {
-        track1.Play(0);
-    }
-
-    void stopTrack()
-    {
-        track1.Stop();
     }
 }
