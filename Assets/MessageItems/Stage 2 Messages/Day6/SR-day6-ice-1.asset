@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR-day6-1-5-icemachine
+  m_Name: SR-day6-ice-1
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Private: economicchef.com
-
-    DIY Ice Machine Repair Made Easy'
+  message: "Private: woogle.com\r\nSearch: \u201Cice machine not working gross\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
@@ -25,7 +23,7 @@ MonoBehaviour:
   flagsNotAllow: 09000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 1
+  delayBeforeSending: 15
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0

@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: GR_browsereviews3
+  m_Name: GR-day6-7-review-6
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 0
-  message: 'Guest: woohooreviews.com
-
-    Browse reviews'
+  MESSAGE_ID: 105
+  message: "Guest: restaurantreviews.com\r\nPost review: \u201CIncredible place for
+    a party or group outing.\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 15
-  messageType: 3
+  timeToFail: 20
+  messageType: 2
   flagsRequired: 08000000
-  flagsNotAllow: 0d000000
-  repeat: 1
-  messageWaitCount: 0
+  flagsNotAllow: 0a000000
+  repeat: 0
+  messageWaitCount: 22
   delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0

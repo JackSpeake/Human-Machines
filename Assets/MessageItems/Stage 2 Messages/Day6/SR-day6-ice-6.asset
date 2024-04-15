@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day1_review3
+  m_Name: SR-day6-ice-6
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 102
-  message: "Guest: reviews.woogle.com\r\nPost review: \u201CDelicious and affordable.
-    You just don\u2019t see reasonably priced food these days!\u201D\r"
+  MESSAGE_ID: 0
+  message: "Private: wamazon.com\r\nSearch: \u201Cmonkey wrench\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 20
-  messageType: 2
+  timeToFail: 0
+  messageType: 1
   flagsRequired: 08000000
   flagsNotAllow: 09000000
   repeat: 0
-  messageWaitCount: 9
-  delayBeforeSending: 0
+  messageWaitCount: 0
+  delayBeforeSending: 5
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0

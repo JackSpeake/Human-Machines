@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: GR_badchef3
+  m_Name: GR-day6-7-review-1
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 0
-  message: "Private: cookingbasics.com\r\nSearch: \u201Cfried egg\u201D"
+  MESSAGE_ID: 100
+  message: "Guest: restaurantreviews.com\r\nPost review: \u201CFive stars! Great
+    food at such a low price!\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 15
-  messageType: 3
-  flagsRequired: 0a000000
-  flagsNotAllow: 0d000000
+  timeToFail: 20
+  messageType: 2
+  flagsRequired: 08000000
+  flagsNotAllow: 0a000000
   repeat: 0
-  messageWaitCount: 0
+  messageWaitCount: 3
   delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0

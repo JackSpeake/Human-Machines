@@ -10,22 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: GR_browsereviews1
+  m_Name: SR-day6-ice-4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: 'Guest: restaurantreviews.com
-
-    Browse reviews'
+  message: "Private: woogle.com\r\nSearch: \u201Cice machine repair diy\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 15
-  messageType: 3
+  timeToFail: 0
+  messageType: 1
   flagsRequired: 08000000
-  flagsNotAllow: 0d000000
-  repeat: 1
+  flagsNotAllow: 09000000
+  repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 0
+  delayBeforeSending: 2
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0

@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR-day6-1-6-icemachine
+  m_Name: GR-day6-7-guest-3
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Private: wamazon.com\r\nSearch: \u201Cmonkey wrench\u201D"
+  message: 'Guest: woohooreviews.com
+
+    Browse reviews'
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 0
-  messageType: 1
+  timeToFail: 15
+  messageType: 3
   flagsRequired: 08000000
-  flagsNotAllow: 09000000
-  repeat: 0
+  flagsNotAllow: 0a000000
+  repeat: 1
   messageWaitCount: 0
-  delayBeforeSending: 15
+  delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0

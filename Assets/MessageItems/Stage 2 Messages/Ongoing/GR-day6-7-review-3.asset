@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day1_review1
+  m_Name: GR-day6-7-review-3
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 100
-  message: "Guest: restaurantreviews.com\r\nPost review: \u201CFive stars! Great
-    food at such a low price!\u201D"
+  MESSAGE_ID: 102
+  message: "Guest: reviews.woogle.com\r\nPost review: \u201CDelicious and affordable.
+    You just don\u2019t see reasonably priced food these days!\u201D\r"
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 20
   messageType: 2
   flagsRequired: 08000000
-  flagsNotAllow: 09000000
+  flagsNotAllow: 0a000000
   repeat: 0
-  messageWaitCount: 3
+  messageWaitCount: 9
   delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
