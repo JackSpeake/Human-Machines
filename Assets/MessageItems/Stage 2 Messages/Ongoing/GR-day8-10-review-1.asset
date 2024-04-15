@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day2_review1
+  m_Name: GR-day8-10-review-1
   m_EditorClassIdentifier: 
   MESSAGE_ID: 105
   message: "Guest: restaurantreviews.com\r\nPost review: \u201CUnbelievable 3 hour
@@ -20,8 +20,8 @@ MonoBehaviour:
   failPoints: 2
   timeToFail: 20
   messageType: 2
-  flagsRequired: 09000000
-  flagsNotAllow: 0a000000
+  flagsRequired: 0a000000
+  flagsNotAllow: 0d000000
   repeat: 0
   messageWaitCount: 3
   delayBeforeSending: 0

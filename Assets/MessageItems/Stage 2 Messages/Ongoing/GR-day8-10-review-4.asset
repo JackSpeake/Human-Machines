@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day2_review2
+  m_Name: GR-day8-10-review-4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 105
-  message: "Guest: reviews.woogle.com\r\nPost review: \u201CThe waitstaff could NOT
-    be more incompetent!\u201D"
+  message: "Guest: woohooreviews.com\r\nPost review: \u201CThese chefs should be
+    looking for a career change!\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 20
   messageType: 2
-  flagsRequired: 09000000
-  flagsNotAllow: 0a000000
+  flagsRequired: 0a000000
+  flagsNotAllow: 0d000000
   repeat: 0
-  messageWaitCount: 7
+  messageWaitCount: 13
   delayBeforeSending: 0
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
