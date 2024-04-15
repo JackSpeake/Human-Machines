@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class NotificationArea : MonoBehaviour
 {
-    [SerializeField] private TMPro.TMP_Text messageText, animationText;
+    [SerializeField] public TMPro.TMP_Text messageText, animationText;
     [SerializeField] private float displayRate;
     [SerializeField] private float displayRateYapperAnim;
     [SerializeField] private float randomYapperChangeTime;
@@ -39,6 +39,9 @@ public class NotificationArea : MonoBehaviour
     {
         stringQueue = new Queue<string>();
         evilQueue = new Queue<bool>();
+
+        if (GameObject.Find("SoundManager") != null)
+            GameObject.Find("SoundManager").GetComponent<SoundController>().notificationArea = this;
     }
 
     public bool isDone()
