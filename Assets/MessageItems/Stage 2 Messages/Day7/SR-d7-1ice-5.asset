@@ -10,25 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day1_chat3
+  m_Name: SR-d7-1ice-5
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 110
-  message: "Private: messages.net\r\nChat: \u201CI\u2019m quitting tomorrow! I don\u2019t
-    care anymore!\u201D"
+  MESSAGE_ID: 0
+  message: 'Private: appliancebay.net/repairs/book
+
+    Fast repair! Book now for
+    $250 plus parts and tax.'
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 2
-  flagsRequired: 08000000
-  flagsNotAllow: 0d000000
+  messageType: 1
+  flagsRequired: 09000000
+  flagsNotAllow: 0a000000
   repeat: 0
-  messageWaitCount: 1
-  delayBeforeSending: 0
+  messageWaitCount: 0
+  delayBeforeSending: 1
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: b4d8787f2d36a0a4f8672a8fa845935f, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: 5d08b4ea25743c74ab6e96e727666699, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: ae2d3f6c294240f42ab1bcb616fa5f48, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: ae2d3f6c294240f42ab1bcb616fa5f48, type: 2}
   reblocked: 0

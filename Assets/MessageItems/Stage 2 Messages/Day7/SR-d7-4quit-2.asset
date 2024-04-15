@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day1_chat4
+  m_Name: SR-d7-4quit-2
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 111
-  message: "Private: messages.net\r\nChat: \u201Cugh wish i could but good 4 u tho\u201D"
+  MESSAGE_ID: 109
+  message: "Private: messages.net\r\nChat: \u201Cfr i cant take these conditions\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
-  messageType: 2
-  flagsRequired: 08000000
-  flagsNotAllow: 0d000000
+  messageType: 1
+  flagsRequired: 09000000
+  flagsNotAllow: 0a000000
   repeat: 0
   messageWaitCount: 2
-  delayBeforeSending: 0
+  delayBeforeSending: 3
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: 86d2978bdfe33874d9eafe5a88af5179, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 81410f3acb57df444b55e55cab3b2a6c, type: 2}
   declineFollowingMessage: {fileID: 11400000, guid: 815f11e56f54ad84c978c3b02814b54f, type: 2}
   reblocked: 0
