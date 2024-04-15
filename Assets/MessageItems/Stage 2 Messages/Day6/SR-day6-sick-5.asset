@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SR-day6-sick-5
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Private: Mail - Sick Day\r\n\u201CHi Boss, I need to leave early because
-    I\u2019m sick. Think it\u2019s from the ice machine.\u201D"
+  message: "Private: Mail - Sick Day\r\n\u201CHi Boss, I need to leave early, ice
+    machine got me sick.\u201D"
   correct: 1
   noFail: 0
   failPoints: 2

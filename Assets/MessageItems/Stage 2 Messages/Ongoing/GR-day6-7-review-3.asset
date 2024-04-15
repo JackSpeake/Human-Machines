@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: GR-day6-7-review-3
   m_EditorClassIdentifier: 
   MESSAGE_ID: 102
-  message: "Guest: reviews.woogle.com\r\nPost review: \u201CDelicious and affordable.
-    You just don\u2019t see reasonably priced food these days!\u201D\r"
+  message: "Guest: reviews.woogle.com\r\nPost review: \u201CDelicious and affordable.\u201D\r"
   correct: 1
   noFail: 0
   failPoints: 2

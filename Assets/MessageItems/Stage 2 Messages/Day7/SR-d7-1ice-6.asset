@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SR-d7-1ice-6
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Private: Mail - ICE MACHINE BROKEN\r\n\u201CALL STAFF: Do NOT use the
-    ice machine. Won\u2019t be fixed for a while.\u201D"
+  message: "Private: Mail - ICE MACHINE BROKEN\r\n\u201CSTAFF: DON'T use the ice
+    machine. Won\u2019t be fixed for a while.\u201D"
   correct: 1
   noFail: 0
   failPoints: 2

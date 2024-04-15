@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SR-day6-chat2-4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Private: messages.net\r\nChat: \u201COH and one guy ordered his coffee
-    half cold water!\u201D"
+  message: "Private: messages.net\r\nChat: \u201CAnd one guy ordered his coffee half
+    cold water!\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
