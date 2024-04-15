@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR-day6-ice-2
+  m_Name: SR-day6-sick-4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Private: woogle.com\r\nSearch: \u201Ccan mold grow in an ice machine\u201D"
+  message: 'Private: netdoctor.com'
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 0
+  timeToFail: 15
   messageType: 1
   flagsRequired: 08000000
   flagsNotAllow: 09000000
@@ -28,6 +28,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: cdbcf8b5e5f64c54caf365d1e4444086, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: cdbcf8b5e5f64c54caf365d1e4444086, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: bb805b9dd3a003e46ba8b17d5ca57c51, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: bb805b9dd3a003e46ba8b17d5ca57c51, type: 2}
   reblocked: 0

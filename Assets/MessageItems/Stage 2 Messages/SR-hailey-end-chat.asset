@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_chatdeny
+  m_Name: SR-hailey-end-chat
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 106
+  MESSAGE_ID: 107
   message: 'Private: messages.net
 
-    Chat: "msg isnt sending lemme get off wifi"'
+    Chat: "Is the wifi not working too?"'
   correct: 0
   noFail: 1
   failPoints: 2
@@ -25,7 +25,7 @@ MonoBehaviour:
   flagsNotAllow: 0d000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 10
+  delayBeforeSending: 2
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0

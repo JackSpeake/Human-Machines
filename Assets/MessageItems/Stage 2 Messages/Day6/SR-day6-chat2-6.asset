@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR-day6-ice-2
+  m_Name: SR-day6-chat2-6
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Private: woogle.com\r\nSearch: \u201Ccan mold grow in an ice machine\u201D"
+  message: "Private: messages.net\r\nChat: \u201CAnd I think this girl didn\u2019t
+    know eggs weren\u2019t vegan!\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 0
+  timeToFail: 15
   messageType: 1
   flagsRequired: 08000000
   flagsNotAllow: 09000000
@@ -28,6 +29,6 @@ MonoBehaviour:
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: cdbcf8b5e5f64c54caf365d1e4444086, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: cdbcf8b5e5f64c54caf365d1e4444086, type: 2}
+  acceptFollowingMessage: {fileID: 11400000, guid: 3b7d39de8af55cd40907b660c6286b67, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 5d08b4ea25743c74ab6e96e727666699, type: 2}
   reblocked: 0

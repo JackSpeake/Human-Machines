@@ -23,11 +23,11 @@ MonoBehaviour:
   flagsNotAllow: 09000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 15
+  delayBeforeSending: 25
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 405bda0c72d545548bd9ab673d36ea5f, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 405bda0c72d545548bd9ab673d36ea5f, type: 2}
   reblocked: 0

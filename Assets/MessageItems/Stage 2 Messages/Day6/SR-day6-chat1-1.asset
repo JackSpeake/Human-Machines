@@ -10,26 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_chatdenyalt
+  m_Name: SR-day6-chat1-1
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 107
-  message: 'Private: messages.net
-
-    Chat: "Is the wifi not working too?"'
-  correct: 0
-  noFail: 1
+  MESSAGE_ID: 0
+  message: "Private: messages.net\r\nChat: \u201CGirl how I already have a headache?!\u201D"
+  correct: 1
+  noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
   flagsRequired: 08000000
-  flagsNotAllow: 0d000000
+  flagsNotAllow: 09000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 10
+  delayBeforeSending: 50
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: ee5e03790b863c448945f386cafd100c, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 5d08b4ea25743c74ab6e96e727666699, type: 2}
   reblocked: 0

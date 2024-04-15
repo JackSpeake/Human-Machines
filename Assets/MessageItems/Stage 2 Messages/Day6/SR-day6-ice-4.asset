@@ -27,7 +27,7 @@ MonoBehaviour:
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 027f65d8b824f9948a97ca5a910db52f, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 027f65d8b824f9948a97ca5a910db52f, type: 2}
   reblocked: 0

@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR-day6-ice-2
+  m_Name: SR-day6-sick-5
   m_EditorClassIdentifier: 
   MESSAGE_ID: 0
-  message: "Private: woogle.com\r\nSearch: \u201Ccan mold grow in an ice machine\u201D"
+  message: "Private: Mail - Sick Day\r\n\u201CHi Boss, I need to leave early because
+    I\u2019m sick. Think it\u2019s from the ice machine.\u201D"
   correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 0
+  timeToFail: 15
   messageType: 1
   flagsRequired: 08000000
   flagsNotAllow: 09000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 2
+  delayBeforeSending: 5
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 1
-  acceptFollowingMessage: {fileID: 11400000, guid: cdbcf8b5e5f64c54caf365d1e4444086, type: 2}
-  declineFollowingMessage: {fileID: 11400000, guid: cdbcf8b5e5f64c54caf365d1e4444086, type: 2}
+  following: 0
+  acceptFollowingMessage: {fileID: 0}
+  declineFollowingMessage: {fileID: 0}
   reblocked: 0
