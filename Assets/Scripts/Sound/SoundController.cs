@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    private AudioSource trackYapper;
-    private AudioSource trackKeyboard;
+    public AudioSource trackYapper, trackKeyboard;
 
     public NotificationArea notificationArea;
     public TMPro.TMP_Text headerText, lowerText;
-
-    private void Start()
-    {
-        trackYapper = GetComponents<AudioSource>()[0];
-        trackKeyboard = GetComponents<AudioSource>()[1];
-    }
 
     void Update ()
     {

@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private float waitTime = 2f;
     [SerializeField] private GameObject hiredText, assignmentText1, assignmentText2, tutorialMessage;
 
-    [SerializeField] private AudioSource gunshot, notification;
+    [SerializeField] private AudioSource gunshot, notification, click, startup, shutdown;
 
     bool clicked = false;
 
@@ -23,6 +23,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void Quit()
     {
+        click.Play();
+        shutdown.Play();
         Application.Quit();
     }
 
@@ -31,6 +33,8 @@ public class MainMenuManager : MonoBehaviour
         if (!clicked)
         {
             clicked = true;
+            click.Play();
+            startup.Play();
             StartCoroutine(DeleteMenuElements());
         }
             
