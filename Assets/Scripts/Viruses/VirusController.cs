@@ -94,6 +94,7 @@ public class VirusController : MonoBehaviour
 
         if (HealthModule && HealthModule.gameObject.activeInHierarchy)
         {
+
             infectionPercent = ((float) infectedPanelCount) / 25f * 100f;
             if (!staticValuesUpdated && HealthModule.started)
             {
@@ -104,7 +105,7 @@ public class VirusController : MonoBehaviour
             t += Time.deltaTime;
             tVirus += Time.deltaTime;
 
-            if (tVirus >= virusEffectsTryRate && waitingForFirstEnableDone)
+            if (tVirus >= virusEffectsTryRate && !waitingForFirstEnableDone)
             {
                 tVirus = 0;
 
@@ -114,9 +115,12 @@ public class VirusController : MonoBehaviour
                 }
             }
 
-            if (t >= currInfectionSpeed && waitingForFirstEnableDone)
+            Debug.Log("T = " + t + " curr infect = " + currInfectionSpeed + " waiting = " + waitingForFirstEnableDone);
+
+            if (t >= currInfectionSpeed && !waitingForFirstEnableDone)
             {
                 InfectPanels();
+                currInfectionSpeed = Random.Range(infectionSpeedMin, infectionSpeedMax);
                 t = 0;
             }
 
