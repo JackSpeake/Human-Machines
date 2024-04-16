@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR-d8-3tip-5
+  m_Name: SR-day9-3scab-5
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 105
-  message: 'Private: healthservices.gov/restaurants/health-code/report
+  MESSAGE_ID: 0
+  message: 'Private: cookinwiz.com
 
-    File
-    a Report with the Health Inspector'
-  correct: 0
+    So, Your Hollandaise Broke. 10 hot tips to
+    Fix any Hollandaise'
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 0a000000
-  flagsNotAllow: 0b000000
+  flagsRequired: 0b000000
+  flagsNotAllow: 0c000000
   repeat: 0
   messageWaitCount: 0
   delayBeforeSending: 5
