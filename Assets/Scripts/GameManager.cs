@@ -832,6 +832,17 @@ public class GameManager : MonoBehaviour
 
         confetti.SetActive(false);
         finalAssignmentColorChange.SetActive(false);
+        
+        if (GameObject.Find("SoundManager") != null)
+        {
+            GameObject soundManager = GameObject.Find("SoundManager");
+
+            soundManager.GetComponents<AudioSource>()[2].Stop();
+            soundManager.GetComponents<AudioSource>()[3].Stop();
+
+            soundManager.GetComponent<SoundController>().creditsHeaderText = creditTexts[0];
+            soundManager.GetComponent<SoundController>().creditsLowerText = creditTexts[1];
+        }
 
         // Newspaper here
         yield return new WaitForSeconds(1f);
@@ -883,6 +894,7 @@ public class GameManager : MonoBehaviour
         creditTexts[1].gameObject.SetActive(true);
         creditTexts[0].maxVisibleCharacters = 0;
         creditTexts[1].maxVisibleCharacters = 0;
+
 
         while (creditTexts[0].maxVisibleCharacters < creditTexts[0].text.Length)
         {

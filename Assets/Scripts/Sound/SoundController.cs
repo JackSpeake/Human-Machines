@@ -8,7 +8,7 @@ public class SoundController : MonoBehaviour
     private AudioSource trackKeyboard;
 
     public NotificationArea notificationArea;
-    public TMPro.TMP_Text headerText, lowerText;
+    public TMPro.TMP_Text headerText, lowerText, creditsHeaderText, creditsLowerText;
 
     private void Start()
     {
@@ -49,6 +49,23 @@ public class SoundController : MonoBehaviour
                 trackKeyboard.Stop();
         }
         else if (headerText == null && trackKeyboard.isPlaying)
+        {
+            trackKeyboard.Stop();
+        }
+
+        if (creditsHeaderText != null)
+        {
+            if ((creditsHeaderText.maxVisibleCharacters < creditsHeaderText.text.Length - 1
+                || creditsLowerText.maxVisibleCharacters < creditsLowerText.text.Length - 1)
+                && !trackKeyboard.isPlaying)
+            {
+                trackKeyboard.Play(0);
+            }
+            else if (creditsHeaderText.maxVisibleCharacters >= creditsHeaderText.text.Length - 1
+                && creditsLowerText.maxVisibleCharacters >= creditsLowerText.text.Length - 1)
+                trackKeyboard.Stop();
+        }
+        else if (creditsHeaderText == null && trackKeyboard.isPlaying)
         {
             trackKeyboard.Stop();
         }
