@@ -501,6 +501,11 @@ public class GameManager : MonoBehaviour
         List<TMPro.TMP_Text> texts = new List<TMPro.TMP_Text>(headerText.gameObject.GetComponentsInChildren<TMPro.TMP_Text>());
         texts.Remove(headerText);
         lowerText = texts[0];
+        if (GameObject.Find("SoundManager") != null)
+        {
+            GameObject.Find("SoundManager").GetComponent<SoundController>().headerText = headerText;
+            GameObject.Find("SoundManager").GetComponent<SoundController>().lowerText = lowerText;
+        }
 
         int profit = (int)((float)WeeklyRates[stage - 1] * (DayBreakdownClass.GetPercent() / 100f));
         money += profit;
@@ -538,6 +543,12 @@ public class GameManager : MonoBehaviour
         {
             headerText.maxVisibleCharacters--;
             yield return new WaitForSeconds(.008f);
+        }
+
+        if (GameObject.Find("SoundManager") != null)
+        {
+            GameObject.Find("SoundManager").GetComponent<SoundController>().headerText = null;
+            GameObject.Find("SoundManager").GetComponent<SoundController>().lowerText = null;
         }
 
         yield return new WaitForSeconds(.5f);

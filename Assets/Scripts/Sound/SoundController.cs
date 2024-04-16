@@ -8,10 +8,12 @@ public class SoundController : MonoBehaviour
     private AudioSource trackKeyboard;
 
     public NotificationArea notificationArea;
+    public TMPro.TMP_Text headerText, lowerText;
 
     private void Start()
     {
-        trackYapper = GetComponent<AudioSource>();
+        trackYapper = GetComponents<AudioSource>()[0];
+        trackKeyboard = GetComponents<AudioSource>()[1];
     }
 
     void Update ()
@@ -24,8 +26,29 @@ public class SoundController : MonoBehaviour
                 trackYapper.time = Random.Range(0f, 8f);
                 trackYapper.Play(0);
             }
-            else if (notificationArea.messageText.maxVisibleCharacters >= notificationArea.messageText.text.Length)
+            else if (notificationArea.messageText.maxVisibleCharacters >= notificationArea.messageText.text.Length - 1)
                 trackYapper.Stop();
+        }
+        else if (notificationArea == null && trackYapper.isPlaying)
+        {
+            trackYapper.Stop();
+        }
+
+        if (headerText != null)
+        {
+            if ((headerText.maxVisibleCharacters < headerText.text.Length - 1
+                || lowerText.maxVisibleCharacters < lowerText.text.Length - 1)
+                && !trackKeyboard.isPlaying)
+            {
+                trackKeyboard.Play(0);
+            }
+            else if (headerText.maxVisibleCharacters >= headerText.text.Length - 1
+                && lowerText.maxVisibleCharacters >= lowerText.text.Length - 1)
+                trackKeyboard.Stop();
+        }
+        else if (headerText == null && trackKeyboard.isPlaying)
+        {
+            trackKeyboard.Stop();
         }
     }
 }
