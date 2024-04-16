@@ -22,7 +22,8 @@ public enum Flags
     DayTwelveCompleted,
     DayThriteenCompleted,
     DayFourteenCompleted,
-    ReblockerPurchased
+    ReblockerPurchased,
+    Week2JobQuit
 }
 
 public static class SetFlags

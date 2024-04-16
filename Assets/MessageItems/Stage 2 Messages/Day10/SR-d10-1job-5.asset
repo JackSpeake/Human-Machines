@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
+  m_Name: SR-d10-1job-5
+  m_EditorClassIdentifier: 
+  MESSAGE_ID: 0
+  message: 'Private: certainly.com/posting/chef-needed-hMn0ta1
+
+    Accept Position'
+  correct: 0
+  noFail: 0
+  failPoints: 2
+  timeToFail: 15
+  messageType: 1
+  flagsRequired: 0c000000
+  flagsNotAllow: 0d000000
+  repeat: 0
+  messageWaitCount: 0
+  delayBeforeSending: 3
+  completeRaiseFlag: 1
+  acceptRaiseFlag: 19
+  declineRaiseFlag: 0
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: b995a68ac0e5e7b418e751de87a405ca, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 7e00a58c175a2934aa9e13f464810f34, type: 2}
+  reblocked: 0
