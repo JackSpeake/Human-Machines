@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMPro.TMP_Text[] creditTexts;
 
+    [SerializeField] private GameObject circle;
+
     private bool lost = false;
 
     public bool started = false;
@@ -765,6 +767,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator GameEnd()
     {
         yield return new WaitForEndOfFrame();
+
+        circle.SetActive(false);
 
         fakeCongrats.SetActive(true);
 
