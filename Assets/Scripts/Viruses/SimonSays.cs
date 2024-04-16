@@ -17,6 +17,7 @@ public class SimonSays : MonoBehaviour
     bool playingExample = false;
     bool lockout = false;
     float timeSincePress = 0;
+    private bool mute = true;
 
     [SerializeField] private float pressedTime = 3f;
     [SerializeField] private float buttonFlashTime = .2f;
@@ -141,7 +142,10 @@ public class SimonSays : MonoBehaviour
     {
         float t = 0;
         source.clip = tracks[buttonIndex];
-        source.Play(0);
+        if (!mute) {
+            source.Play(0);
+        }
+        
 
         while (t < buttonFlashTime)
         {
@@ -195,7 +199,9 @@ public class SimonSays : MonoBehaviour
         {
             if (!sfxplayed) {
                 source.clip = tracks[order[i]];
-                source.Play(0);
+                if (!mute) {
+                    source.Play(0);
+                }
                 sfxplayed = true;
             }
             t += Time.deltaTime;
@@ -229,5 +235,9 @@ public class SimonSays : MonoBehaviour
             i++;
         }
         pressed = false;
+    }
+
+    public void SetMute(bool status) {
+        mute = status;
     }
 }

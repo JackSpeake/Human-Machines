@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: GR-day8-10-review-1
+  m_Name: SR-d8-1chat-1
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 105
-  message: "Guest: restaurantreviews.com\r\nPost review: \u201CUnbelievable 3 hour
-    wait and cold food!"
-  correct: 0
+  MESSAGE_ID: 114
+  message: "Private: messages.net\r\nChat: \u201Clol theyre still open\u201D"
+  correct: 1
   noFail: 0
   failPoints: 2
-  timeToFail: 20
-  messageType: 2
+  timeToFail: 15
+  messageType: 1
   flagsRequired: 0a000000
-  flagsNotAllow: 0d000000
+  flagsNotAllow: 0b000000
   repeat: 0
-  messageWaitCount: 3
-  delayBeforeSending: 0
+  messageWaitCount: 0
+  delayBeforeSending: 25
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 71a22d41a11fe454f8635c4af2134d3d, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 815f11e56f54ad84c978c3b02814b54f, type: 2}
   reblocked: 0

@@ -2108,7 +2108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.01248
+      value: 147.01259
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6893,6 +6893,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1410391857}
+        m_TargetAssemblyTypeName: SimonSays, Assembly-CSharp
+        m_MethodName: SetMute
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &535783797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9213,7 +9225,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1155988252}
         m_TargetAssemblyTypeName: Reblocker, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Upgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21842,6 +21854,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c8395008be6989b4abc1ea1d6ab807e6, type: 2}
   - {fileID: 11400000, guid: bb10019dc4453c044a7fa62cc5395f0d, type: 2}
   - {fileID: 11400000, guid: 9b6c3c935fdab6e44a707485000fe5a9, type: 2}
+  - {fileID: 11400000, guid: b21a5b487fd8b3b4f888828a61cf1499, type: 2}
+  - {fileID: 11400000, guid: 235b36d6ab14ac04bb29130016f07077, type: 2}
+  - {fileID: 11400000, guid: 18cc1067fa3c8dc48b865ee2110c6031, type: 2}
+  - {fileID: 11400000, guid: 7e8e0bcadf14d604eb70d086b92dd374, type: 2}
+  - {fileID: 11400000, guid: 52fa05b48c3e79040b204615cfe8656f, type: 2}
+  - {fileID: 11400000, guid: 227bf229e9cd851489e15b6cfba9fc11, type: 2}
+  - {fileID: 11400000, guid: a557b6bc6f4c1b544a401c21b0c1e9dd, type: 2}
+  - {fileID: 11400000, guid: 3e5334665ced7c940b9342ef68a16c88, type: 2}
+  - {fileID: 11400000, guid: 26d6cae79cf046f428f3e5322e2e3a4b, type: 2}
+  - {fileID: 11400000, guid: 532429c1c3a1a5348a67305985d8762e, type: 2}
+  - {fileID: 11400000, guid: 2ba8215bf9408264f9b3c2e1c56de54b, type: 2}
   tmModule: {fileID: 281496292}
   spawning: 1
 --- !u!1 &1498037168
@@ -31749,7 +31772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.00705
+      value: 201.00716
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -32508,7 +32531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.098000005, y: 0.21000001}
   m_AnchorMax: {x: 0.65372896, y: 0.25}
-  m_AnchoredPosition: {x: 409, y: 182.50302}
+  m_AnchoredPosition: {x: 409, y: 182.50313}
   m_SizeDelta: {x: -797.28, y: 419.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5070123225570991109
@@ -33853,6 +33876,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1410391857}
+        m_TargetAssemblyTypeName: SimonSays, Assembly-CSharp
+        m_MethodName: SetMute
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1410391856}
         m_TargetAssemblyTypeName: Module, Assembly-CSharp
         m_MethodName: Close
@@ -33863,7 +33898,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &5070123226655121457
 MonoBehaviour:

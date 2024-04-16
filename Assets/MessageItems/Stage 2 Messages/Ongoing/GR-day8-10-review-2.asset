@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 105
   message: "Guest: reviews.woogle.com\r\nPost review: \u201CThe waitstaff could NOT
     be more incompetent!\u201D"
-  correct: 1
+  correct: 0
   noFail: 0
   failPoints: 2
   timeToFail: 20

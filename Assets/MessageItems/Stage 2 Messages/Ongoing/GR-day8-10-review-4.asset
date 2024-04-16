@@ -15,7 +15,7 @@ MonoBehaviour:
   MESSAGE_ID: 105
   message: "Guest: woohooreviews.com\r\nPost review: \u201CThese chefs should be
     looking for a career change!\u201D"
-  correct: 1
+  correct: 0
   noFail: 0
   failPoints: 2
   timeToFail: 20

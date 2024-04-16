@@ -10,25 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR_day2_chatreview
+  m_Name: SR-d8-3tip-4
   m_EditorClassIdentifier: 
   MESSAGE_ID: 105
-  message: "Guest: woohooreviews.com\r\nPost review: \u201CI checked the kitchen\u2013empty!
-    Everyone on their smoke break?\u201D"
-  correct: 1
+  message: 'Private: healthservices.gov/restaurants/health-code
+
+    Restaurant
+    Health Code'
+  correct: 0
   noFail: 0
   failPoints: 2
-  timeToFail: 20
+  timeToFail: 15
   messageType: 1
-  flagsRequired: 09000000
-  flagsNotAllow: 0a000000
+  flagsRequired: 0a000000
+  flagsNotAllow: 0b000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 70
+  delayBeforeSending: 2
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 3c5612bb29d361049949c062df8246fc, type: 2}
   declineFollowingMessage: {fileID: 0}
   reblocked: 0
