@@ -2108,7 +2108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 147.01233
+      value: 147.01236
       objectReference: {fileID: 0}
     - target: {fileID: 5070123225585993774, guid: c16fcfb83c8f3a947bac5616dc046dc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20740,6 +20740,122 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429704681}
   m_CullTransparentMesh: 1
+--- !u!1 &1448344090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1448344092}
+  - component: {fileID: 1448344091}
+  m_Layer: 0
+  m_Name: RandomMessages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1448344091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448344090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545e61ee20aa44d45893ec4bb7d091ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - day: 1
+    stage: 3
+    time: 0.51
+    message: This is a big job. Don't mess it up.
+  - day: 3
+    stage: 3
+    time: 0.36
+    message: Don't disappoint us.
+  - day: 2
+    stage: 2
+    time: 0.36
+    message: If the restaraunt fails. Its coming out of your paycheck
+  - day: 4
+    stage: 1
+    time: 0.6
+    message: Keep them together, your job is at stake
+  - day: 2
+    stage: 1
+    time: 0.6
+    message: You don't seem to be very good with kids.
+  - day: 1
+    stage: 1
+    time: 0.4
+    message: Is this your first job? It seems like it.
+  - day: 5
+    stage: 3
+    time: 0.38
+    message: If we go down, you go down with us.
+  - day: 5
+    stage: 3
+    time: 0.89
+    message: What have you done.
+  - day: 5
+    stage: 2
+    time: 0.89
+    message: Maybe this one was... Inevitable.
+  - day: 5
+    stage: 1
+    time: 0.89
+    message: I'll never have kids.
+  - day: 2
+    stage: 1
+    time: 0.38
+    message: Is this a game to you?
+  - day: 3
+    stage: 1
+    time: 0.53
+    message: These people are... Insane. Holy shit.
+  - day: 1
+    stage: 2
+    time: 0.32
+    message: This is a change of pace, maybe you wont mess it up this time.
+  - day: 4
+    stage: 2
+    time: 0.32
+    message: I would never eat here. Wow.
+  - day: 1
+    stage: 3
+    time: 0.68
+    message: Maybe I should run for office. Doesn't seem too hard.
+  - day: 2
+    stage: 3
+    time: 0.53
+    message: Can you believe people voted for this guy?
+  - day: 3
+    stage: 3
+    time: 0.7
+    message: Interfering with the election was a mistake.
+  - day: 4
+    stage: 3
+    time: 0.43
+    message: That intern is up to no good.
+--- !u!4 &1448344092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448344090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.941637, y: 0.8722997, z: 1875.3413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452046717
 GameObject:
   m_ObjectHideFlags: 0
@@ -31534,7 +31650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 201.0069
+      value: 201.00693
       objectReference: {fileID: 0}
     - target: {fileID: 6365249259015724400, guid: 65a558e631c83414e974f779cf71cdef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -32293,7 +32409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.098000005, y: 0.21000001}
   m_AnchorMax: {x: 0.65372896, y: 0.25}
-  m_AnchoredPosition: {x: 409, y: 182.50287}
+  m_AnchoredPosition: {x: 409, y: 182.5029}
   m_SizeDelta: {x: -797.28, y: 419.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5070123225570991109
