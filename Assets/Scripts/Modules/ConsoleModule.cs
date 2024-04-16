@@ -33,6 +33,10 @@ public class ConsoleModule : MonoBehaviour
             case "invincible":
                 GameManager.Instance.hp += 100000;
                 break;
+            case "endgame":
+                GameManager.Instance.day = 5;
+                GameManager.Instance.stage = 3;
+                break;
             default:
                 break;
         }

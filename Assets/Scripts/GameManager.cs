@@ -36,11 +36,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MessageItemManager miManager;
     [SerializeField] private TimeoutModule tmModule;
 
-    [SerializeField] private GameObject confetti, congrats, newAssignment, newAssignmentAfterColorChange;
+    [SerializeField] private GameObject confetti, congrats, fakeCongrats, newAssignment, newAssignmentAfterColorChange, finalAssignment, finalAssignmentColorChange;
 
     [SerializeField] private ReblockedMessages reMsg;
     [SerializeField] private AudioSource shutdownSound;
     [SerializeField] private AudioSource promotionSound;
+
+    [SerializeField] private Image newspaper, mainBackdrop;
+
+    [SerializeField] private TMPro.TMP_Text[] creditTexts;
 
     private bool lost = false;
 
@@ -563,7 +567,10 @@ public class GameManager : MonoBehaviour
             day = 1;
             stage++;
             messagePanel.GetComponentInChildren<MessageSpawner>().ResetMessages();
-            StartCoroutine(StartNewWeek());
+            if (stage < 4)
+                StartCoroutine(StartNewWeek());
+            else
+                StartCoroutine(GameEnd());
         }
         else
         {
@@ -754,4 +761,182 @@ public class GameManager : MonoBehaviour
         return strs[Random.Range(0, strs.Length)];
     }
 
+
+    private IEnumerator GameEnd()
+    {
+        yield return new WaitForEndOfFrame();
+
+        fakeCongrats.SetActive(true);
+
+        TMPro.TMP_Text headerText, lowerText;
+
+        headerText = fakeCongrats.GetComponentInChildren<TMPro.TMP_Text>();
+        List<TMPro.TMP_Text> texts = new List<TMPro.TMP_Text>(headerText.gameObject.GetComponentsInChildren<TMPro.TMP_Text>());
+        texts.Remove(headerText);
+        lowerText = texts[0];
+
+        headerText.maxVisibleCharacters = 0;
+        lowerText.maxVisibleCharacters = 0;
+
+        while (headerText.maxVisibleCharacters < headerText.text.Length)
+        {
+            headerText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(.1f);
+        }
+
+        yield return new WaitForSeconds(.5f);
+
+        while (lowerText.maxVisibleCharacters < lowerText.text.Length)
+        {
+            lowerText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(.03f);
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
+        promotionSound.Play(0);
+        confetti.SetActive(true);
+        fakeCongrats.SetActive(false);
+        finalAssignment.SetActive(true);
+
+        yield return new WaitForSeconds(7.5f);
+
+        finalAssignment.SetActive(false);
+        finalAssignmentColorChange.SetActive(true);
+
+
+        TMPro.TMP_Text text = finalAssignmentColorChange.GetComponentInChildren<TMPro.TMP_Text>();
+
+        texts = new List<TMPro.TMP_Text>(text.gameObject.GetComponentsInChildren<TMPro.TMP_Text>());
+        texts.Remove(text);
+        lowerText = texts[0];
+
+        text.color = Color.red;
+        lowerText.color = Color.red;
+
+        yield return new WaitForSeconds(1f);
+
+        lowerText.text += "NEW ASSIGNMENT:";
+
+        yield return new WaitForSeconds(1f);
+
+        lowerText.text += "\n" + "GET OUT";
+
+        yield return new WaitForSeconds(3f);
+
+        lowerText.text = "";
+
+        confetti.SetActive(false);
+        finalAssignmentColorChange.SetActive(false);
+
+        // Newspaper here
+        yield return new WaitForSeconds(1f);
+
+        float d = 0;
+        while (d < 1f)
+        {
+            mainBackdrop.rectTransform.localScale = new Vector3(1 - d, 1 - d, 1 - d);
+            d += Time.deltaTime * 6f;
+            yield return new WaitForEndOfFrame();
+        }
+
+        mainBackdrop.rectTransform.localScale = new Vector3(0, 0, 0);
+        mainBackdrop.enabled = false;
+
+        yield return new WaitForSeconds(4f);
+
+        d = 0;
+        newspaper.gameObject.SetActive(true);
+        while (d < 3f)
+        {
+            newspaper.color = new Color(1, 1, 1, d / 3);
+            d += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForSeconds(10f);
+
+        d = 3f;
+        while (d > 0)
+        {
+            newspaper.color = new Color(1, 1, 1, d / 3);
+            d -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        newspaper.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(CreditsCoroutine());
+    }
+
+
+    private IEnumerator CreditsCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+
+        creditTexts[0].gameObject.SetActive(true);
+        creditTexts[1].gameObject.SetActive(true);
+        creditTexts[0].maxVisibleCharacters = 0;
+        creditTexts[1].maxVisibleCharacters = 0;
+
+        while (creditTexts[0].maxVisibleCharacters < creditTexts[0].text.Length)
+        {
+            creditTexts[0].maxVisibleCharacters++;
+            yield return new WaitForSeconds(.1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        while (creditTexts[1].maxVisibleCharacters < creditTexts[1].text.Length)
+        {
+            creditTexts[1].maxVisibleCharacters++;
+            yield return new WaitForSeconds(.1f);
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        while (creditTexts[1].maxVisibleCharacters > 0)
+        {
+            creditTexts[1].maxVisibleCharacters--;
+            yield return new WaitForSeconds(.03f);
+        }
+
+        while (creditTexts[0].maxVisibleCharacters > 0)
+        {
+            creditTexts[0].maxVisibleCharacters--;
+            yield return new WaitForSeconds(.03f);
+        }
+
+        creditTexts[0].gameObject.SetActive(false);
+        creditTexts[1].gameObject.SetActive(false);
+
+        for (int i = 2; i < 9; i++)
+        {
+            yield return new WaitForSeconds(1.5f);
+
+            creditTexts[i].gameObject.SetActive(true);
+            creditTexts[i].maxVisibleCharacters = 0;
+
+            while (creditTexts[i].maxVisibleCharacters < creditTexts[i].text.Length)
+            {
+                creditTexts[i].maxVisibleCharacters++;
+                yield return new WaitForSeconds(.1f);
+            }
+
+            yield return new WaitForSeconds(2f);
+
+            while (creditTexts[i].maxVisibleCharacters > 0)
+            {
+                creditTexts[i].maxVisibleCharacters--;
+                yield return new WaitForSeconds(.03f);
+            }
+
+            creditTexts[i].gameObject.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(4f);
+
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
 }
