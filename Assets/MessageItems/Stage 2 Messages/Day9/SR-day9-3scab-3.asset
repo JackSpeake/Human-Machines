@@ -10,27 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b488dd758040448908dd71fafe0f0c, type: 3}
-  m_Name: SR-d8-3tip-5
+  m_Name: SR-day9-3scab-3
   m_EditorClassIdentifier: 
-  MESSAGE_ID: 105
-  message: 'Private: healthservices.gov/restaurants/health-code/report
-
-    File
-    a Report with the Health Inspector'
-  correct: 0
+  MESSAGE_ID: 0
+  message: "Private: woogle.com\r\nSearch: \u201Cis canadian bacon the same as regular
+    bacon\u201D"
+  correct: 1
   noFail: 0
   failPoints: 2
   timeToFail: 15
   messageType: 1
-  flagsRequired: 0a000000
-  flagsNotAllow: 0b000000
+  flagsRequired: 0b000000
+  flagsNotAllow: 0c000000
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 5
+  delayBeforeSending: 3
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: b67d11f8d57eb8d43b2b5c89039d73e4, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: b67d11f8d57eb8d43b2b5c89039d73e4, type: 2}
   reblocked: 0
