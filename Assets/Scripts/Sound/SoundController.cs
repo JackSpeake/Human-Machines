@@ -14,6 +14,8 @@ public class SoundController : MonoBehaviour
     {
         trackYapper = GetComponents<AudioSource>()[0];
         trackKeyboard = GetComponents<AudioSource>()[1];
+
+        GetComponents<AudioSource>()[3].PlayDelayed(0.3f);
     }
 
     void Update ()
