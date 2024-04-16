@@ -16,14 +16,14 @@ MonoBehaviour:
   message: 'Request Received: wnn.com/Wexas-governor-assistant-responsible-for-leak-events'
   correct: 1
   noFail: 0
-  failPoints: 0
-  timeToFail: 0
-  messageType: 0
+  failPoints: 5
+  timeToFail: 15
+  messageType: 1
   flagsRequired: 
   flagsNotAllow: 
   repeat: 0
-  messageWaitCount: 0
-  delayBeforeSending: 0
+  messageWaitCount: 13
+  delayBeforeSending: 2.83
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0

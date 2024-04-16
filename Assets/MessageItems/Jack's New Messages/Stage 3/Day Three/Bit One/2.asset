@@ -23,16 +23,16 @@ MonoBehaviour:
   noFail: 0
   failPoints: 5
   timeToFail: 15
-  messageType: 0
+  messageType: 1
   flagsRequired: 0c000000
   flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 0
+  delayBeforeSending: 3.38
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
   following: 1
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  acceptFollowingMessage: {fileID: 11400000, guid: a6eb3ee564f240c42979ef6f8225e877, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: a6eb3ee564f240c42979ef6f8225e877, type: 2}
   reblocked: 0

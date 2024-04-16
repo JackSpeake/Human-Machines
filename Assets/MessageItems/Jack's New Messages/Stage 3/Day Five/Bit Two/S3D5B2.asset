@@ -16,18 +16,18 @@ MonoBehaviour:
   message: 'Request Received: woogle.com/what-is-wexas-governor-favorite-food'
   correct: 0
   noFail: 0
-  failPoints: 0
-  timeToFail: 0
-  messageType: 0
-  flagsRequired: 
+  failPoints: 5
+  timeToFail: 15
+  messageType: 1
+  flagsRequired: 10000000
   flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 0
+  delayBeforeSending: 45
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 86b5829dfdf6d6e45aee78991fa037aa, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 86b5829dfdf6d6e45aee78991fa037aa, type: 2}
   reblocked: 0

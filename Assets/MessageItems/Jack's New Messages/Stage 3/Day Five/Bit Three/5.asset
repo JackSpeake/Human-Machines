@@ -16,18 +16,18 @@ MonoBehaviour:
   message: 'Request Received: governorstuff.com/directory/assistant/personal-information'
   correct: 1
   noFail: 0
-  failPoints: 0
-  timeToFail: 0
-  messageType: 0
+  failPoints: 5
+  timeToFail: 15
+  messageType: 1
   flagsRequired: 
   flagsNotAllow: 
   repeat: 0
-  messageWaitCount: 0
-  delayBeforeSending: 0
+  messageWaitCount: 13
+  delayBeforeSending: 2.83
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: bddc337f56c8f9847a1cea0c909830de, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: bddc337f56c8f9847a1cea0c909830de, type: 2}
   reblocked: 0

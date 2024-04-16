@@ -16,18 +16,18 @@ MonoBehaviour:
   message: 'Request Received: woogle.com/what-powers-does-a-governor-have'
   correct: 1
   noFail: 0
-  failPoints: 0
-  timeToFail: 0
-  messageType: 0
+  failPoints: 5
+  timeToFail: 15
+  messageType: 1
   flagsRequired: 
   flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 0
+  delayBeforeSending: 2.32
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
-  following: 0
-  acceptFollowingMessage: {fileID: 0}
-  declineFollowingMessage: {fileID: 0}
+  following: 1
+  acceptFollowingMessage: {fileID: 11400000, guid: 15c0f124fe85ef945a2d9364242cbf57, type: 2}
+  declineFollowingMessage: {fileID: 11400000, guid: 15c0f124fe85ef945a2d9364242cbf57, type: 2}
   reblocked: 0

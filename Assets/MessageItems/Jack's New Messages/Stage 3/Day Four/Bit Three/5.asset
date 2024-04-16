@@ -18,14 +18,14 @@ MonoBehaviour:
     \r\n"
   correct: 1
   noFail: 0
-  failPoints: 0
-  timeToFail: 0
-  messageType: 0
+  failPoints: 5
+  timeToFail: 15
+  messageType: 1
   flagsRequired: 
   flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 0
+  delayBeforeSending: 2.43
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0

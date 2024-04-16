@@ -16,14 +16,14 @@ MonoBehaviour:
   message: 'Request Received: woogle.com/how-to-submit-taxes'
   correct: 1
   noFail: 1
-  failPoints: 0
-  timeToFail: 0
-  messageType: 0
+  failPoints: 5
+  timeToFail: 15
+  messageType: 1
   flagsRequired: 
   flagsNotAllow: 
   repeat: 0
   messageWaitCount: 0
-  delayBeforeSending: 0
+  delayBeforeSending: 2.24
   completeRaiseFlag: 0
   acceptRaiseFlag: 0
   declineRaiseFlag: 0
