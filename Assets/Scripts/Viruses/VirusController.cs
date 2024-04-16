@@ -61,7 +61,7 @@ public class VirusController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.day == 2 && GameManager.Instance.notifications.isActiveAndEnabled)
+        if (GameManager.Instance.day == 3 && GameManager.Instance.notifications.isActiveAndEnabled)
         {
             if (waitingForFirstEnableDone && !GameManager.Instance.GetNotificationStatus())
             {
