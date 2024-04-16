@@ -839,9 +839,6 @@ public class GameManager : MonoBehaviour
 
             soundManager.GetComponents<AudioSource>()[2].Stop();
             soundManager.GetComponents<AudioSource>()[3].Stop();
-
-            soundManager.GetComponent<SoundController>().creditsHeaderText = creditTexts[0];
-            soundManager.GetComponent<SoundController>().creditsLowerText = creditTexts[1];
         }
 
         // Newspaper here
@@ -895,6 +892,11 @@ public class GameManager : MonoBehaviour
         creditTexts[0].maxVisibleCharacters = 0;
         creditTexts[1].maxVisibleCharacters = 0;
 
+        if (GameObject.Find("SoundManager") != null)
+        {
+            GameObject.Find("SoundManager").GetComponent<SoundController>().headerText = creditTexts[0];
+            GameObject.Find("SoundManager").GetComponent<SoundController>().lowerText = creditTexts[1];
+        }
 
         while (creditTexts[0].maxVisibleCharacters < creditTexts[0].text.Length)
         {
