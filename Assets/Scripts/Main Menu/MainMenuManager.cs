@@ -19,6 +19,8 @@ public class MainMenuManager : MonoBehaviour
     {
         // CHECK IF WEB BUILD
         // IF WEB BUILD REMOVE QUIT BUTTON
+
+        Cursor.visible = false;
     }
 
     public void Quit()
